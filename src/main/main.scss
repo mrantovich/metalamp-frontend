@@ -1,7 +1,8 @@
+@import 'fonts';
 @import 'colors';
 @import 'nullstyle';
 
 html {
-    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-family: $font-primary, sans-serif;
     color: $dark-shade;
 }
