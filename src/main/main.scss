@@ -3,6 +3,11 @@
 @import 'nullstyle';
 
 html {
+    font-size: 1.4rem;
     font-family: $font-primary, sans-serif;
     color: $dark-shade;
 }
+
+@import '../main/wrappers.scss';
+@import '../ui-kit/ui-kit.scss';
+@import '../blocks/text/text.scss';

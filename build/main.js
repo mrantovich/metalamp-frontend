@@ -26,7 +26,27 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
   \***************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("var pug = __webpack_require__(/*! !../../node_modules/pug-runtime/index.js */ \"./node_modules/pug-runtime/index.js\");\n\nfunction template(locals) {var pug_html = \"\", pug_mixins = {}, pug_interp;;\n    var locals_for_with = (locals || {});\n    \n    (function (pageTitle) {\n      pageTitle = \"MetaLamp Frontend\"\npug_html = pug_html + \"\\u003C!DOCTYPE html\\u003E\\u003Chtml lang=\\\"ru\\\"\\u003E\\u003Chead\\u003E\\u003Cmeta charset=\\\"UTF-8\\\"\\u003E\\u003Cmeta http-equiv=\\\"X-UA-Compatible\\\" content=\\\"IE=edge\\\"\\u003E\\u003Cmeta name=\\\"viewport\\\" content=\\\"width=device-width, initial-scale=1.0\\\"\\u003E\\u003Ctitle\\u003E\" + (pug.escape(null == (pug_interp = pageTitle) ? \"\" : pug_interp)) + \"\\u003C\\u002Ftitle\\u003E\\u003C\\u002Fhead\\u003E\\u003Cbody\\u003E \\u003C\\u002Fbody\\u003E\\u003C\\u002Fhtml\\u003E\";\n    }.call(this, \"pageTitle\" in locals_for_with ?\n        locals_for_with.pageTitle :\n        typeof pageTitle !== 'undefined' ? pageTitle : undefined));\n    ;;return pug_html;};\nmodule.exports = template;\n\n//# sourceURL=webpack://metalamp-frontend/./src/main/main.pug?");
+eval("var pug = __webpack_require__(/*! !../../node_modules/pug-runtime/index.js */ \"./node_modules/pug-runtime/index.js\");\n\nfunction template(locals) {var pug_html = \"\", pug_mixins = {}, pug_interp;;\n    var locals_for_with = (locals || {});\n    \n    (function (pageTitle) {\n      pageTitle = \"MetaLamp Frontend\"\npug_html = pug_html + \"\\u003C!DOCTYPE html\\u003E\\u003Chtml lang=\\\"ru\\\"\\u003E\\u003Chead\\u003E\\u003Cmeta charset=\\\"UTF-8\\\"\\u003E\\u003Cmeta http-equiv=\\\"X-UA-Compatible\\\" content=\\\"IE=edge\\\"\\u003E\\u003Cmeta name=\\\"viewport\\\" content=\\\"width=device-width, initial-scale=1.0\\\"\\u003E\\u003Ctitle\\u003E\" + (pug.escape(null == (pug_interp = pageTitle) ? \"\" : pug_interp)) + \"\\u003C\\u002Ftitle\\u003E\\u003C\\u002Fhead\\u003E\\u003Cbody\\u003E \" + (null == (pug_interp = __webpack_require__(/*! ../ui-kit/ui-kit.pug */ \"./src/ui-kit/ui-kit.pug\").call(this, locals)) ? \"\" : pug_interp) + \"\\u003C\\u002Fbody\\u003E\\u003C\\u002Fhtml\\u003E\";\n    }.call(this, \"pageTitle\" in locals_for_with ?\n        locals_for_with.pageTitle :\n        typeof pageTitle !== 'undefined' ? pageTitle : undefined));\n    ;;return pug_html;};\nmodule.exports = template;\n\n//# sourceURL=webpack://metalamp-frontend/./src/main/main.pug?");
+
+/***/ }),
+
+/***/ "./src/ui-kit/form/form.pug":
+/*!**********************************!*\
+  !*** ./src/ui-kit/form/form.pug ***!
+  \**********************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("var pug = __webpack_require__(/*! !../../../node_modules/pug-runtime/index.js */ \"./node_modules/pug-runtime/index.js\");\n\nfunction template(locals) {var pug_html = \"\", pug_mixins = {}, pug_interp;pug_html = pug_html + \"\\u003Cform class=\\\"form\\\"\\u003E\\u003Cinput class=\\\"form__text-field\\\" type=\\\"text\\\" name=\\\"text\\\" placeholder=\\\"Text sample\\\"\\u003E\\u003C\\u002Fform\\u003E\";;return pug_html;};\nmodule.exports = template;\n\n//# sourceURL=webpack://metalamp-frontend/./src/ui-kit/form/form.pug?");
+
+/***/ }),
+
+/***/ "./src/ui-kit/ui-kit.pug":
+/*!*******************************!*\
+  !*** ./src/ui-kit/ui-kit.pug ***!
+  \*******************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("var pug = __webpack_require__(/*! !../../node_modules/pug-runtime/index.js */ \"./node_modules/pug-runtime/index.js\");\n\nfunction template(locals) {var pug_html = \"\", pug_mixins = {}, pug_interp;pug_html = pug_html + \"\\u003Cdiv class=\\\"wrapper\\\"\\u003E \\u003Cdiv class=\\\"ui-kit\\\"\\u003E\\u003Cdiv class=\\\"container\\\"\\u003E \\u003Cdiv class=\\\"ui-kit__content\\\"\\u003E \" + (null == (pug_interp = __webpack_require__(/*! ./form/form.pug */ \"./src/ui-kit/form/form.pug\").call(this, locals)) ? \"\" : pug_interp) + \"\\u003C\\u002Fdiv\\u003E\\u003C\\u002Fdiv\\u003E\\u003C\\u002Fdiv\\u003E\\u003C\\u002Fdiv\\u003E\";;return pug_html;};\nmodule.exports = template;\n\n//# sourceURL=webpack://metalamp-frontend/./src/ui-kit/ui-kit.pug?");
 
 /***/ }),
 

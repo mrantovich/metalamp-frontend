@@ -74,6 +74,42 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: inherit; }
 
 html {
+  font-size: 1.4rem;
   font-family: "Montserrat", sans-serif;
   color: #1F2041; }
+
+.wrapper {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden; }
+
+.container {
+  height: 100%;
+  max-width: 1190px;
+  padding: 0 15px;
+  margin: 0 auto; }
+
+.ui-kit {
+  width: 100%;
+  padding: 30px 15px; }
+
+.text {
+  font-size: 1.4rem;
+  color: rgba(31, 32, 65, 0.75);
+  line-height: 171.42857%; }
+  .text_label {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #1F2041;
+    line-height: 125%; }
+  .text_sub-title {
+    font-size: 1.9rem;
+    font-weight: bold;
+    color: #1F2041;
+    line-height: 121.05263%; }
+  .text_title {
+    font-size: 2.4rem;
+    font-weight: bold;
+    color: #1F2041;
+    line-height: 120.83333%; }
 
