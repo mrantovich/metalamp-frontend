@@ -1,7 +1,11 @@
 mixin dropdown(placeholder, itemList)
     .dropdown
         .dropdown__field Сколько гостей
-            .dropdown__menu 
+            .dropdown__menu.dropdown__menu_is-hidden
                 each item in itemList 
-                    .dropdown-menu-option
-                        .dropdown-item=item
+                    .dropdown__item
+                        .dropdown__name.text.text_label=item
+                        .dropdown__counter 
+                            .dropdown__counter-button.dropdown__counter-button_minus
+                            .dropdown__counter-num.text.text_label 0
+                            .dropdown__counter-button.dropdown__counter-button_plus

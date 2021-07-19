@@ -11,6 +11,7 @@
     // Class for all text inputs (text, email etc.)
     &__text-field {
         width: 35rem;
+        height: 4.4rem;
         font-size: 1.4rem;
         color: $dark-shade-75-percent;
         padding: 13px 15px;
@@ -29,10 +30,6 @@
         }
     }
 
-    // Classes for select and options inside it
-    &__select {
-        background: transparent;
-    }
 }
 
 @import './dropdown/dropdown.scss';

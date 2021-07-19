@@ -8,13 +8,6 @@ form.form
         .form__label-text.text.text_label Email field
         input(type="email", name="text", placeholder="Email sample").form__text-field
     label.form__label
-        .form__label-text.text.text_label Dropdown 
-        select.form__select.form__text-field
-            option(disabled,selected) Сколько гостей
-            option.form__option One
-            option.form__option Two
-            option.form__option Three
-    label.form__label
-        .form__label-text.text.text_label Dropdown IQ 
+        .form__label-text.text.text_label Dropdown
         +dropdown("Сколько гостей", ["One", "Two", "Three"])
 

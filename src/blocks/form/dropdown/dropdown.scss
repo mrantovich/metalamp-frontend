@@ -2,18 +2,112 @@
 
     &__field {
         max-width: 35rem;
+        height: 4.4rem;
         font-size: 1.4rem;
         color: $dark-shade-75-percent;
         padding: 13px 15px;
         border: 1px solid $dark-shade-25-percent;
         border-radius: 0.4rem;
         position: relative;
+        cursor: pointer;
+
+        &::after, &::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            transform: translateX(-50%);
+            background-color: $dark-shade-50-percent;
+            width: 0.8rem;
+            height: 0.2rem;
+            transition: 0.3s;
+        }
+
+        &::after {
+            right: 1.5rem;
+            transform: rotate(-45deg);
+        }
+        &::before {
+            right: 2rem;
+            transform: rotate(45deg);
+        }
+
+        &:hover {
+            border: 1px solid $dark-shade-50-percent;
+        }
     }
 
     &__menu {
         position: absolute;
-        bottom: -100%;
+        width: 100%;
+        left: 0;
+        top: 4.4rem;
         border: 1px solid $dark-shade-25-percent;
         border-radius: 0.4rem;
+        padding: 15px 12px;
+
+        &_is-hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        &_is-visible {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+
+    &__item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 0.7rem;
+    }
+
+    &__name {
+    }
+
+    &__counter {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 9.2rem;
+        height: 3rem;
+    }
+
+    &__counter-button {
+        width: 3rem;
+        height: 3rem;
+        border: 1px solid $dark-shade-25-percent;
+        border-radius: 50%;
+        position: relative;
+        cursor: pointer;
+
+        &::after {
+            content: '';
+            position: absolute;
+            width: 0.8rem;
+            height: 0.1rem;
+            background: $dark-shade-50-percent;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        &_minus {
+        }
+
+        &_plus {
+
+            &::before {
+                content: '';
+                position: absolute;
+                width: 0.8rem;
+                height: 0.1rem;
+                background: $dark-shade-50-percent;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%) rotate(90deg);
+            }
+        }
     }
 }
