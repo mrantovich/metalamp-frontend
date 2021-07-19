@@ -1,14 +1,17 @@
 .dropdown {
+    max-width: 35rem;
+    height: 4.4rem;
+    position: relative;
 
     &__field {
-        max-width: 35rem;
-        height: 4.4rem;
+        width: 100%;
+        height: 100%;
         font-size: 1.4rem;
         color: $dark-shade-75-percent;
         padding: 13px 15px;
         border: 1px solid $dark-shade-25-percent;
         border-radius: 0.4rem;
-        position: relative;
+        transition: 0.3s;
         cursor: pointer;
 
         &::after, &::before {
@@ -21,7 +24,7 @@
             height: 0.2rem;
             transition: 0.3s;
         }
-
+    
         &::after {
             right: 1.5rem;
             transform: rotate(-45deg);
@@ -32,6 +35,10 @@
         }
 
         &:hover {
+            border: 1px solid $dark-shade-50-percent;
+        }
+
+        &_is-expanded {
             border: 1px solid $dark-shade-50-percent;
         }
     }
