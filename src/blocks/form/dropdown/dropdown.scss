@@ -40,6 +40,8 @@
 
         &_is-expanded {
             border: 1px solid $dark-shade-50-percent;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
         }
     }
 
@@ -48,18 +50,23 @@
         width: 100%;
         left: 0;
         top: 4.4rem;
-        border: 1px solid $dark-shade-25-percent;
+        border: 1px solid $dark-shade-50-percent;
+        border-top: 0;
         border-radius: 0.4rem;
         padding: 15px 12px;
 
         &_is-hidden {
-            opacity: 0;
-            visibility: hidden;
+            animation-name: hideMenu;
+            animation-duration: 0.2s;
+            animation-fill-mode: forwards;
         }
 
         &_is-visible {
-            opacity: 1;
-            visibility: visible;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+            animation-name: showMenu;
+            animation-duration: 0.2s;
+            animation-fill-mode: forwards;
         }
     }
 
@@ -84,7 +91,7 @@
     &__counter-button {
         width: 3rem;
         height: 3rem;
-        border: 1px solid $dark-shade-25-percent;
+        border: 1px solid $dark-shade-50-percent;
         border-radius: 50%;
         position: relative;
         cursor: pointer;
@@ -116,5 +123,35 @@
                 transform: translate(-50%, -50%) rotate(90deg);
             }
         }
+
+        &_disabled {
+            border: 1px solid $dark-shade-25-percent;
+
+            &::after, &::before {
+                background: $dark-shade-25-percent;
+            }
+        }
+    }
+}
+
+@keyframes showMenu {
+    from {
+        opacity: 0;
+        visibility: hidden;
+    }
+    to {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+@keyframes hideMenu {
+    from {
+        opacity: 1;
+        visibility: visible;
+    }
+    to {
+        opacity: 0;
+        visibility: hidden;
     }
 }

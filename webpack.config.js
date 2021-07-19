@@ -5,6 +5,15 @@ const MiniCssExtracPlugin = require('mini-css-extract-plugin');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 
 module.exports = {
+    mode: 'development',
+    devServer: {
+        historyApiFallback: true,
+        contentBase: path.resolve(__dirname, './build'),
+        open: true,
+        compress: true,
+        hot: true,
+        port: 8080,
+    },
     entry: {
         main: path.resolve(__dirname, './src/index.js')
     },
@@ -37,5 +46,6 @@ module.exports = {
         new MiniCssExtracPlugin({
             filename: 'style.css',
         }),
+        new webpack.HotModuleReplacementPlugin()
     ],
 }
