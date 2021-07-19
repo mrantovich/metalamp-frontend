@@ -1,7 +1,29 @@
 .form {
 
+    // Classes for labels
+    &__label {
+    }
+
+    &__label-text {
+        margin: 0 0 5px 0;
+    }
+
     // Class for all text inputs (text, email etc.)
     &__text-field {
-        
+        color: $dark-shade-75-percent;
+        padding: 13px 15px;
+        border: 1px solid $dark-shade-25-percent;
+        border-radius: 0.4rem;
+        transition: 0.3s;
+
+        &::placeholder {
+            font-size: 1.4rem;
+            color: $dark-shade-25-percent;
+            line-height: 1.8 / 1.4 * 100%;
+        }
+
+        &:hover, &:focus {
+            border: 1px solid $dark-shade-50-percent;
+        }
     }
 }

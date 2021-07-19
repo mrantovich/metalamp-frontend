@@ -73,6 +73,9 @@ h1, h2, h3, h4, h5, h6 {
   font-size: inherit;
   font-weight: inherit; }
 
+:root {
+  font-size: 10px; }
+
 html {
   font-size: 1.4rem;
   font-family: "Montserrat", sans-serif;
@@ -93,6 +96,22 @@ html {
   width: 100%;
   padding: 30px 15px; }
 
+.form__label-text {
+  margin: 0 0 5px 0; }
+
+.form__text-field {
+  color: rgba(31, 32, 65, 0.75);
+  padding: 13px 15px;
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  border-radius: 0.4rem;
+  transition: 0.3s; }
+  .form__text-field::placeholder {
+    font-size: 1.4rem;
+    color: rgba(31, 32, 65, 0.25);
+    line-height: 128.57143%; }
+  .form__text-field:hover, .form__text-field:focus {
+    border: 1px solid rgba(31, 32, 65, 0.5); }
+
 .text {
   font-size: 1.4rem;
   color: rgba(31, 32, 65, 0.75);
@@ -101,7 +120,8 @@ html {
     font-size: 1.2rem;
     font-weight: bold;
     color: #1F2041;
-    line-height: 125%; }
+    line-height: 125%;
+    text-transform: uppercase; }
   .text_sub-title {
     font-size: 1.9rem;
     font-weight: bold;

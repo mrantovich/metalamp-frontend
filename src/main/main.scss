@@ -2,6 +2,8 @@
 @import 'colors';
 @import 'nullstyle';
 
+@import 'root';
+
 html {
     font-size: 1.4rem;
     font-family: $font-primary, sans-serif;
@@ -10,4 +12,5 @@ html {
 
 @import '../main/wrappers.scss';
 @import '../ui-kit/ui-kit.scss';
+@import '../blocks/form/form.scss';
 @import '../blocks/text/text.scss';

@@ -36,7 +36,7 @@ eval("var pug = __webpack_require__(/*! !../../node_modules/pug-runtime/index.js
   \**********************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("var pug = __webpack_require__(/*! !../../../node_modules/pug-runtime/index.js */ \"./node_modules/pug-runtime/index.js\");\n\nfunction template(locals) {var pug_html = \"\", pug_mixins = {}, pug_interp;pug_html = pug_html + \"\\u003Cform class=\\\"form\\\"\\u003E\\u003Cinput class=\\\"form__text-field\\\" type=\\\"text\\\" name=\\\"text\\\" placeholder=\\\"Text sample\\\"\\u003E\\u003C\\u002Fform\\u003E\";;return pug_html;};\nmodule.exports = template;\n\n//# sourceURL=webpack://metalamp-frontend/./src/ui-kit/form/form.pug?");
+eval("var pug = __webpack_require__(/*! !../../../node_modules/pug-runtime/index.js */ \"./node_modules/pug-runtime/index.js\");\n\nfunction template(locals) {var pug_html = \"\", pug_mixins = {}, pug_interp;pug_html = pug_html + \"\\u003Cform class=\\\"form\\\"\\u003E\\u003Clabel class=\\\"form__label\\\"\\u003E \\u003Cdiv class=\\\"form__label-text text text_label\\\"\\u003EText field\\u003C\\u002Fdiv\\u003E\\u003Cinput class=\\\"form__text-field\\\" type=\\\"text\\\" name=\\\"text\\\" placeholder=\\\"Text sample\\\"\\u003E\\u003C\\u002Flabel\\u003E\\u003C\\u002Fform\\u003E\";;return pug_html;};\nmodule.exports = template;\n\n//# sourceURL=webpack://metalamp-frontend/./src/ui-kit/form/form.pug?");
 
 /***/ }),
 
