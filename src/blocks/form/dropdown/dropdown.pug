@@ -1,0 +1,7 @@
+mixin dropdown(placeholder, itemList)
+    .iqdropdown
+        p.iqdropdown-selection 
+            .iqdropdown-menu 
+                each item in itemList 
+                    .iqdropdown-menu-option
+                        .iqdropdown-item=item

@@ -1,5 +1,20 @@
+include ../../blocks/form/dropdown/dropdown.pug
+
 form.form
     label.form__label 
         .form__label-text.text.text_label Text field
         input(type="text", name="text", placeholder="Text sample").form__text-field
+    label.form__label
+        .form__label-text.text.text_label Email field
+        input(type="email", name="text", placeholder="Email sample").form__text-field
+    label.form__label
+        .form__label-text.text.text_label Dropdown 
+        select.form__select.form__text-field
+            option(disabled,selected) Сколько гостей
+            option.form__option One
+            option.form__option Two
+            option.form__option Three
+    label.form__label
+        .form__label-text.text.text_label Dropdown IQ 
+        +dropdown("Сколько гостей", ["One", "Two", "Three"])
 

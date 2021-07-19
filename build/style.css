@@ -100,6 +100,8 @@ html {
   margin: 0 0 5px 0; }
 
 .form__text-field {
+  width: 35rem;
+  font-size: 1.4rem;
   color: rgba(31, 32, 65, 0.75);
   padding: 13px 15px;
   border: 1px solid rgba(31, 32, 65, 0.25);
@@ -111,6 +113,9 @@ html {
     line-height: 128.57143%; }
   .form__text-field:hover, .form__text-field:focus {
     border: 1px solid rgba(31, 32, 65, 0.5); }
+
+.form__select {
+  background: transparent; }
 
 .text {
   font-size: 1.4rem;

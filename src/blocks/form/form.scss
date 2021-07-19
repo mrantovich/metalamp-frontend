@@ -10,6 +10,8 @@
 
     // Class for all text inputs (text, email etc.)
     &__text-field {
+        width: 35rem;
+        font-size: 1.4rem;
         color: $dark-shade-75-percent;
         padding: 13px 15px;
         border: 1px solid $dark-shade-25-percent;
@@ -25,5 +27,10 @@
         &:hover, &:focus {
             border: 1px solid $dark-shade-50-percent;
         }
+    }
+
+    // Classes for select and options inside it
+    &__select {
+        background: transparent;
     }
 }
