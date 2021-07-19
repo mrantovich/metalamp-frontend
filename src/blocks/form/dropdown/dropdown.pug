@@ -1,7 +1,7 @@
 mixin dropdown(placeholder, itemList)
-    .iqdropdown
-        p.iqdropdown-selection 
-            .iqdropdown-menu 
+    .dropdown
+        .dropdown__field
+            .dropdown__menu 
                 each item in itemList 
-                    .iqdropdown-menu-option
-                        .iqdropdown-item=item
+                    .dropdown-menu-option
+                        .dropdown-item=item
