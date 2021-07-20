@@ -1,4 +1,4 @@
-import IMask from "imask";
+import IMask from 'imask';
 
 const maskedTextFields = document.querySelectorAll('.form__text-field_masked');
 let maskOptionsForDate = {

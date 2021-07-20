@@ -45,6 +45,7 @@ module.exports = {
         new HTMLWebpackPlugin({
             template: path.resolve(__dirname, './src/main/main.pug'),
             filename: 'index.html',
+            inject: 'body'
         }),
         new MiniCssExtracPlugin({
             filename: 'style.css',
