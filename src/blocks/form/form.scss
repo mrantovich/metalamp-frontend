@@ -28,6 +28,8 @@
         &:hover, &:focus {
             border: 1px solid $dark-shade-50-percent;
         }
+
+        &_masked {}
     }
 
 }

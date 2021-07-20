@@ -3,6 +3,7 @@ const webpack = require('webpack');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtracPlugin = require('mini-css-extract-plugin');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
+const nodeExternals = require('webpack-node-externals');
 
 module.exports = {
     mode: 'development',
@@ -14,6 +15,8 @@ module.exports = {
         hot: true,
         port: 8080,
     },
+    target: 'node',
+    externals: [nodeExternals()],
     entry: {
         main: path.resolve(__dirname, './src/index.js')
     },
