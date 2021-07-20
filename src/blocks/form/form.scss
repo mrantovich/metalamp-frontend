@@ -9,6 +9,10 @@
         flex-direction: column;
     }
 
+    &__box-with-likes {
+        display: flex;
+    }
+
     // Classes for labels
     &__label {
 
@@ -141,3 +145,4 @@
 }
 
 @import './dropdown/dropdown.scss';
+@import './like-button/like-button.scss';
