@@ -1,4 +1,4 @@
 import './main/main.pug';
 import './main/main.scss';
 import './blocks/form/dropdown/dropdown';
-import './blocks/form/imask';
+import './blocks/form/like-button/like-button';

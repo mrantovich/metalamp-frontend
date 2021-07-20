@@ -7,6 +7,7 @@
     position: relative;
     transition: 0.2s;
 
+
     &__container {
         position: absolute;
         top: 50%;
@@ -17,55 +18,6 @@
     }
 
     &__heart {
-        width: 0.7rem;
-        height: 0.7rem;
-        transform: rotate(-45deg);
-        border: 0.1rem solid #c7c7cf;
-        border-radius: 1rem / 50;
-        border-top-color: transparent;
-        border-right-color: transparent;
-        position: relative;
-        z-index: -1;
-        margin-right: 0.75rem;
-        transition: 0.2s;
-
-        &::after, &::before {
-            content: '';
-            width: 0.55rem;
-            height: 0.55rem;
-            border-radius: 80%;
-            position: absolute;
-            border: 0.1rem solid #c7c7cf;
-            z-index: -1;
-            transition: 0.2s;
-        }
-        
-        &::after {
-            border-right-color: transparent;
-            top: 0;
-            left: 0;
-            /* top: -0.03rem;
-            left: 0.09rem; */
-            transform: rotate(155deg)  translate(-40%, -30%);
-        }
-
-        &::before {
-            border-bottom-color: transparent;
-            bottom: 0;
-            right: 0;
-/*             top: -0.25rem;
-            left: -0.11rem; */
-            transform: rotate(25deg) translate(-30%, -40%);
-        }
-    }
-
-    &__heart-inside {
-        width: 0.3rem;
-        height: 0.3rem;
-        background-color: $white;
-        transform: rotate(-45deg) translate(0.03rem, 0.15rem);
-        z-index: 12;
-        transition: 0.2s;
     }
 
     &__counter {
@@ -80,20 +32,6 @@
             border: 0.1rem solid $purple;
 
             .like-button__heart {
-                background: $purple;
-                border: 0.1rem solid $purple;
-                border-top-color: transparent;
-                border-right-color: transparent;
-            }
-            .like-button__heart::after,
-            .like-button__heart::before {
-                background: $purple;
-                border: 0.1rem solid $purple;
-            }
-
-            .like-button__heart-inside {
-                background: $white;
-                transform: translate(0.44rem, -0.22rem);
             }
 
             .like-button__counter {
