@@ -3,7 +3,9 @@
     height: 2rem;
     border: 0.1rem solid $dark-shade-25-percent;
     border-radius: 1rem;
+    cursor: pointer;
     position: relative;
+    transition: 0.2s;
 
     &__container {
         position: absolute;
@@ -18,7 +20,6 @@
         width: 0.7rem;
         height: 0.7rem;
         transform: rotate(-45deg);
-        //border: 0.1rem solid $dark-shade-25-percent;
         border: 0.1rem solid #c7c7cf;
         border-radius: 1rem / 50;
         border-top-color: transparent;
@@ -26,6 +27,7 @@
         position: relative;
         z-index: -1;
         margin-right: 0.75rem;
+        transition: 0.2s;
 
         &::after, &::before {
             content: '';
@@ -33,9 +35,9 @@
             height: 0.55rem;
             border-radius: 80%;
             position: absolute;
-            //border: 0.1rem solid $dark-shade-25-percent;
             border: 0.1rem solid #c7c7cf;
             z-index: -1;
+            transition: 0.2s;
         }
         
         &::after {
@@ -63,11 +65,40 @@
         background-color: $white;
         transform: rotate(-45deg) translate(0.03rem, 0.15rem);
         z-index: 12;
+        transition: 0.2s;
     }
 
     &__counter {
         font-size: 1rem;
         line-height: 12 / 10 * 100%;
         color: $dark-shade-25-percent;
+        transition: 0.2s;
+    }
+
+    @media (any-hover: hover) {
+        &:hover {
+            border: 0.1rem solid $purple;
+
+            .like-button__heart {
+                background: $purple;
+                border: 0.1rem solid $purple;
+                border-top-color: transparent;
+                border-right-color: transparent;
+            }
+            .like-button__heart::after,
+            .like-button__heart::before {
+                background: $purple;
+                border: 0.1rem solid $purple;
+            }
+
+            .like-button__heart-inside {
+                background: $white;
+                transform: translate(0.44rem, -0.22rem);
+            }
+
+            .like-button__counter {
+                color: $purple;
+            }
+        }
     }
 }
