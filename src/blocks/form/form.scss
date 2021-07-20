@@ -2,13 +2,17 @@
 
     // Box to limit content by width
     &__box {
-        max-width: 32rem;
+        max-width: 23rem;
         display: flex;
         flex-direction: column;
     }
 
     // Classes for labels
     &__label {
+
+        &_with-checkbox {
+            display: flex;
+        }
     }
 
     &__label-text {
@@ -40,9 +44,12 @@
     }
 
     &__checkbox {
+        display: block;
+        flex: 0 0 auto;
         appearance: none;
         width: 2rem;
         height: 2rem;
+        margin-right: 1rem;
         border: 1px solid $dark-shade-25-percent;
         border-radius: 0.4rem;
         position: relative;
