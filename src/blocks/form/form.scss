@@ -77,6 +77,37 @@
             width: 0.8rem;
             transform: translate(-50%, -50%) rotate(-45deg);
         }
+
+        &_as-toggle {
+            @include buttons-property(4rem, 2rem, 1rem, 1rem);
+
+            &:checked {
+                border: 1px solid $purple;
+                &::after {
+                    background: linear-gradient(180deg, $purple,$purple-second);
+                    transform: translate(1.8rem, -50%);
+                    transition: 0.2s;
+                }
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                background: $dark-shade-25-percent;
+                width: 1.2rem;
+                height: 1.2rem;
+                border-radius: 50%;
+                top: 50%;
+                left: 0.4rem;
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(-50%);
+                transition: 0.2s;
+            }
+            &::before {
+                display: none;
+            }
+        }
     }
 
     &__radio {
