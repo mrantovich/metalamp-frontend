@@ -11,6 +11,8 @@
 
     &__box-with-likes {
         display: flex;
+        width: 10rem;
+        justify-content: space-between;
     }
 
     // Classes for labels
