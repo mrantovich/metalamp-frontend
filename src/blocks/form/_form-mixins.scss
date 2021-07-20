@@ -1,0 +1,13 @@
+@mixin buttons-property($width, $height, $margin-right, $border-radius) {
+    display: block;
+    flex: 0 0 auto;
+    appearance: none;
+    width: $width;
+    height: $height;
+    margin-right: $margin-right;
+    border: 1px solid $dark-shade-25-percent;
+    border-radius: $border-radius;
+    position: relative;
+    cursor: pointer;
+    transition: 0.2s;
+}
