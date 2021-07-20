@@ -10,7 +10,18 @@ form.form
     label.form__label
         .form__label-text.text.text_label Dropdown
         +dropdown("Сколько гостей", ["One", "Two", "Three"])
-    label.form_label
+    label.form__label
         .form__label-text.text.text_label Masked Text Field 
         input(type="num", name="masked-date").form__text-field.form__text-field_masked
+    .form__label-text.text.text_label Checkbox buttons
+    .form__box
+        label.form__label 
+            input(type="checkbox", name="check").form__checkbox
+            | Можно курить
+        label.form__label 
+            input(type="checkbox", name="check", checked).form__checkbox
+            | Можно с питомцами
+        label.form__label 
+            input(type="checkbox", name="check", checked).form__checkbox
+            | Можно пригласить гостей (до 10 человек)
 
