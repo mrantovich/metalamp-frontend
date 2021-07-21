@@ -51,6 +51,8 @@ form.form
             .like-button__container 
                 img(src=require("../assets/img/like-button-not-selected.svg"), alt="Heart image", class="like-button__heart")
                 .like-button__counter 12
-    .form__box-with-likes 
-        +star-buttons(numFilled=3, maxNum=5)
+    .form__label-text.text.text_label Rate button
+    .form__box-with-stars
+        +star-buttons(4, 5)
+        +star-buttons(5, 5)
 

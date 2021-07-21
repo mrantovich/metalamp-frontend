@@ -1,0 +1,17 @@
+.star-button {
+    width: 12rem;
+    height: 2.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    &__entry {
+        width: 2rem;
+        height: 2rem;
+        background: url('../assets/img/star-not-filled.svg') no-repeat;
+
+        &_is-filled {
+            background: url('../assets/img/star-filled.svg') no-repeat;
+        }
+    }
+}

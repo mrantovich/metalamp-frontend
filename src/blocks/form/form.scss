@@ -15,6 +15,12 @@
         justify-content: space-between;
     }
 
+    &__box-with-stars {
+        display: flex;
+        width: 28rem;
+        justify-content: space-between;
+    }
+
     // Classes for labels
     &__label {
 
@@ -148,3 +154,4 @@
 
 @import './dropdown/dropdown.scss';
 @import './like-button/like-button.scss';
+@import './star-button/star-button.scss';

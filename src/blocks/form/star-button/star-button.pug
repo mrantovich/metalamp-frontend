@@ -1,5 +1,9 @@
 mixin star-buttons(numFilled, maxNum)
-    - var counter = 1;
-    .star-button 
-        while counter < cc
-            .star-button__entry.star-button__entry_is-filled= counter++
+    - var n = 0
+    .star-button
+        while n < numFilled 
+            .star-button__entry.star-button__entry_is-filled
+            - n++
+        while numFilled < maxNum 
+            .star-button__entry 
+            - numFilled++
