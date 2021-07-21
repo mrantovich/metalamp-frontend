@@ -7,9 +7,17 @@
     position: relative;
     transition: 0.2s;
 
+    &_is-highlighted {
+        border: 0.1rem solid $purple;
+
+        .like-button__counter {
+            color: $purple;
+        }
+    }
 
     &__container {
         position: absolute;
+        width: 2rem;
         top: 50%;
         left: 0.7rem;
         transform: translateY(-50%);
@@ -18,6 +26,14 @@
     }
 
     &__heart {
+        margin-right: 0.4rem;
+        transition: 0.2s;
+
+        &_is-highlighted {
+            animation-name: heartBeat;
+            animation-duration: 0.5s;
+            animation-fill-mode: initial;
+        }
     }
 
     &__counter {
@@ -39,4 +55,17 @@
             }
         }
     }
+}
+
+@keyframes heartBeat {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.6);
+    }
+    100% {
+        transform: scale(1);
+    }
+    
 }

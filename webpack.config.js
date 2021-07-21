@@ -5,6 +5,11 @@ const MiniCssExtracPlugin = require('mini-css-extract-plugin');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const nodeExternals = require('webpack-node-externals');
 
+const isDev = process.env.NODE_ENV === 'development';
+const isProd = !isDev;
+
+//const filename = (ext) => isDev ? `[name].${ext}` : `[name].[contenthash].${ext}`;
+
 module.exports = {
     mode: 'development',
     devServer: {
@@ -22,7 +27,8 @@ module.exports = {
     },
     output: {
         path: path.resolve(__dirname, './build'),
-        filename: '[name].js'
+        filename: '[name].js',
+        publicPath: ''
     },
     module: {
         rules: [
@@ -35,7 +41,11 @@ module.exports = {
                 use: 'pug-loader'
             },
             {
-                test: /\.(ttf|woff|svg)$/,
+                test: /\.(?:png|gif|jpg|svg)$/i,
+                type: 'asset/resource'
+            },
+            {
+                test: /\.(ttf|woff)$/,
                 type: 'asset/resource'
             }
         ]
