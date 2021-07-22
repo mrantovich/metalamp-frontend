@@ -1,5 +1,6 @@
 include ../../blocks/form/dropdown/dropdown.pug
 include ../../blocks/form/star-button/star-button.pug
+include ../../blocks/form/button/button.pug
 
 form.form
     label.form__label 
@@ -53,6 +54,12 @@ form.form
                 .like-button__counter 12
     .form__label-text.text.text_label Rate button
     .form__box-with-stars
-        +star-buttons(4, 5)
+        +star-buttons(0, 5)
         +star-buttons(5, 5)
+    .form__label-text.text.text_label Buttons 
+        .form__vbox
+            button.form__button.button Click me
+            button.form__button.button.button_is-disabled Click me 
+            +empty-button("Click me")
+            +empty-button("Click me", true)
 

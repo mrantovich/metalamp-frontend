@@ -9,6 +9,12 @@
         flex-direction: column;
     }
 
+    &__vbox {
+        display: grid;
+        grid-template: 1fr 1fr / 15rem 15rem;
+        gap: 2rem;
+    }
+
     &__box-with-likes {
         display: flex;
         width: 10rem;
@@ -30,7 +36,7 @@
     }
 
     &__label-text {
-        margin: 0 0 5px 0;
+        margin: 0 0 2rem 0;
     }
 
     // Class for all text inputs (text, email etc.)
@@ -155,3 +161,4 @@
 @import './dropdown/dropdown.scss';
 @import './like-button/like-button.scss';
 @import './star-button/star-button.scss';
+@import './button//button.scss';

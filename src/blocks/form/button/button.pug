@@ -1,0 +1,9 @@
+mixin empty-button(textContent, isDisabled)
+    if isDisabled 
+        button.button__wrapper.button__wrapper_is-disabled 
+            .button__border-wrap 
+                .button__empty= textContent
+    else
+        button.button__wrapper
+            .button__border-wrap
+                .button__empty= textContent
