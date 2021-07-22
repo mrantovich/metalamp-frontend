@@ -20,9 +20,15 @@
         margin: 1.5rem 0;
     }
 
+    &__range-slider-container {
+        width: 30rem;
+        padding: 4rem 0;
+    }
+
     &__range-slider {
-        width: 40rem;
-        padding: 5rem 0;
+        width: 100%;
+        height: 0.6rem;
+        border: none;
     }
 
     &__box-with-likes {

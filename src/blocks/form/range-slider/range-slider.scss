@@ -1,3 +1,45 @@
 .noUi-handle {
+    transform: translateY(0.25rem);
+    border-radius: 50%;
+    border: 0.2rem solid $white;
     background: $green;
+    box-shadow: none;
+
+    cursor: pointer;
+
+    &::after,
+    &::before {
+        content: none;
+    }
+}
+
+.noUi-handle-lower {
+    left: 2.2rem;
+}
+
+.noUi-handle-upper {
+    left: calc(100% - 0.8rem);
+}
+
+.noUi-base {
+    height: 0.6rem;
+    position: relative;
+}
+
+.noUi-horizontal .noUi-handle {
+    width: 1.2rem;
+    height: 1.2rem;
+}
+
+.noUi-connects {
+    border-radius: none;
+    border: 0.1rem solid $dark-shade-25-percent;
+    position: relative;
+}
+
+.noUi-connect {
+    height: 0.6rem;
+    background: $green;
+    position: relative;
+    z-index: 99 !important;
 }
