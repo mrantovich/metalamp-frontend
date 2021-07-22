@@ -20,8 +20,6 @@ module.exports = {
         hot: true,
         port: 8080,
     },
-    target: 'node',
-    externals: [nodeExternals()],
     entry: {
         main: path.resolve(__dirname, './src/index.js')
     },
@@ -35,6 +33,10 @@ module.exports = {
             {
                 test: /\.s[ac]ss/,
                 use: [MiniCssExtracPlugin.loader, 'css-loader', 'sass-loader']
+            },
+            {
+                test: /\.css$/,
+                use: [MiniCssExtracPlugin.loader, 'css-loader']
             },
             {
                 test: /\.pug$/,
