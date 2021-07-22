@@ -17,13 +17,24 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        border-radius: 50%;
         cursor: pointer;
+        transition: 0.2s;
+
+        @media (any-hover: hover) {
+            &:hover {
+                color: $white;
+                background: $purple;
+                border-radius: 50%;
+            }
+        }
 
         &_current {
             color: $white;
             font-weight: bold;
             background: linear-gradient(180deg, $purple 0%, $purple-second 100%);
             border-radius: 50%;
+            pointer-events: none;
         }
 
         &_ellipsis {
@@ -37,6 +48,14 @@
         background: linear-gradient(180deg, $green 0%, $green-second 100%);
         border-radius: 50%;
         position: relative;
+        transition: 0.2s;
+
+        @media (any-hover: hover) {
+            &:hover {
+                box-shadow: 0 0 1.5rem 0 $green;
+                transform: scale(1.1);
+            }
+        }
 
         &::after, &::before {
             content: '';
