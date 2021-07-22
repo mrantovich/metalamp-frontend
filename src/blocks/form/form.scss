@@ -31,6 +31,17 @@
         border: none;
     }
 
+    &__range-text {
+        font-size: 1.2rem;
+        line-height: 1.5 / 1.2 * 100%;
+        color: $dark-shade-50-percent;
+        font-weight: normal;
+        text-transform: uppercase;
+        display: flex;
+        padding: 1.5rem 0;
+        justify-content: flex-end;
+    }
+
     &__box-with-likes {
         display: flex;
         width: 10rem;
