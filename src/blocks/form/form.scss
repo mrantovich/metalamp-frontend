@@ -20,6 +20,11 @@
         margin: 1.5rem 0;
     }
 
+    &__range-slider {
+        width: 40rem;
+        padding: 2rem;
+    }
+
     &__box-with-likes {
         display: flex;
         width: 10rem;
@@ -168,3 +173,4 @@
 @import './star-button/star-button.scss';
 @import './button//button.scss';
 @import './pagination/pagination.scss';
+@import './range-slider/range-slider.scss';
