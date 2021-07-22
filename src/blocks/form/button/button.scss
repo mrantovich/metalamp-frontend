@@ -15,6 +15,7 @@
 
     cursor: pointer;
     position: relative;
+    transition: 0.2s;
 
     &_with-arrow {
 
@@ -27,6 +28,7 @@
             top: 50%;
             right: 2rem;
             transform: translate(0, -50%);
+            transition: 0.2s;
         }
 
         &::before {
@@ -40,6 +42,15 @@
             top: 50%;
             right: 2rem;
             transform: translate(0, -50%) rotate(45deg);
+            transition: 0.2s;
+        }
+
+        @media (any-hover: hover) {
+            &:hover {
+                &::after, &::before {
+                    right: 1.7rem;
+                }
+            }
         }
     }
 
@@ -58,6 +69,13 @@
         background: transparent;
         border-radius: 2.2rem;
         cursor: pointer;
+        transition: 0.2s;
+
+        @media (any-hover: hover) {
+            &:hover {
+                box-shadow: 0 0 1.5rem 0 $purple;
+            }
+        }
 
         &_is-disabled {
             opacity: 0.5;
@@ -82,6 +100,12 @@
         background: $white;
         border-radius: 2.2rem;
         padding: 1.2rem 1.7rem 1.3rem 1.7rem;
+    }
+
+    @media (any-hover: hover) {
+        &:hover {
+            box-shadow: 0 0 1.5rem 0 $purple;
+        }
     }
 
 }
