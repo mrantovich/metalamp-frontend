@@ -54,11 +54,16 @@
         justify-content: space-between;
     }
 
+    &__container-richbox {
+        max-width: 26.6rem;
+    }
+
     // Classes for labels
     &__label {
 
         &_with-checkbox {
             display: flex;
+            align-items: center;
         }
     }
 
@@ -92,6 +97,7 @@
 
     &__checkbox {
         @include buttons-property(2rem, 2rem, 1rem, 0.4rem);
+        align-self: flex-start;
 
         &:checked {
             border: 1px solid $purple;
@@ -113,12 +119,12 @@
         }
 
         &::after {
-            left: 40%;
-            width: 0.5rem;
+            left: 35%;
+            width: 0.4rem;
             transform: translate(-50%, -50%) rotate(45deg);
         }
         &::before {
-            left: 60%;
+            left: 58%;
             width: 0.8rem;
             transform: translate(-50%, -50%) rotate(-45deg);
         }
@@ -153,6 +159,25 @@
                 display: none;
             }
         }
+    }
+
+    &__rich-checkbox {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__rich-checkbox-title {
+        font-size: 1.4rem;
+        font-weight: bold;
+        line-height: 1.8 / 1.4 * 100%;
+        color: $dark-shade-75-percent;
+        margin-bottom: 0.5rem;
+    }
+
+    &__rich-checkbox-desc {
+        font-size: 1.2rem;
+        line-height: 1.4 / 1.2 * 100%;
+        color: $dark-shade-50-percent;
     }
 
     &__radio {

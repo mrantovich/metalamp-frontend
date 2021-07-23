@@ -1,6 +1,7 @@
 include ../../blocks/form/dropdown/dropdown.pug
 include ../../blocks/form/star-button/star-button.pug
 include ../../blocks/form/button/button.pug
+include ../../blocks/form/form-mixins.pug
 
 form.form
     label.form__label 
@@ -78,4 +79,8 @@ form.form
         .form__range-slider-container
             .form__range-text
             .form__range-slider.range-slider 
+    .form__label-text.text.text_label Rich checkbox buttons 
+        .form__container-richbox
+            +rich-checkbox("rch", "Широкий коридор", "Ширина коридоров в номере не менее 91 см.", true)
+            +rich-checkbox("cch", "Помощник для инвалидов", "На 1 этаже вас встретит специалист  и проводит до номера.")
 
