@@ -1,3 +1,15 @@
+mixin like-button(numLikes, state)
+    if state 
+        .like-button.like-button_is-highlighted
+            .like-button__container
+                img(src=require("../assets/img/like-button-selected.svg"), alt="Heart image", class="like-button__heart like-button__heart_is-highlighted")
+                .like-button__counter= numLikes 
+    else 
+        .like-button
+            .like-button__container
+                img(src=require("../assets/img/like-button-not-selected.svg"), alt="Heart image", class="like-button__heart")
+                .like-button__counter= numLikes 
+
 mixin rich-checkbox(name, title, description, isChecked)
     if isChecked
         label.form__label.form__label_with-checkbox.text
@@ -11,3 +23,15 @@ mixin rich-checkbox(name, title, description, isChecked)
             .form__rich-checkbox
                 .form__rich-checkbox-title= title 
                 .form__rich-checkbox-desc= description
+
+mixin user-review(userImage, userName, time, reviewText, numLikes)
+    .user-review__top 
+        .user-review__image
+            img(src=userImage, alt="User Image")
+        .user-review__info 
+            .user-review__name= userName 
+            .user-review__time= time
+    .user-review__body
+        .user-review__likes
+            +like-button(numLikes, true)
+        .user-review__text.text= reviewText
