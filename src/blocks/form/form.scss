@@ -66,6 +66,11 @@
         max-width: 71rem;
     }
 
+    &__container-room-info {
+        margin-top: 3rem;
+        max-width: 28rem;
+    }
+
     // Classes for labels
     &__label {
 
@@ -246,3 +251,4 @@
 @import './pagination/pagination.scss';
 @import './range-slider/range-slider.scss';
 @import './user-review/user-review.scss';
+@import './room-info/room-info.scss';
