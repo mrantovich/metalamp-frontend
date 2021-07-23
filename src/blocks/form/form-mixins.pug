@@ -24,14 +24,13 @@ mixin rich-checkbox(name, title, description, isChecked)
                 .form__rich-checkbox-title= title 
                 .form__rich-checkbox-desc= description
 
-mixin user-review(userImage, userName, time, reviewText, numLikes)
-    .user-review__top 
+mixin user-review(userImage, userName, time, reviewText, numLikes, isLikeHighlighted)
+    .user-review
         .user-review__image
             img(src=userImage, alt="User Image")
         .user-review__info 
             .user-review__name= userName 
             .user-review__time= time
-    .user-review__body
         .user-review__likes
-            +like-button(numLikes, true)
+            +like-button(numLikes, isLikeHighlighted)
         .user-review__text.text= reviewText
