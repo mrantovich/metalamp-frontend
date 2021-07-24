@@ -58,6 +58,11 @@
         max-width: 26.6rem;
     }
 
+    &__container-datepicker {
+        max-width: 30rem;
+        margin: 3rem 0;
+    }
+
     &__container-bullet-list {
         max-width: 25.6rem;
     }
@@ -252,3 +257,4 @@
 @import './range-slider/range-slider.scss';
 @import './user-review/user-review.scss';
 @import './room-info/room-info.scss';
+@import './datepicker/datepicker.scss';
