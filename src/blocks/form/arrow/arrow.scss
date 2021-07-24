@@ -1,0 +1,30 @@
+@mixin arrow($color: $white, $direction: 0) {
+    width: 2.4rem;
+    height: 2.4rem;
+    position: relative;
+    transform: rotate($direction);
+
+    &::after, &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transition: 0.2s;
+    }
+
+    &::after {
+        background: $color;
+        width: 1.4rem;
+        height: 0.2rem;
+    }
+
+    &::before {
+        background: transparent;
+        width: 1rem;
+        height: 1rem;
+        border-top: 0.2rem solid $color;
+        border-right: 0.2rem solid $color;
+        transform: translate(-25%, -50%) rotate(45deg);
+    }
+}

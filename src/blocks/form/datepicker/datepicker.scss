@@ -1,16 +1,40 @@
-.qs-datepicker-container {
-    width: 100%;
+.datepicker {
+
+    &__wrapper {
+        width: 100%;
+        position: relative;
+    }
 }
 
-.qs-controls {
-    height: 6.4rem;
-    background-color: $white;
-    padding: 0 2rem;
+.litepicker {
+    --litepicker-month-width: 100%;
+
+    & > .container__main {
+    }
+
+    & > .container__months {
+    }
+
+    & .container__months .month-item-header {
+        height: 6.4rem;
+        padding: 0 2rem;
+    }
+
+    & .container__months .month-item-header div>.month-item-name,
+    & .container__months .month-item-header div>.month-item-year {
+        color: $dark-shade-100-percent;
+        font-size: 1.9rem;
+        font-weight: bold;
+        line-height: 2.3 / 1.9 * 100%;
+        text-transform: capitalize;
+    }
+
 }
 
-.qs-month-year {
-    color: $dark-shade-100-percent;
-    font-size: 1.9rem;
-    font-weight: bold;
-    line-height: 2.3 / 1.9 * 100%;
+.button-previous-month {
+    @include arrow($purple, 180deg);
 }
+.button-next-month {
+    @include arrow($purple);
+}
+
