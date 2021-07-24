@@ -31,5 +31,9 @@ $('.date-picker').datepicker({
     nextHtml: ' ',
     navTitles: {
         days: 'MM yyyy'
-    }
+    },
+    offset: 0,
+    todayButton: true,
+    clearButton: true,
+    range: true,
 });

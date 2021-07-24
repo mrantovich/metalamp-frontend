@@ -1,6 +1,10 @@
 .datepicker {
-
+    width: 32rem;
     font-family: $font-primary, sans-serif;
+
+    border: 0.1rem solid $dark-shade-25-percent;
+    border-radius: 0.4rem;
+    box-shadow: 0px 10px 20px $dark-shade-5-percent;
 }
 
 .datepicker-wrapper {
@@ -57,10 +61,19 @@
     font-size: 1.2rem;
     font-weight: normal;
     line-height: 1.5rem;
+    height: 4rem;
+    border-radius: 50%;
 
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: 0.2s;
+
+    @media (any-hover: hover) {
+        &:hover {
+            background: rgba($purple, 0.5);
+        }
+    }
 
     &.-other-month- {
         color: $dark-shade-25-percent;
@@ -72,4 +85,87 @@
         background: $gradient-green;
         border-radius: 50%;
     }
+
+    &.-range-to- {
+        border-color: $purple;
+        @media (any-hover: hover) {
+            &:hover {
+                background: rgba($purple, 0.5);
+            }
+        }
+    }
+
+    &.-range-from-.-selected-,
+    &.-range-to-.-selected- {
+        font-weight: bold;
+        color: $white;
+        background: $gradient-purple;
+        border-radius: 50%;
+        position: relative;
+
+        &::after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 100%;
+            background: $gradient-purple;
+            opacity: 0.25;
+        }
+    }
+
+    &.-range-from-.-selected- {
+        &::after {
+            right: 0;
+        }
+    }
+
+    &.-range-to-.-selected- {
+        &::after {
+            left: 0;
+        }
+    }
+
+    &.-in-range- {
+        background: transparent;
+        position: relative;
+        &:after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: $gradient-purple;
+            opacity: 0.25;
+            z-index: -10;
+        }
+
+        @media (any-hover: hover) {
+            &:hover {
+                background: rgba($purple, 0.5);
+            }
+        }
+    }
+}
+
+.datepicker--buttons {
+    border-top: none;
+    padding: 0 2rem 1rem;
+}
+
+.datepicker--button {
+    font-size: 1.2rem;
+    font-weight: bold;
+    line-height: 1.5 / 1.2 * 100%;
+    color: $purple;
+    text-transform: uppercase;
+    display: flex;
+}
+
+.datepicker--button[data-action="clear"] {
+    justify-content: flex-start;
+    order: 1;
+}
+
+.datepicker--button[data-action="today"] {
+    justify-content: flex-end;
+    order: 2;
 }
