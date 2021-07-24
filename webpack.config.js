@@ -21,7 +21,7 @@ module.exports = {
         port: 8080,
     },
     entry: {
-        main: path.resolve(__dirname, './src/index.js')
+        main: path.resolve(__dirname, './src/index.js'),
     },
     output: {
         path: path.resolve(__dirname, './build'),
@@ -61,6 +61,10 @@ module.exports = {
         }),
         new MiniCssExtracPlugin({
             filename: 'style.css',
+        }),
+        new webpack.ProvidePlugin({
+            $: 'jquery',
+            jQuery: 'jquery'
         }),
         new webpack.HotModuleReplacementPlugin()
     ],
