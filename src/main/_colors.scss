@@ -22,3 +22,6 @@ $purple: #BC9CFF;
 $purple-second: #8BA4F9;
 $green: #6FCF97;
 $green-second: #66D2EA;
+
+// linear gradients
+$gradient-green: linear-gradient(180deg, $green 0%, $green-second 100%);

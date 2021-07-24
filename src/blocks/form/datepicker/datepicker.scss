@@ -7,6 +7,7 @@
 }
 
 .litepicker {
+    font-family: $font-primary, sans-serif;
     --litepicker-month-width: 100%;
 
     & > .container__main {
@@ -27,6 +28,40 @@
         font-weight: bold;
         line-height: 2.3 / 1.9 * 100%;
         text-transform: capitalize;
+    }
+
+    // Style of weekdays
+    & .container__months .month-item-weekdays-row>div {
+        font-size: 1.2rem;
+        font-weight: bold;
+        line-height: 1.5 / 1.2 * 100%;
+        color: $purple;
+        text-transform: capitalize;
+    }
+
+    // Style of day (general)
+    & .container__days .day-item {
+        color: $dark-shade-50-percent;
+        font-size: 1.2rem;
+        font-weight: normal;
+        line-height: 1.5rem;
+
+        width: 4rem;
+        height: 4rem;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        margin: 0 auto;
+    }
+
+    // Style of day (current)
+    & .container__days .day-item.is-today {
+        font-weight: bold;
+        color: $white;
+        background: $gradient-green;
+        border-radius: 50%;
     }
 
 }
