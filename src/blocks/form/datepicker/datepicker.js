@@ -24,3 +24,12 @@ picker.on('show', () => {
 
 import 'air-datepicker/dist/css/datepicker.min.css';
 import 'air-datepicker/dist/js/datepicker.min.js';
+
+
+$('.date-picker').datepicker({
+    prevHtml: ' ',
+    nextHtml: ' ',
+    navTitles: {
+        days: 'MM yyyy'
+    }
+});

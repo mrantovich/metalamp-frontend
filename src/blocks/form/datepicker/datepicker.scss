@@ -1,79 +1,75 @@
 .datepicker {
 
-    &__wrapper {
-        /*  width: 100%;
-        position: relative; */
-    }
+    font-family: $font-primary, sans-serif;
 }
 
-/* .litepicker {
-    font-family: $font-primary, sans-serif;
-    --litepicker-month-width: 100%;
+.datepicker-wrapper {
+    position: relative;
+}
 
-    & > .container__main {
+.datepicker--pointer {
+    display: none;
+}
+
+.datepicker--nav {
+    height: 6.4rem;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    border-bottom: none;
+}
+
+.datepicker--nav-action[data-action="prev"] {
+    @include arrow($purple, 180deg);
+}
+
+.datepicker--nav-action[data-action="next"] {
+    @include arrow($purple);
+}
+
+.datepicker--nav-title {
+    color: $dark-shade-100-percent;
+    font-size: 1.9rem;
+    font-weight: bold;
+    line-height: 2.3 / 1.9 * 100%;
+    text-transform: capitalize;
+}
+
+.datepicker--content {
+    padding: 0 2rem 2rem;
+}
+
+.datepicker--day-name {
+    width: 4rem;
+    height: 4rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    line-height: 1.5 / 1.2 * 100%;
+    color: $purple;
+    text-transform: capitalize;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.datepicker--cell-day {
+    color: $dark-shade-50-percent;
+    font-size: 1.2rem;
+    font-weight: normal;
+    line-height: 1.5rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &.-other-month- {
+        color: $dark-shade-25-percent;
     }
 
-    & > .container__months {
-    }
-
-    & .container__months .month-item-header {
-        height: 6.4rem;
-        padding: 0 2rem;
-    }
-
-    & .container__months .month-item-header div>.month-item-name,
-    & .container__months .month-item-header div>.month-item-year {
-        color: $dark-shade-100-percent;
-        font-size: 1.9rem;
-        font-weight: bold;
-        line-height: 2.3 / 1.9 * 100%;
-        text-transform: capitalize;
-    }
-
-    // Style of weekdays
-    & .container__months .month-item-weekdays-row>div {
-        width: 4rem;
-        height: 4rem;
-        font-size: 1.2rem;
-        font-weight: bold;
-        line-height: 1.5 / 1.2 * 100%;
-        color: $purple;
-        text-transform: capitalize;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    // Style of day (general)
-    & .container__days .day-item {
-        color: $dark-shade-50-percent;
-        font-size: 1.2rem;
-        font-weight: normal;
-        line-height: 1.5rem;
-
-        width: 4rem;
-        height: 4rem;
-
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    // Style of day (current)
-    & .container__days .day-item.is-today {
+    &.-current- {
         font-weight: bold;
         color: $white;
         background: $gradient-green;
         border-radius: 50%;
     }
-
 }
-
-.button-previous-month {
-    @include arrow($purple, 180deg);
-}
-.button-next-month {
-    @include arrow($purple);
-}
-
- */

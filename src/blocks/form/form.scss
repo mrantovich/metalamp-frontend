@@ -7,6 +7,7 @@
         max-width: 23rem;
         display: flex;
         flex-direction: column;
+        margin: 3rem 0;
     }
 
     &__vbox {
@@ -258,3 +259,4 @@
 @import './range-slider/range-slider.scss';
 @import './user-review/user-review.scss';
 @import './room-info/room-info.scss';
+@import './datepicker/datepicker.scss';
