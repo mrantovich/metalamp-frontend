@@ -1,3 +1,16 @@
+.date-picker {
+
+    &::placeholder {
+        color: $dark-shade-75-percent;
+    }
+}
+
+.date-picker-container {
+    display: grid;
+    grid-template: 1fr / 1fr 1fr;
+    column-gap: 2rem;
+}
+
 .date-picker-wrap {
     position: relative;
 
@@ -110,6 +123,14 @@
                 background: rgba($purple, 0.5);
             }
         }
+    }
+
+    &.-selected-,
+    &.-focus-.-selected- {
+        font-weight: bold;
+        color: $white;
+        background: $gradient-purple;
+        border-radius: 50%;
     }
 
     &.-range-from-.-selected-,

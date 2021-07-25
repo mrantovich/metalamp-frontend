@@ -25,8 +25,7 @@ picker.on('show', () => {
 import 'air-datepicker/dist/css/datepicker.min.css';
 import 'air-datepicker/dist/js/datepicker.min.js';
 
-
-$('.date-picker').datepicker({
+const calendarOptions = {
     prevHtml: ' ',
     nextHtml: ' ',
     navTitles: {
@@ -38,4 +37,12 @@ $('.date-picker').datepicker({
     range: true,
     dateFormat: 'd M',
     multipleDatesSeparator: ' - '
-});
+}
+
+
+$('.date-picker').datepicker(calendarOptions);
+
+$('.date-picker_single').datepicker({
+    range: false,
+    dateFormat: 'd.mm.yyyy'
+})

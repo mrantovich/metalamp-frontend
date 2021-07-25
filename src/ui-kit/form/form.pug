@@ -17,10 +17,25 @@ form.form
         .form__label-text.text.text_label Masked Text Field 
         input(type="num", name="masked-date").form__text-field.form__text-field_masked
     .form__container-datepicker 
-        .form__label-text.text.text_label Date dropdown
+        .form__label-text.text.text_label Filter date dropdown
         label.form__label
             .date-picker-wrap
                 input(type="text", name="datepicker").form__text-field.form__date-picker.date-picker
+    .form__container-datepicker 
+        .form__label-text.text.text_label Date dropdown (position to left)
+        label.form__label
+            .date-picker-wrap 
+                input(type="text", name="datepick", placeholder="ДД.ММ.ГГГГ").form__text-field.form__date-picker.date-picker.date-picker_single
+    .form__container-datepicker
+        .date-picker-container 
+            .date-picker-container__left-part
+                label.form__label
+                    .date-picker-wrap 
+                        input(type="text", name="datepikkk", placeholder="ДД.ММ.ГГГГ").form__text-field.form__date-picker.date-picker.date-picker_single
+            .date-picker-container__right-part
+                label.form__label
+                    .date-picker-wrap 
+                        input(type="text", name="datepikkk", placeholder="ДД.ММ.ГГГГ").form__text-field.form__date-picker.date-picker.date-picker_single
     .form__label-text.text.text_label Checkbox buttons
     .form__box
         label.form__label.form__label_with-checkbox.text
