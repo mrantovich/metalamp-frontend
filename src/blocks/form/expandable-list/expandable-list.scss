@@ -1,9 +1,17 @@
-.checkbox-expandable {
+.expandable-list {
+
+    &_is-active {
+
+        .expandable-list__title::after {
+            transform: translate(0, -25%) rotate(135deg);
+        }
+    }
 
     &__title {
         margin-bottom: 1.7rem;
         position: relative;
         z-index: 22;
+        cursor: pointer;
 
         &::after {
             content: '';
@@ -16,6 +24,7 @@
             top: 50%;
             right: 2rem;
             transform: translate(0, -75%) rotate(-45deg);
+            transition: 0.2s;
         }
     }
 

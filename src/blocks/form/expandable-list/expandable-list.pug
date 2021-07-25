@@ -1,7 +1,7 @@
-mixin checkbox-expandable(title, expandableListItems)
-    .checkbox-expandable 
-        .checkbox-expandable__title.text.text_label= title
-        .checkbox-expandable__list
+mixin expandable-list(title, expandableListItems)
+    .expandable-list 
+        .expandable-list__title.text.text_label= title
+        .expandable-list__list
             each listItem in expandableListItems 
                 - var itenName = listItem[0]
                 - var isChecked = listItem[1]

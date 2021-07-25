@@ -2,7 +2,7 @@ include ../../blocks/form/dropdown/dropdown.pug
 include ../../blocks/form/star-button/star-button.pug
 include ../../blocks/form/button/button.pug
 include ../../blocks/form/datepicker/datepicker.pug
-include ../../blocks/form/checkbox-expandable/checkbox-expandable.pug
+include ../../blocks/form/expandable-list/expandable-list.pug
 include ../../blocks/form/form-mixins.pug
 
 form.form
@@ -101,7 +101,7 @@ form.form
     
     .form__container-box 
         - var expandableData = [["breakfast", false, "Завтрак"], ["table", true, "Письменный стол"], ["child-chair", true, "Стул для кормления"], ["bed", true, "Кроватка"], ["tv", false, "Телевизор"], ["shampoo", false, "Шампунь"]]
-        +checkbox-expandable("Expandable checkbox list", expandableData)
+        +expandable-list("Expandable checkbox list", expandableData)
 
     .form__label-text.text.text_label Bullet list 
         .form__container-bullet-list 
