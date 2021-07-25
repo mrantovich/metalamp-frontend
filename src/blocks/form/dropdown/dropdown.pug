@@ -1,6 +1,6 @@
 mixin dropdown(placeholder, itemList)
     .dropdown
-        .dropdown__field Сколько гостей
+        .dropdown__field= placeholder
         .dropdown__menu.dropdown__menu_is-hidden
             each item in itemList 
                 .dropdown__item

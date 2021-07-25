@@ -36,4 +36,6 @@ $('.date-picker').datepicker({
     todayButton: true,
     clearButton: true,
     range: true,
+    dateFormat: 'd M',
+    multipleDatesSeparator: ' - '
 });

@@ -1,3 +1,20 @@
+.date-picker-wrap {
+    position: relative;
+
+    &::after {
+        content: '';
+        background: transparent;
+        border-left: 0.2rem solid $dark-shade-50-percent;
+        border-bottom: 0.2rem solid $dark-shade-50-percent;
+        width: 0.8rem;
+        height: 0.8rem;
+        position: absolute;
+        top: 50%;
+        right: 2rem;
+        transform: translate(0, -75%) rotate(-45deg);
+    }
+}
+
 .datepicker {
     width: 32rem;
     font-family: $font-primary, sans-serif;
