@@ -1,6 +1,7 @@
 include ../../blocks/form/dropdown/dropdown.pug
 include ../../blocks/form/star-button/star-button.pug
 include ../../blocks/form/button/button.pug
+include ../../blocks/form/datepicker/datepicker.pug
 include ../../blocks/form/form-mixins.pug
 
 form.form
@@ -18,24 +19,16 @@ form.form
         input(type="num", name="masked-date").form__text-field.form__text-field_masked
     .form__container-datepicker 
         .form__label-text.text.text_label Filter date dropdown
-        label.form__label
-            .date-picker-wrap
-                input(type="text", name="datepicker").form__text-field.form__date-picker.date-picker
+        +date-picker("filter-date-picker")
     .form__container-datepicker 
         .form__label-text.text.text_label Date dropdown (position to left)
-        label.form__label
-            .date-picker-wrap 
-                input(type="text", name="datepick", placeholder="ДД.ММ.ГГГГ").form__text-field.form__date-picker.date-picker.date-picker_single
+        +date-picker("general-left-date-picker", true)
     .form__container-datepicker
         .date-picker-container 
             .date-picker-container__left-part
-                label.form__label
-                    .date-picker-wrap 
-                        input(type="text", name="datepikkk", placeholder="ДД.ММ.ГГГГ").form__text-field.form__date-picker.date-picker.date-picker_single
+                +date-picker("left-date-picker", true)
             .date-picker-container__right-part
-                label.form__label
-                    .date-picker-wrap 
-                        input(type="text", name="datepikkk", placeholder="ДД.ММ.ГГГГ").form__text-field.form__date-picker.date-picker.date-picker_single
+                +date-picker("right-date-picker", true)
     .form__label-text.text.text_label Checkbox buttons
     .form__box
         label.form__label.form__label_with-checkbox.text
