@@ -24,6 +24,7 @@ function makeDropdownMenuVisible() {
 
     selectAllCounterButtonsPlus(dropdownMenu);
     selectAllCounterButtonsMinus(dropdownMenu);
+
 };
 
 function selectAllCounterButtonsPlus(menuElement) {
@@ -56,7 +57,6 @@ function makeDropdownCounterChange(button, changeWay) {
         let currentCount = counterElement.innerHTML;
         currentCount++;
         counterElement.innerHTML = currentCount;
-        dropdownFieldText.push(currentCount);
     };
     
     if (changeWay === 'down') {
@@ -65,7 +65,6 @@ function makeDropdownCounterChange(button, changeWay) {
         let currentCount = counterElement.innerHTML;
         currentCount--;
         counterElement.innerHTML = currentCount;
-        dropdownFieldText.push(currentCount);
     };
 
     if (buttonMinus.classList.contains('dropdown__counter-button_disabled')) {
@@ -76,7 +75,43 @@ function makeDropdownCounterChange(button, changeWay) {
         buttonMinus.classList.add('dropdown__counter-button_disabled');
     };
     
+    updateFieldText(button);
 };
+
+function updateFieldText(buttonElem) {
+    let counterContainer = buttonElem.parentElement;
+    let itemName = counterContainer.previousElementSibling.innerHTML;
+    let itemValue = counterContainer.querySelector('.dropdown__counter-num').innerHTML;
+
+    // .dropdown__item
+    let dropdownItem = counterContainer.parentElement;
+    // .dropdown__menu
+    let dropdownMenu = dropdownItem.parentElement;
+    // .dropdown__field
+    let field = dropdownMenu.previousElementSibling;
+    let fieldValue = field.innerHTML;
+    console.log(fieldValue);
+
+    let fieldString = field.innerHTML;
+    let fieldItems = fieldString.split(',');
+    let newFieldItems = [];
+
+
+    fieldItems.forEach(function(item) {
+        if (item.includes(itemName)) {
+            let newValue = itemValue + ' ' + itemName + ', ';
+            newFieldItems.push(newValue);
+        } else {
+            newFieldItems.push(item);
+        };
+        let newValue = itemValue + ' ' + itemName + ', ';
+        newFieldItems.push(newValue);
+    });
+
+    newFieldItems = newFieldItems.join('');
+    field.innerHTML = newFieldItems;
+
+}
 
 // tool to get previous element with certain selector
 function getPreviousSibling(elem, selector) {
