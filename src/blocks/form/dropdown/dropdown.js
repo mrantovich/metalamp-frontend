@@ -56,7 +56,7 @@ function makeDropdownCounterChange(button, changeWay) {
         let currentCount = counterElement.innerHTML;
         currentCount++;
         counterElement.innerHTML = currentCount;
-        
+        dropdownFieldText.push(currentCount);
     };
     
     if (changeWay === 'down') {
@@ -65,13 +65,16 @@ function makeDropdownCounterChange(button, changeWay) {
         let currentCount = counterElement.innerHTML;
         currentCount--;
         counterElement.innerHTML = currentCount;
+        dropdownFieldText.push(currentCount);
     };
 
     if (buttonMinus.classList.contains('dropdown__counter-button_disabled')) {
         buttonMinus.classList.remove('dropdown__counter-button_disabled');
-    } if (counterElement.innerHTML === '0') {
-            buttonMinus.classList.add('dropdown__counter-button_disabled');
-        };
+    };
+    
+    if (counterElement.innerHTML === '0') {
+        buttonMinus.classList.add('dropdown__counter-button_disabled');
+    };
     
 };
 
