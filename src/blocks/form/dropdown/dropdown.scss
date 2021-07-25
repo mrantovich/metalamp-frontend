@@ -128,11 +128,8 @@
         }
 
         &_disabled {
-            border: 1px solid $dark-shade-25-percent;
-
-            &::after, &::before {
-                background: $dark-shade-25-percent;
-            }
+            opacity: 0.5;
+            pointer-events: none;
         }
     }
 }

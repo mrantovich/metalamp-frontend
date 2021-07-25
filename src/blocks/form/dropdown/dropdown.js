@@ -1,6 +1,9 @@
-const dropdownField = document.querySelector('.dropdown__field');
+const dropdownFields = document.querySelectorAll('.dropdown__field');
 
-dropdownField.addEventListener('click', makeDropdownMenuVisible);
+for (let i = 0; i < dropdownFields.length; i++) {
+    let dropdown = dropdownFields[i];
+    dropdown.addEventListener('click', makeDropdownMenuVisible);
+}
 
 function makeDropdownMenuVisible() {
 
@@ -18,34 +21,69 @@ function makeDropdownMenuVisible() {
         dropdownMenu.classList.add(hiddenFlag);
         this.classList.remove(dropdownMenuIsExpanded);
     };
+
+    selectAllCounterButtonsPlus(dropdownMenu);
+    selectAllCounterButtonsMinus(dropdownMenu);
 };
 
-const dropdownMenuCounters = document.querySelectorAll('.dropdown__counter-num');
-
-for (let i = 0; i < dropdownMenuCounters.length; i++) {
-    dropdownMenuCounters[i].addEventListener('change', doWorkWithMenuCounter);
-};
-
-function doWorkWithMenuCounter() {
-    let buttonMinus = this.previousSibling;
-    console.log(this.innerHTML);
-    console.log(buttonMinus);
-    if (numValue === '0') {
-        buttonMinus.classList.add('dropdown__counter-button_disabled');
-    } else {
-        buttonMinus.classList.remove('dropdown__counter-button_disabled');
+function selectAllCounterButtonsPlus(menuElement) {
+    let dropdownMenuButtonsPlus = menuElement.querySelectorAll('.dropdown__counter-button_plus');
+    for (let i = 0; i < dropdownMenuButtonsPlus.length; i++) {
+        let button = dropdownMenuButtonsPlus[i];
+        button.addEventListener('click', function() {
+            makeDropdownCounterChange(button, 'up')
+        });
     };
 };
 
-const dropdownMenuButtonPlus = document.querySelectorAll('.dropdown__counter-button_plus');
-
-for (let i = 0; i < dropdownMenuButtonPlus.length; i++) {
-    dropdownMenuButtonPlus[i].addEventListener('click', makeDropdownCounterUp);
+function selectAllCounterButtonsMinus(menuElement) {
+    let dropdownMenuButtonsMinus = menuElement.querySelectorAll('.dropdown__counter-button_minus');
+    for (let i = 0; i < dropdownMenuButtonsMinus.length; i++) {
+        let button = dropdownMenuButtonsMinus[i];
+        button.addEventListener('click', function() {
+            makeDropdownCounterChange(button, 'down')
+        });
+    };
 };
 
-function makeDropdownCounterUp() {
-    let counterElement = this.previousSibling;
-    let currentCount = counterElement.innerHTML;
-    currentCount++;
-    counterElement.innerHTML = currentCount;
-}
+function makeDropdownCounterChange(button, changeWay) {
+    let counterElement;
+    let buttonMinus;
+    
+    if (changeWay === 'up') {
+        buttonMinus = getPreviousSibling(button, '.dropdown__counter-button_minus');
+        counterElement = getPreviousSibling(button, '.dropdown__counter-num');
+        let currentCount = counterElement.innerHTML;
+        currentCount++;
+        counterElement.innerHTML = currentCount;
+        
+    };
+    
+    if (changeWay === 'down') {
+        buttonMinus = button;
+        counterElement = button.nextElementSibling;
+        let currentCount = counterElement.innerHTML;
+        currentCount--;
+        counterElement.innerHTML = currentCount;
+    };
+
+    if (buttonMinus.classList.contains('dropdown__counter-button_disabled')) {
+        buttonMinus.classList.remove('dropdown__counter-button_disabled');
+    } if (counterElement.innerHTML === '0') {
+            buttonMinus.classList.add('dropdown__counter-button_disabled');
+        };
+    
+};
+
+// tool to get previous element with certain selector
+function getPreviousSibling(elem, selector) {
+    let sibling = elem.previousElementSibling;
+
+    // if there's no selector, return the first sibling
+    if (!selector) return sibling;
+
+    while (sibling) {
+        if (sibling.matches(selector)) return sibling;
+        sibling = sibling.previousElementSibling;
+    };
+};
