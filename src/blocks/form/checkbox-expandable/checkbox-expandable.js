@@ -1,8 +1,13 @@
-const expandableCheckboxTitle = document.querySelector('.checkbox-expandable');
-const expandableCheckboxList = document.querySelector('.checkbox-expandable__list');
+const expandableCheckboxList = document.querySelectorAll('.checkbox-expandable');
 
-expandableCheckboxTitle.addEventListener('click', toggleCheckboxList);
-
-function toggleCheckboxList() {
-    expandableCheckboxList.classList.toggle('checkbox-expandable__list_is-hide');
+for (let i = 0; i < expandableCheckboxList.length; i++) {
+    expandableCheckboxList[i].addEventListener('click', function(){
+        this.classList.toggle('checkbox-expandable__is-active');
+        let content = this.lastChild;
+        if (content.style.maxHeight) {
+            content.style.maxHeight = null;
+        } else {
+            content.style.maxHeight = content.scrollHeight + 'px';
+        }
+    });
 };

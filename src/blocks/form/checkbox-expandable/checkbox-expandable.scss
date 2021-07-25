@@ -20,13 +20,8 @@
     }
 
     &__list {
+        max-height: 0;
+        overflow: hidden;
         transition: 0.2s;
-
-        &_is-hide {
-            opacity: 0;
-            visibility: hidden;
-            height: 0;
-            transition: 0.2s;
-        }
     }
 }
