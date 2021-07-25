@@ -64,6 +64,11 @@
         margin: 3rem 0;
     }
 
+    &__container-box {
+        max-width: 26.6rem;
+        margin: 3rem 0;
+    }
+
     &__container-masked {
         max-width: 32rem;
         margin: 3rem 0;
@@ -88,6 +93,7 @@
         &_with-checkbox {
             display: flex;
             align-items: center;
+            margin-bottom: 1rem;
         }
     }
 
@@ -265,3 +271,4 @@
 @import './user-review/user-review.scss';
 @import './room-info/room-info.scss';
 @import './datepicker/datepicker.scss';
+@import './checkbox-expandable/checkbox-expandable.scss';

@@ -4,6 +4,7 @@ import './blocks/form/like-button/like-button';
 import './blocks/form/imask';
 import './blocks/form/range-slider/range-slider';
 import './blocks/form/datepicker/datepicker';
+import './blocks/form/checkbox-expandable/checkbox-expandable';
 
 import './main/main.pug';
 import './main/main.scss';

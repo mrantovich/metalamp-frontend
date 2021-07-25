@@ -50,10 +50,13 @@
         width: 100%;
         left: 0;
         top: 4.4rem;
+        background: $white;
         border: 1px solid $dark-shade-50-percent;
         border-top: 0;
         border-radius: 0.4rem;
+        box-shadow: 0px 10px 20px $dark-shade-5-percent;
         padding: 15px 12px;
+        z-index: 11;
 
         &_is-hidden {
             animation-name: hideMenu;

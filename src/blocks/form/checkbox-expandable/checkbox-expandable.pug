@@ -1,0 +1,11 @@
+mixin checkbox-expandable(title, expandableListItems)
+    .checkbox-expandable 
+        .checkbox-expandable__title.text.text_label= title
+        .checkbox-expandable__list
+            each listItem in expandableListItems 
+                - var itenName = listItem[0]
+                - var isChecked = listItem[1]
+                - var itemContent = listItem[2]
+                label.form__label.form__label_with-checkbox.text
+                    input(type="checkbox", name=itemName, checked=isChecked).form__checkbox
+                    | #{itemContent}

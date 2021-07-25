@@ -1,0 +1,32 @@
+.checkbox-expandable {
+
+    &__title {
+        margin-bottom: 1.7rem;
+        position: relative;
+        z-index: 22;
+
+        &::after {
+            content: '';
+            background: transparent;
+            border-left: 0.2rem solid $dark-shade-50-percent;
+            border-bottom: 0.2rem solid $dark-shade-50-percent;
+            width: 0.8rem;
+            height: 0.8rem;
+            position: absolute;
+            top: 50%;
+            right: 2rem;
+            transform: translate(0, -75%) rotate(-45deg);
+        }
+    }
+
+    &__list {
+        transition: 0.2s;
+
+        &_is-hide {
+            opacity: 0;
+            visibility: hidden;
+            height: 0;
+            transition: 0.2s;
+        }
+    }
+}
