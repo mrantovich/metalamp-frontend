@@ -34,7 +34,9 @@ for (let i = 0; i < dropdowns.length; i++) {
                 for (let i = 0; i < itemKeys.length;) {
                     let itemName = dropdownItems[i].innerHTML;
                     let itemQuant = itemCount[itemKeys[i]];
+                    itemName = itemName.toLowerCase();
                     text = `${itemQuant} ${itemName}`;
+                    console.log(text);
                     textArray.push(text);
                     i++
                 };
