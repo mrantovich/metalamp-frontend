@@ -1,4 +1,4 @@
-const dropdownFields = document.querySelectorAll('.dropdown__field');
+/* const dropdownFields = document.querySelectorAll('.dropdown__field');
 
 for (let i = 0; i < dropdownFields.length; i++) {
     let dropdown = dropdownFields[i];
@@ -124,4 +124,20 @@ function getPreviousSibling(elem, selector) {
         if (sibling.matches(selector)) return sibling;
         sibling = sibling.previousElementSibling;
     };
-};
+}; */
+
+import 'item-quantity-dropdown/lib/item-quantity-dropdown.min.js';
+import 'item-quantity-dropdown/lib/item-quantity-dropdown.min.css';
+
+let dropdowns = $('.iqdropdown').iqDropdown({
+    onChange: (id, count, totalItems) => {
+    },
+    setSelectionText: function(itemCount, totalItems) {
+        let itemKeys = Object.keys(itemCount);
+        for (let i = 0; i < itemKeys.length;) {
+            console.log(itemKeys[i])
+            console.log(itemCount[itemKeys[i]])
+            i++
+        };
+    }
+});

@@ -12,9 +12,10 @@ form.form
     label.form__label
         .form__label-text.text.text_label Email field
         input(type="email", name="text", placeholder="Email sample").form__text-field
-    label.form__label
-        .form__label-text.text.text_label Dropdown
-        +dropdown("Сколько гостей", ["Спальни", "Кровати", "Ванные комнаты"])
+    .form__container-masked
+        label.form__label
+            .form__label-text.text.text_label Dropdown
+            +dropdown("Сколько гостей", ["Спальни", "Кровати", "Ванные комнаты"])
     .form__container-masked
         .form__label-text.text.text_label Masked Text Field
         label.form__label
