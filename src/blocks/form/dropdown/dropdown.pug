@@ -1,6 +1,6 @@
 mixin dropdown(placeholder, itemList)
     .iqdropdown
-        .iqdropdown-selection= placeholder
+        p.iqdropdown-selection
             .iqdropdown-menu
                 each item, index in itemList 
                     .iqdropdown-menu-option(data-id="item"+index)
