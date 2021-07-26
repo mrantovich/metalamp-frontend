@@ -5,12 +5,12 @@ let dropdowns = $('.iqdropdown');
 
 for (let i = 0; i < dropdowns.length; i++) {
     let dr = dropdowns[i];
-    console.log(dr.className.includes('iqdropdown_single'));
     if (dr.className.includes('iqdropdown_single')) {
         $(dr).iqDropdown({
+            selectionText: 'гость',
             setSelectionText: function(itemCount, totalItems) {
-                //return `${totalItems}`;
-                console.log('sdfsd')
+                let text = this.selectionText;
+                return `${totalItems} ${text}`;
             },
         });
     } else {
