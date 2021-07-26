@@ -1,0 +1,16 @@
+.iqdropdown,
+.iqdropdown .menu-open {
+    transition: 0.2s;
+    &:hover, &:focus {
+        border: 1px solid $dark-shade-50-percent;
+    }
+}
+
+.iqdropdown-menu {
+    padding: 1.3rem 0.7rem 1.5rem 1.5rem;
+}
+
+.iqdropdown-menu-option {
+    align-items: flex-start;
+    height: auto;
+}

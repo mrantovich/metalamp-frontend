@@ -18,9 +18,9 @@ for (let i = 0; i < dropdowns.length; i++) {
     
             for (let i = 0; i < itemKeys.length;) {
                 console.log(itemKeys[i])
-                console.log(dropdownItems[i].innerHTML)
-                console.log(itemCount[itemKeys[i]])
-                text = itemKeys[i] + ' ' + itemCount[itemKeys[i]];
+                let itemName = dropdownItems[i].innerHTML;
+                let itemQuant = itemCount[itemKeys[i]];
+                text = `${itemQuant} ${itemName}`;
                 textArray.push(text);
                 i++
             };
