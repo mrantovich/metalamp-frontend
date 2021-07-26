@@ -1,16 +1,99 @@
 .iqdropdown,
-.iqdropdown .menu-open {
+.iqdropdown.menu-open {
+    border: 1px solid $dark-shade-50-percent;
+    
     transition: 0.2s;
+
     &:hover, &:focus {
         border: 1px solid $dark-shade-50-percent;
+        border-radius: 0.4rem 0.4rem 0 0;
     }
+}
+
+.iqdropdown * {
+
+    font-family: $font-primary, sans-serif;
+
+    & .iqdropdown-menu-option {
+        align-items: center;
+        height: auto;
+
+        &:not(:last-child) {
+            margin-bottom: 0.7rem;
+        }
+    }
+}
+
+.iqdropdown .iqdropdown-selection {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-right: 9rem;
+
+    font-family: $font-primary, sans-serif;
+    font-size: 1.4rem;
+    font-weight: normal;
+    color: $dark-shade-75-percent;
+    line-height: 2.4 / 1.4 * 100%;
+    text-transform: none;
 }
 
 .iqdropdown-menu {
     padding: 1.3rem 0.7rem 1.5rem 1.5rem;
+    border: 1px solid $dark-shade-50-percent;
+    border-radius: 0 0 0.4rem 0.4rem;
+    box-shadow: 0 1rem 2rem $dark-shade-5-percent;
 }
 
-.iqdropdown-menu-option {
-    align-items: flex-start;
-    height: auto;
+.iqdropdown-item {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: $dark-shade;
+    line-height: 1.5 / 1.2 * 100%;
+    text-transform: uppercase;
 }
+
+.iqdropdown .iqdropdown-item-controls {
+    width: 9.2rem;
+    height: auto;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.iqdropdown .iqdropdown-item-controls .counter {
+    font-family: $font-primary, sans-serif;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: $dark-shade;
+    line-height: 1.5 / 1.2 * 100%;
+    text-transform: uppercase;
+    border: none;
+    padding: 0 0.5rem;
+}
+
+.iqdropdown .iqdropdown-item-controls button {
+    width: 3rem;
+    height: 3rem;
+    border: 0.1rem solid $dark-shade-50-percent;
+    padding: 0;
+}
+
+.iqdropdown .iqdropdown-item-controls button.button-decrement,
+.iqdropdown .iqdropdown-item-controls button.button-increment {
+    border-radius: 50%;
+}
+
+.iqdropdown .iqdropdown-item-controls button.button-increment {
+    
+}
+
+.iqdropdown .icon-decrement.icon-decrement::after,
+.iqdropdown .icon-decrement.icon-increment::after,
+.iqdropdown .icon-decrement.icon-increment::before {
+    width: 0.8rem;
+    height: 0.1rem;
+    background: $dark-shade-50-percent;
+    top: 0.75rem;
+    left: 0.35rem;
+}
+
