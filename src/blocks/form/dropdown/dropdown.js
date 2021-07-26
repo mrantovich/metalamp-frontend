@@ -34,14 +34,3 @@ for (let i = 0; i < dropdowns.length; i++) {
         });
     };
 };
-
-
-/* for (let i = 0; i < singleDropdowns.length; i++) {
-    let sdr = singleDropdowns[i];
-    $(sdr).iqDropdown({
-        setSelectionText: function(itemCount, totalItems) {
-            //return `${totalItems}`;
-            console.log('sdfsd')
-        },
-    });
-}; */
