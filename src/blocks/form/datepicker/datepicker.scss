@@ -54,11 +54,11 @@
 }
 
 .datepicker--nav-action[data-action="prev"] {
-    @include arrow($purple, 180deg);
+    @include arrow(2.4rem, 2.4rem, $purple, 180deg);
 }
 
 .datepicker--nav-action[data-action="next"] {
-    @include arrow($purple);
+    @include arrow(2.4rem, 2.4rem, $purple);
 }
 
 .datepicker--nav-title {

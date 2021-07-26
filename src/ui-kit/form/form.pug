@@ -3,6 +3,7 @@ include ../../blocks/form/star-button/star-button.pug
 include ../../blocks/form/button/button.pug
 include ../../blocks/form/datepicker/datepicker.pug
 include ../../blocks/form/expandable-list/expandable-list.pug
+include ../../blocks/form/subscription/subscription.pug
 include ../../blocks/form/form-mixins.pug
 
 form.form
@@ -22,6 +23,9 @@ form.form
         .form__label-text.text.text_label Masked Text Field
         label.form__label
             input(type="num", name="masked-date").form__text-field.form__text-field_masked
+    .form__container-masked 
+        .form__label-text.text.text_label Subscription field 
+        +subscription-field("Email")
     .form__container-datepicker 
         .form__label-text.text.text_label Filter date dropdown
         +date-picker("filter-date-picker")

@@ -123,6 +123,7 @@
         }
 
         &_masked {}
+
     }
 
     &__checkbox {
@@ -272,3 +273,4 @@
 @import './room-info/room-info.scss';
 @import './datepicker/datepicker.scss';
 @import './expandable-list/expandable-list.scss';
+@import './subscription/subscription.scss';

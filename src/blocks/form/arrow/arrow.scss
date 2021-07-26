@@ -1,6 +1,6 @@
-@mixin arrow($color: $white, $direction: 0) {
-    width: 2.4rem;
-    height: 2.4rem;
+@mixin arrow($width, $height, $color: $white, $direction: 0) {
+    width: $width;
+    height: $height;
     position: relative;
     transform: rotate($direction);
 

@@ -1,0 +1,22 @@
+.subscription {
+    display: flex;
+
+    &__field {
+        border-radius: 0.4rem 0 0 0.4rem;
+        border-right: none;
+
+        &:focus {
+            border-right: none
+        }
+    }
+
+    &__button {
+        @include arrow(4.4rem, 4.4rem, $purple);
+
+        flex: 1 1 auto;
+        border: 0.1rem solid $dark-shade-25-percent;
+        background: transparent;
+        border-radius: 0 0.4rem 0.4rem 0;
+        border-left: none;
+    }
+}
