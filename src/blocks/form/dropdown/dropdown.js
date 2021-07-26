@@ -5,11 +5,7 @@ let dropdowns = $('.iqdropdown');
 
 for (let i = 0; i < dropdowns.length; i++) {
     let dr = dropdowns[i];
-    console.log($(dr).find('.iqdropdown-item'));
-    let dropdownItems = ["one", "two"];
     $(dr).iqDropdown({
-        onChange: (id, count, totalItems) => {
-        },
         setSelectionText: function(itemCount, totalItems) {
             let textArray = [];
             let text;

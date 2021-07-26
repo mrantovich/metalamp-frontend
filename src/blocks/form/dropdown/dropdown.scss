@@ -1,13 +1,19 @@
 .iqdropdown,
 .iqdropdown.menu-open {
-    border: 1px solid $dark-shade-50-percent;
-    
     transition: 0.2s;
 
     &:hover, &:focus {
         border: 1px solid $dark-shade-50-percent;
-        border-radius: 0.4rem 0.4rem 0 0;
     }
+}
+
+.iqdropdown {
+    border: 1px solid $dark-shade-25-percent;
+    cursor: pointer;
+}
+
+.iqdropdown.menu-open {
+    border-radius: 0.4rem 0.4rem 0 0;
 }
 
 .iqdropdown * {
@@ -36,13 +42,26 @@
     color: $dark-shade-75-percent;
     line-height: 2.4 / 1.4 * 100%;
     text-transform: none;
+
+    &::after {
+        content: '';
+        background: transparent;
+        border-left: 0.2rem solid $dark-shade-50-percent;
+        border-bottom: 0.2rem solid $dark-shade-50-percent;
+        width: 0.8rem;
+        height: 0.8rem;
+        position: absolute;
+        top: 50%;
+        right: 0.5rem;
+        transform: translate(0, -75%) rotate(-45deg);
+    }
 }
 
 .iqdropdown-menu {
     padding: 1.3rem 0.7rem 1.5rem 1.5rem;
     border: 1px solid $dark-shade-50-percent;
     border-radius: 0 0 0.4rem 0.4rem;
-    box-shadow: 0 1rem 2rem $dark-shade-5-percent;
+    box-shadow: 0 2rem 2rem $dark-shade-5-percent;
 }
 
 .iqdropdown-item {
