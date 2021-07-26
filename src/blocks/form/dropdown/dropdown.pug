@@ -1,8 +1,17 @@
-mixin dropdown(placeholder, itemList)
-    .iqdropdown
-        p.iqdropdown-selection
-            .iqdropdown-menu
-                each item, index in itemList 
-                    .iqdropdown-menu-option(data-id="item"+index)
-                        .iqdropdown-content
-                            .iqdropdown-item= item
+mixin dropdown(placeholder, itemList, isCounterTotal)
+    if isCounterTotal 
+        .iqdropdown.iqdropdown_single 
+            p.iqdropdown-selection= placeholder
+                .iqdropdown-menu
+                    each item, index in itemList 
+                        .iqdropdown-menu-option(data-id="item"+index)
+                            .iqdropdown-content
+                                .iqdropdown-item= item
+    else
+        .iqdropdown
+            p.iqdropdown-selection= placeholder
+                .iqdropdown-menu
+                    each item, index in itemList 
+                        .iqdropdown-menu-option(data-id="item"+index)
+                            .iqdropdown-content
+                                .iqdropdown-item= item

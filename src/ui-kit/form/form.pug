@@ -16,6 +16,9 @@ form.form
         .form__label-text.text.text_label Dropdown
             +dropdown("Сколько гостей", ["Спальни", "Кровати", "Ванные комнаты"])
     .form__container-masked
+        .form__label-text.text.text_label Single Dropdown
+            +dropdown("Сколько гостей", ["Взрослые", "Дети", "Младенцы"], true)
+    .form__container-masked
         .form__label-text.text.text_label Masked Text Field
         label.form__label
             input(type="num", name="masked-date").form__text-field.form__text-field_masked
