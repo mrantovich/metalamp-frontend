@@ -69,6 +69,7 @@
     border: 1px solid $dark-shade-50-percent;
     border-radius: 0 0 0.4rem 0.4rem;
     box-shadow: 0 2rem 2rem $dark-shade-5-percent;
+    transition: 0.2s;
 }
 
 .iqdropdown.menu-open .iqdropdown-menu {
@@ -134,14 +135,20 @@
 }
 
 .iqdropdown .iqdropdown-menu-button {
-    height: 100%;
-    font-size: 1.2rem;
+    opacity: 0;
+    font-size: 0;
     font-weight: bold;
     line-height: 1.5 / 1.2 * 100%;
     color: $purple;
     text-transform: uppercase;
     display: flex;
     cursor: pointer;
+    transition: 0.2s;
+}
+
+.iqdropdown .iqdropdown-menu-button_is-visible {
+    opacity: 1;
+    font-size: 1.2rem;
 }
 
 @keyframes makeDropdownMenuVisible {

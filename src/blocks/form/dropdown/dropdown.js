@@ -16,6 +16,26 @@ for (let i = 0; i < dropdowns.length; i++) {
     let dr = dropdowns[i];
     if (dr.className.includes('iqdropdown_single')) {
         $(dr).iqDropdown({
+            onChange: function(id, count, totalItems) {
+                function hideOrShowButton(buttonSelector) {
+                    let buttonName = $(dr).find(buttonSelector)[0];
+                    let isVisibleClass = 'iqdropdown-menu-button_is-visible';
+                    if (buttonName) {
+                        if (buttonName.classList.contains(isVisibleClass)) {
+                            console.log(typeof totalItems);
+                            if (totalItems === 0) {
+                                buttonName.classList.remove(isVisibleClass);
+                            };
+                        } else if (!buttonName.classList.contains(isVisibleClass) && totalItems > 0) {
+                            buttonName.classList.add('iqdropdown-menu-button_is-visible');
+                        };
+                        
+                    };
+                };
+
+                hideOrShowButton('.iqdropdown-menu-button_clear');
+                hideOrShowButton('.iqdropdown-menu-button_apply');
+            },
             selectionText: 'гость',
             setSelectionText: function(itemCount, totalItems) {
                 let text = this.selectionText;
@@ -25,6 +45,26 @@ for (let i = 0; i < dropdowns.length; i++) {
         });
     } else {
         $(dr).iqDropdown({
+            onChange: function(id, count, totalItems) {
+                function hideOrShowButton(buttonSelector) {
+                    let buttonName = $(dr).find(buttonSelector)[0];
+                    let isVisibleClass = 'iqdropdown-menu-button_is-visible';
+                    if (buttonName) {
+                        if (buttonName.classList.contains(isVisibleClass)) {
+                            console.log(typeof totalItems);
+                            if (totalItems === 0) {
+                                buttonName.classList.remove(isVisibleClass);
+                            };
+                        } else if (!buttonName.classList.contains(isVisibleClass) && totalItems > 0) {
+                            buttonName.classList.add('iqdropdown-menu-button_is-visible');
+                        };
+                        
+                    };
+                };
+
+                hideOrShowButton('.iqdropdown-menu-button_clear');
+                hideOrShowButton('.iqdropdown-menu-button_apply');
+            },
             setSelectionText: function(itemCount, totalItems) {
                 let textArray = [];
                 let text;
