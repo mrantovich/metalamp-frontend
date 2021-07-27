@@ -167,17 +167,18 @@
 
             &:checked {
                 border: 1px solid $purple;
+                transition: 0.2s;
+
                 &::after {
-                    background: linear-gradient(180deg, $purple,$purple-second);
+                    background: $gradient-purple;
                     transform: translate(1.8rem, -50%);
-                    transition: 0.2s;
                 }
             }
 
             &::after {
                 content: '';
                 position: absolute;
-                background: $dark-shade-25-percent;
+                background: linear-gradient(0, $dark-shade-25-percent 100%, $dark-shade-25-percent 100%);
                 width: 1.2rem;
                 height: 1.2rem;
                 border-radius: 50%;
@@ -185,7 +186,7 @@
                 left: 0.4rem;
                 opacity: 1;
                 visibility: visible;
-                transform: translateY(-50%);
+                transform: translate(0, -50%);
                 transition: 0.2s;
             }
             &::before {
