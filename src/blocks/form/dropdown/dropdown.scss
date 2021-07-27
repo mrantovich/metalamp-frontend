@@ -28,6 +28,7 @@
     & .iqdropdown-menu-option {
         align-items: center;
         height: auto;
+        padding: 0;
 
         &:not(:last-child) {
             margin-bottom: 0.7rem;
@@ -124,6 +125,23 @@
     background: $dark-shade-50-percent;
     top: 0.75rem;
     left: 0.35rem;
+}
+
+.iqdropdown-menu-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+}
+
+.iqdropdown .iqdropdown-menu-button {
+    height: 100%;
+    font-size: 1.2rem;
+    font-weight: bold;
+    line-height: 1.5 / 1.2 * 100%;
+    color: $purple;
+    text-transform: uppercase;
+    display: flex;
+    cursor: pointer;
 }
 
 @keyframes makeDropdownMenuVisible {

@@ -7,6 +7,9 @@ mixin dropdown(placeholder, itemList, isCounterTotal)
                         .iqdropdown-menu-option(data-id="item"+index)
                             .iqdropdown-content
                                 .iqdropdown-item= item
+                    .iqdropdown-menu-buttons 
+                        .iqdropdown-menu-button.iqdropdown-menu-button_clear Очистить
+                        .iqdropdown-menu-button.iqdropdown-menu-button_apply Применить
     else
         .iqdropdown
             p.iqdropdown-selection= placeholder
@@ -15,3 +18,6 @@ mixin dropdown(placeholder, itemList, isCounterTotal)
                         .iqdropdown-menu-option(data-id="item"+index)
                             .iqdropdown-content
                                 .iqdropdown-item= item
+                    .iqdropdown-menu-buttons 
+                        .iqdropdown-menu-button.iqdropdown-menu-button_clear Очистить
+                        .iqdropdown-menu-button.iqdropdown-menu-button_apply Применить
