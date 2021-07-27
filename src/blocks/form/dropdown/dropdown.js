@@ -15,14 +15,13 @@ let dropdowns = $('.iqdropdown');
 for (let i = 0; i < dropdowns.length; i++) {
     let dr = dropdowns[i];
     if (dr.className.includes('iqdropdown_single')) {
-        $(dr).iqDropdown({
+        let ddd = $(dr).iqDropdown({
             onChange: function(id, count, totalItems) {
                 function hideOrShowButton(buttonSelector) {
                     let buttonName = $(dr).find(buttonSelector)[0];
                     let isVisibleClass = 'iqdropdown-menu-button_is-visible';
                     if (buttonName) {
                         if (buttonName.classList.contains(isVisibleClass)) {
-                            console.log(typeof totalItems);
                             if (totalItems === 0) {
                                 buttonName.classList.remove(isVisibleClass);
                             };
@@ -51,7 +50,6 @@ for (let i = 0; i < dropdowns.length; i++) {
                     let isVisibleClass = 'iqdropdown-menu-button_is-visible';
                     if (buttonName) {
                         if (buttonName.classList.contains(isVisibleClass)) {
-                            console.log(typeof totalItems);
                             if (totalItems === 0) {
                                 buttonName.classList.remove(isVisibleClass);
                             };
@@ -76,7 +74,6 @@ for (let i = 0; i < dropdowns.length; i++) {
                     let itemQuant = itemCount[itemKeys[i]];
                     itemName = itemName.toLowerCase();
                     text = `${itemQuant} ${itemName}`;
-                    console.log(text);
                     textArray.push(text);
                     i++
                 };

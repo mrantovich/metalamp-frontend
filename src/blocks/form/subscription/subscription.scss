@@ -5,8 +5,14 @@
         border-radius: 0.4rem 0 0 0.4rem;
         border-right: none;
 
-        &:focus {
-            border-right: none
+        &:hover, &:focus {
+            border-right: none;
+        }
+
+        &:hover ~ .subscription__button,
+        &:focus ~ .subscription__button {
+            border-color: $dark-shade-50-percent;
+            border-left: none;
         }
     }
 
@@ -18,5 +24,6 @@
         background: transparent;
         border-radius: 0 0.4rem 0.4rem 0;
         border-left: none;
+        transition: 0.2s;
     }
 }
