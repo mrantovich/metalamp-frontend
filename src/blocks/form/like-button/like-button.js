@@ -9,13 +9,23 @@ for (let i = 0; i < likeButtons.length; i++) {
     likeButtons[i].addEventListener('mouseout', deHighlightLikeButton);
 };
 
+// on click
+// adding classes to container and like image to visually highlight them
 function changeLikeButtonState() {
     if (!this.classList.contains('like-button_is-highlighted')) {
         this.classList.add('like-button_is-highlighted');
 
         let likeContainer = getChildElement(this);
+
+        // select like image (heart) and make it highlighted
         let likeHeart = getChildElement(likeContainer);
         likeHeart.classList.add('like-button__heart_is-highlighted');
+
+        // select like button counter to increment it
+        let likeCounter = likeHeart.nextSibling;
+        let counter = likeCounter.innerHTML;
+        counter++;
+        likeCounter.innerHTML = counter;
     };
 };
 
