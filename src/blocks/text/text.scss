@@ -5,6 +5,14 @@
     line-height: 2.4 / 1.4 * 100%;
     text-transform: none;
 
+    &_is-light {
+        color: $dark-shade-50-percent;
+    }
+
+    &_is-normal {
+        color: $dark-shade-75-percent;
+    }
+
     &_label {
         font-size: 1.2rem;
         font-weight: bold;

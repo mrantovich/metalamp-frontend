@@ -15,7 +15,7 @@ let dropdowns = $('.iqdropdown');
 for (let i = 0; i < dropdowns.length; i++) {
     let dr = dropdowns[i];
     if (dr.className.includes('iqdropdown_single')) {
-        let ddd = $(dr).iqDropdown({
+        $(dr).iqDropdown({
             onChange: function(id, count, totalItems) {
                 function hideOrShowButton(buttonSelector) {
                     let buttonName = $(dr).find(buttonSelector)[0];

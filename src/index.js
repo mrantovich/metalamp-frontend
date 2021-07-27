@@ -5,6 +5,7 @@ import './blocks/form/imask';
 import './blocks/form/range-slider/range-slider';
 import './blocks/form/datepicker/datepicker';
 import './blocks/form/expandable-list/expandable-list';
+import './blocks/form/form.js';
 
 import './main/main.pug';
 import './main/main.scss';
