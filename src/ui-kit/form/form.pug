@@ -48,17 +48,20 @@ form.form
             .date-picker-container__right-part
                 +date-picker("right-date-picker", true)
     
+    //- Common checkboxes. Contains: text, name, flag showing is button checked or not.
     .form__container-box
         .form__label-text.text.text_label Checkbox buttons
         +checkbox("Можно курить", "check")
         +checkbox("Можно с питомцами", "check", true)
         +checkbox("Можно пригласить гостей (до 10 человек)", "check", true)
 
+    //- Radio buttons. Must have similiar name (second parameter). Contains: text, name, flag showing is button checked or not.
     .form__container-box
         .form__label-text.text.text_label Radio buttons 
         +radio("Мужчина", "some-radio", true)
         +radio("Женщина", "some-radio")
     
+    //- Toggles making from checkboxes. Contains: text, name, flag showing is toggle active or not.
     .form__container-box 
         .form__label-text.text.text_label Toggle
         +toggle("Получать спецпредложения", "first-toggle", true)
