@@ -1,32 +1,37 @@
-mixin checkbox(contentOfCheckbox, typeOfCheckbox, nameOfCheckbox, isChecked)
-    - var type = typeOfCheckbox 
+//- Each type of buttons have its own mixin with respective name.
+//- Parameters are: 
+//-                 content of box (text that will be displayd next ot button),
+//-                 name of box (must be the same for radio buttons),
+//-                 flag showing is button checked or not
+//-
 
-    case type
-        when "checkbox"
-            label.form__label.form__label_with-checkbox.text
-                if isChecked
-                    input(type=type, name=nameOfCheckbox, checked).form__checkbox.checkbox
-                    | #{contentOfCheckbox}
-                else
-                    input(type=type, name=nameOfCheckbox).form__checkbox.checkbox
-                    | #{contentOfCheckbox}
-        when "radio"
-            if isChecked 
-                label.form__label.form__label_with-checkbox.text.text_is-light.text_is-normal
-                    input(type=type, name=nameOfCheckbox, checked).form__radio.radio
-                    | #{contentOfCheckbox}
-            else
-                label.form__label.form__label_with-checkbox.text.text_is-light
-                    input(type=type, name=nameOfCheckbox).form__radio.radio
-                    | #{contentOfCheckbox}
+//- Common checkbox.
+mixin checkbox(contentOfCheckbox, nameOfCheckbox, isChecked)
+    label.form__label.form__label_with-checkbox.text
+        if isChecked
+            input(type="checkbox", name=nameOfCheckbox, checked).form__checkbox.checkbox
+            | #{contentOfCheckbox}
+        else
+            input(type="checkbox", name=nameOfCheckbox).form__checkbox.checkbox
+            | #{contentOfCheckbox}
+
+//- For radio buttons. Name speaks for itself.
+mixin radio(contentOfCheckbox, nameOfCheckbox, isChecked)
+    if isChecked 
+        label.form__label.form__label_with-checkbox.text.text_is-light.text_is-normal
+            input(type="radio", name=nameOfCheckbox, checked).form__radio.radio
+            | #{contentOfCheckbox}
+    else
+        label.form__label.form__label_with-checkbox.text.text_is-light
+            input(type="radio", name=nameOfCheckbox).form__radio.radio
+            | #{contentOfCheckbox}
 
 //- Imitate toggle buttons. Use custom checkbox for it.
 mixin toggle(contentOfCheckbox, nameOfCheckbox, isChecked)
-    if isChecked 
-        label.form__label.form__label_with-checkbox.text
+    label.form__label.form__label_with-checkbox.text
+        if isChecked
             input(type="checkbox", name=nameOfCheckbox, checked).form__checkbox.checkbox.checkbox_as-toggle
             | #{contentOfCheckbox}
-    else 
-        label.form__label.form__label_with-checkbox.text
+        else 
             input(type="checkbox", name=nameOfCheckbox).form__checkbox.checkbox.checkbox_as-toggle
             | #{contentOfCheckbox}
