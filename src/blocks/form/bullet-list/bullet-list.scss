@@ -1,0 +1,22 @@
+// Class for custom bullet list.
+.bullet-list {
+
+    &__item {
+        position: relative;
+        padding-left: 1.75rem;
+        text-transform: none;
+
+        // Custom bullet on each list item.
+        &::before {
+            content: '';
+            background-color: $dark-shade-25-percent;
+            width: 1rem;
+            height: 1rem;
+            border-radius: 50%;
+            position: absolute;
+            top: 1.25rem;
+            left: 0;
+            transform: translate(0, -50%);
+        }
+    }
+}

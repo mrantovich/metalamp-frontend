@@ -1,0 +1,5 @@
+//- Custom bullet (unordered) list. Just take an array of strings.
+mixin bullet-list(items)
+    ul.form__bullet-list.bullet-list
+        each item in items 
+            li.bullet-list__item.text= item
