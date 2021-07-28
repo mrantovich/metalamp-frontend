@@ -2,6 +2,6 @@ mixin date-picker(datePickerName, isSingle)
     label.form__label
         .date-picker-wrap 
             if isSingle
-                input(type="text", name=datePickerName, placeholder="ДД.ММ.ГГГГ").form__text-field.form__date-picker.date-picker.date-picker_single
+                input(type="text", name=datePickerName, placeholder="ДД.ММ.ГГГГ").form__text-field.text-field.form__date-picker.date-picker.date-picker_single
             else
-                input(type="text", name=datePickerName, placeholder="ДД.ММ - ДД.ММ").form__text-field.form__date-picker.date-picker
+                input(type="text", name=datePickerName, placeholder="ДД.ММ - ДД.ММ").form__text-field.text-field.form__date-picker.date-picker

@@ -1,3 +1,4 @@
+include ../../blocks/form/text-field/text-field.pug
 include ../../blocks/form/dropdown/dropdown.pug
 include ../../blocks/form/star-button/star-button.pug
 include ../../blocks/form/button/button.pug
@@ -7,39 +8,47 @@ include ../../blocks/form/subscription/subscription.pug
 include ../../blocks/form/form-mixins.pug
 
 form.form
-    label.form__label 
+
+    .form__container-box.form__container-box_big
         .form__label-text.text.text_label Text field
-        input(type="text", name="text", placeholder="Text sample").form__text-field
-    label.form__label
+        +text-field("text", "sometext", "Text sample")
+
+    .form__container-box_big
         .form__label-text.text.text_label Email field
-        input(type="email", name="text", placeholder="Email sample").form__text-field
-    .form__container-masked
+        +text-field("email", "email-sample", "Email sample")
+
+    .form__container-box_big
         .form__label-text.text.text_label Dropdown
-            +dropdown("Сколько гостей", ["Спальни", "Кровати", "Ванные комнаты"])
-    .form__container-masked
+        +dropdown("Сколько гостей", ["Спальни", "Кровати", "Ванные комнаты"])
+    .form__container-box_big
         .form__label-text.text.text_label Single Dropdown
-            +dropdown("Сколько гостей", ["Взрослые", "Дети", "Младенцы"], true)
-    .form__container-masked
+        +dropdown("Сколько гостей", ["Взрослые", "Дети", "Младенцы"], true)
+
+    .form__container-box_big
         .form__label-text.text.text_label Masked Text Field
-        label.form__label
-            input(type="num", name="masked-date").form__text-field.form__text-field_masked
-    .form__container-masked 
+        +text-field("num", "masked-date", "", true)
+
+    .form__container-box_big
         .form__label-text.text.text_label Subscription field 
         +subscription-field("Email")
-    .form__container-datepicker 
+
+    .form__container-box
         .form__label-text.text.text_label Filter date dropdown
         +date-picker("filter-date-picker")
-    .form__container-datepicker 
+
+    .form__container-box
         .form__label-text.text.text_label Date dropdown (position to left)
         +date-picker("general-left-date-picker", true)
-    .form__container-datepicker
+
+    .form__container-box_big
         .date-picker-container 
             .date-picker-container__left-part
                 +date-picker("left-date-picker", true)
             .date-picker-container__right-part
                 +date-picker("right-date-picker", true)
-    .form__label-text.text.text_label Checkbox buttons
-    .form__box
+    
+    .form__container-box
+        .form__label-text.text.text_label Checkbox buttons
         label.form__label.form__label_with-checkbox.text
             input(type="checkbox", name="check").form__checkbox
             | Можно курить
@@ -49,24 +58,28 @@ form.form
         label.form__label.form__label_with-checkbox.text
             input(type="checkbox", name="check", checked).form__checkbox
             | Можно пригласить гостей (до 10 человек)
-    .form__label-text.text.text_label Radio buttons 
-    .form__box 
+
+    .form__container-box
+        .form__label-text.text.text_label Radio buttons 
         label.form__label.form__label_with-checkbox.text.text_is-light.text_is-normal
             input(type="radio", name="radio", checked).form__radio
             | Мужчина
         label.form__label.form__label_with-checkbox.text.text_is-light
             input(type="radio", name="radio").form__radio
             | Женщина
-    .form__label-text.text.text_label Toggle
-    .form__box-another
+
+    
+    .form__container-box 
+        .form__label-text.text.text_label Toggle
         label.form__label.form__label_with-checkbox.text
             input(type="checkbox", name="toggle", checked).form__checkbox_as-toggle
             | Получать спецпредложения
         label.form__label.form__label_with-checkbox.text
             input(type="checkbox", name="toggle2nd").form__checkbox_as-toggle
             | Получать спецпредложения
+
     .form__label-text.text.text_label Like button 
-    .form__box-with-likes
+    .form__container-box_with-likes
         .like-button 
             .like-button__container
                 img(src=require("../assets/img/like-button-not-selected.svg"), alt="Heart image", class="like-button__heart")
@@ -75,18 +88,22 @@ form.form
             .like-button__container 
                 img(src=require("../assets/img/like-button-not-selected.svg"), alt="Heart image", class="like-button__heart")
                 .like-button__counter 12
+
     .form__label-text.text.text_label Rate button
-    .form__box-with-stars
+    .form__container-box_with-stars
         +star-buttons(0, 5)
         +star-buttons(5, 5)
-    .form__label-text.text.text_label Buttons 
-        .form__vbox
-            button.form__button.button Click me
-            button.form__button.button.button_is-disabled Click me 
-            +empty-button("Click me")
-            +empty-button("Click me", true)
-        .form__longbox
-            button.form__button.button.button_with-arrow Перейти к оплате
+    
+    .form__container-box
+        .form__label-text.text.text_label Buttons 
+            .form__vbox
+                button.form__button.button Click me
+                button.form__button.button.button_is-disabled Click me 
+                +empty-button("Click me")
+                +empty-button("Click me", true)
+            .form__longbox
+                button.form__button.button.button_with-arrow Перейти к оплате
+
     .form__label-text.text.text_label Pagination 
         .form__pagination.pagination 
             .pagination__content
@@ -97,30 +114,33 @@ form.form
                 .pagination__item 15
                 a(href="/mock/address", alt="Next").pagination__button
             .pagination__desc.text 1 – 12 из 100+ вариантов аренды
+
     .form__label-text.text.text_label Range slider 
         .form__range-slider-container
             .form__range-text
             .form__range-slider.range-slider 
-    .form__label-text.text.text_label Rich checkbox buttons 
-        .form__container-richbox
-            +rich-checkbox("rch", "Широкий коридор", "Ширина коридоров в номере не менее 91 см.", true)
-            +rich-checkbox("cch", "Помощник для инвалидов", "На 1 этаже вас встретит специалист  и проводит до номера.")
+
+    
+    .form__container-box 
+        .form__label-text.text.text_label Rich checkbox buttons 
+        +rich-checkbox("rch", "Широкий коридор", "Ширина коридоров в номере не менее 91 см.", true)
+        +rich-checkbox("cch", "Помощник для инвалидов", "На 1 этаже вас встретит специалист  и проводит до номера.")
     
     .form__container-box 
         - var expandableData = [["breakfast", false, "Завтрак"], ["table", true, "Письменный стол"], ["child-chair", true, "Стул для кормления"], ["bed", true, "Кроватка"], ["tv", false, "Телевизор"], ["shampoo", false, "Шампунь"]]
         +expandable-list("Expandable checkbox list", expandableData)
 
-    .form__label-text.text.text_label Bullet list 
-        .form__container-bullet-list 
+    .form__container-box
+        .form__label-text.text.text_label Bullet list 
             ul.form__list 
                 li.form__list-item.text Нельзя с питомцами
                 li.form__list-item.text Без вечеринок и мероприятий
                 li.form__list-item.text Время прибытия — после 13:00, а выезд до 12:00
 
-    .form__container-review 
+    .form__container-box_long
         +user-review(require("../assets/user-review-img/user-01.jpg"), "Мурад Сарафанов", "5 дней назад", "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.", 12, true)
 
-    .form__container-room-info 
+    .form__container-box_big
         +room-info(require("../assets/room-info/insert_emoticon.svg"), "Комфорт", "Шумопоглощающие стены", true)
         +room-info(require("../assets/room-info/location_city.svg"), "Удобство", "Окно в каждой из спален")
 

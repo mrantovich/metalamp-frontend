@@ -1,0 +1,7 @@
+//- All types of simple text inputs. If isMasked is true, then field will be with mask
+mixin text-field(type, name, placeholder, isMasked)
+    label.form__label
+        if isMasked 
+            input(type=type, name=name).form__text-field.text-field.text-field_masked
+        else 
+            input(type=type, name=name, placeholder=placeholder).form__text-field.text-field
