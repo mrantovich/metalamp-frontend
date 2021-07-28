@@ -2,7 +2,7 @@
     transform: translateY(0.25rem);
     border-radius: 50%;
     border: 0.2rem solid $white;
-    background: $green;
+    background: $gradient-green;
     box-shadow: none;
 
     cursor: pointer;
@@ -24,6 +24,7 @@
 .noUi-base {
     height: 0.6rem;
     position: relative;
+    z-index: 0;
 }
 
 .noUi-horizontal .noUi-handle {
@@ -35,12 +36,13 @@
     border-radius: none;
     border: 0.1rem solid $dark-shade-25-percent;
     position: relative;
+    overflow: visible;
 }
 
 .noUi-connect {
     height: 0.6rem;
-    background: $green;
+    background: $gradient-green;
     position: relative;
-    z-index: 10;
+    top: -0.1rem;
 }
 
