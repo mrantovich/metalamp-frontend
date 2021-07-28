@@ -36,7 +36,8 @@ mixin toggle(contentOfCheckbox, nameOfCheckbox, isChecked)
             input(type="checkbox", name=nameOfCheckbox).form__checkbox.checkbox.checkbox_as-toggle
             | #{contentOfCheckbox}
 
-//- Rich checkbox
+//- Rich checkbox that have two lines of text, first one is bold header.
+//- First and second parameters are header and body (or description) of text area respectively.
 mixin checkbox-rich(headOfCheckbox, bodyOfCheckbox, nameOfCheckbox, isChecked)
     if isChecked
         label.form__label.form__label_with-checkbox.text
