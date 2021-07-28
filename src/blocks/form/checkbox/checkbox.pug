@@ -1,0 +1,21 @@
+mixin checkbox(contentOfCheckbox, typeOfCheckbox, nameOfCheckbox, isChecked)
+    - var type = typeOfCheckbox 
+
+    case type
+        when "checkbox"
+            label.form__label.form__label_with-checkbox.text
+                if isChecked
+                    input(type=type, name=nameOfCheckbox, checked).form__checkbox.checkbox
+                    | #{contentOfCheckbox}
+                else
+                    input(type=type, name=nameOfCheckbox).form__checkbox.checkbox
+                    | #{contentOfCheckbox}
+        when "radio"
+            if isChecked 
+                label.form__label.form__label_with-checkbox.text.text_is-light.text_is-normal
+                    input(type=type, name=nameOfCheckbox, checked).form__radio.radio
+                    | #{contentOfCheckbox}
+            else
+                label.form__label.form__label_with-checkbox.text.text_is-light
+                    input(type=type, name=nameOfCheckbox).form__radio.radio
+                    | #{contentOfCheckbox}

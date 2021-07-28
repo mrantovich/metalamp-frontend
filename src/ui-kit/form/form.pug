@@ -1,4 +1,5 @@
 include ../../blocks/form/text-field/text-field.pug
+include ../../blocks/form/checkbox/checkbox.pug
 include ../../blocks/form/dropdown/dropdown.pug
 include ../../blocks/form/star-button/star-button.pug
 include ../../blocks/form/button/button.pug
@@ -49,25 +50,14 @@ form.form
     
     .form__container-box
         .form__label-text.text.text_label Checkbox buttons
-        label.form__label.form__label_with-checkbox.text
-            input(type="checkbox", name="check").form__checkbox
-            | Можно курить
-        label.form__label.form__label_with-checkbox.text
-            input(type="checkbox", name="check", checked).form__checkbox
-            | Можно с питомцами
-        label.form__label.form__label_with-checkbox.text
-            input(type="checkbox", name="check", checked).form__checkbox
-            | Можно пригласить гостей (до 10 человек)
+        +checkbox("Можно курить", "checkbox", "check")
+        +checkbox("Можно с питомцами", "checkbox", "check", true)
+        +checkbox("Можно пригласить гостей (до 10 человек)", "checkbox", "check", true)
 
     .form__container-box
         .form__label-text.text.text_label Radio buttons 
-        label.form__label.form__label_with-checkbox.text.text_is-light.text_is-normal
-            input(type="radio", name="radio", checked).form__radio
-            | Мужчина
-        label.form__label.form__label_with-checkbox.text.text_is-light
-            input(type="radio", name="radio").form__radio
-            | Женщина
-
+        +checkbox("Мужчина", "radio", "some-radio", true)
+        +checkbox("Женщина", "radio", "some-radio")
     
     .form__container-box 
         .form__label-text.text.text_label Toggle
@@ -119,7 +109,6 @@ form.form
         .form__range-slider-container
             .form__range-text
             .form__range-slider.range-slider 
-
     
     .form__container-box 
         .form__label-text.text.text_label Rich checkbox buttons 

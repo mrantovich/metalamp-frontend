@@ -66,70 +66,7 @@
     }
 
     &__checkbox {
-        @include buttons-property(2rem, 2rem, 1rem, 0.4rem);
-        align-self: flex-start;
-
-        &:checked {
-            border: 1px solid $purple;
-            &::after, &::before {
-                opacity: 1;
-                visibility: visible;
-            }
-        }
-
-        &::after, &::before {
-            content: '';
-            position: absolute;
-            background: linear-gradient(180deg, $purple,$purple-second);
-            height: 0.2rem;
-            top: 50%;
-            opacity: 0;
-            visibility: hidden;
-            transition: 0.2s;
-        }
-
-        &::after {
-            left: 35%;
-            width: 0.4rem;
-            transform: translate(-50%, -50%) rotate(45deg);
-        }
-        &::before {
-            left: 58%;
-            width: 0.8rem;
-            transform: translate(-50%, -50%) rotate(-45deg);
-        }
-
-        &_as-toggle {
-            @include buttons-property(4rem, 2rem, 1rem, 1rem);
-
-            &:checked {
-                border: 1px solid $purple;
-                transition: 0.2s;
-
-                &::after {
-                    background: $gradient-purple;
-                    transform: translate(1.8rem, -50%);
-                }
-            }
-
-            &::after {
-                content: '';
-                position: absolute;
-                background: linear-gradient(0, $dark-shade-25-percent 100%, $dark-shade-25-percent 100%);
-                width: 1.2rem;
-                height: 1.2rem;
-                border-radius: 50%;
-                top: 50%;
-                left: 0.4rem;
-                opacity: 1;
-                visibility: visible;
-                transform: translate(0, -50%);
-                transition: 0.2s;
-            }
-            &::before {
-                display: none;
-            }
-        }
+        
     }
 
     &__rich-checkbox {
@@ -152,30 +89,6 @@
     }
 
     &__radio {
-        @include buttons-property(2rem, 2rem, 1.4rem, 50%);
-
-        &:checked {
-            border: 1px solid $purple;
-            &::after {
-                opacity: 1;
-                visibility: visible;
-            }
-        }
-
-        &::after {
-            content: '';
-            position: absolute;
-            background: linear-gradient(180deg, $purple,$purple-second);
-            width: 1.2rem;
-            height: 1.2rem;
-            border-radius: 50%;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            opacity: 0;
-            visibility: hidden;
-            transition: 0.2s;
-        }
 
     }
 
@@ -203,6 +116,7 @@
 }
 
 @import './text-field/text-field.scss';
+@import './checkbox/checkbox.scss';
 @import './arrow/arrow.scss';
 @import './dropdown/dropdown.scss';
 @import './like-button/like-button.scss';
