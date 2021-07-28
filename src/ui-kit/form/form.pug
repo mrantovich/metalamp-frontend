@@ -61,12 +61,8 @@ form.form
     
     .form__container-box 
         .form__label-text.text.text_label Toggle
-        label.form__label.form__label_with-checkbox.text
-            input(type="checkbox", name="toggle", checked).form__checkbox_as-toggle
-            | Получать спецпредложения
-        label.form__label.form__label_with-checkbox.text
-            input(type="checkbox", name="toggle2nd").form__checkbox_as-toggle
-            | Получать спецпредложения
+        +toggle("Получать спецпредложения", "first-toggle", true)
+        +toggle("Получать спецпредложения", "second-toggle")
 
     .form__label-text.text.text_label Like button 
     .form__container-box_with-likes

@@ -19,3 +19,14 @@ mixin checkbox(contentOfCheckbox, typeOfCheckbox, nameOfCheckbox, isChecked)
                 label.form__label.form__label_with-checkbox.text.text_is-light
                     input(type=type, name=nameOfCheckbox).form__radio.radio
                     | #{contentOfCheckbox}
+
+//- Imitate toggle buttons. Use custom checkbox for it.
+mixin toggle(contentOfCheckbox, nameOfCheckbox, isChecked)
+    if isChecked 
+        label.form__label.form__label_with-checkbox.text
+            input(type="checkbox", name=nameOfCheckbox, checked).form__checkbox.checkbox.checkbox_as-toggle
+            | #{contentOfCheckbox}
+    else 
+        label.form__label.form__label_with-checkbox.text
+            input(type="checkbox", name=nameOfCheckbox).form__checkbox.checkbox.checkbox_as-toggle
+            | #{contentOfCheckbox}
