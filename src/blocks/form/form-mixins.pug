@@ -1,17 +1,3 @@
-mixin rich-checkbox(name, title, description, isChecked)
-    if isChecked
-        label.form__label.form__label_with-checkbox.text
-            input(type="checkbox", name=name, checked).form__checkbox
-            .form__rich-checkbox
-                .form__rich-checkbox-title= title 
-                .form__rich-checkbox-desc= description
-    else
-        label.form__label.form__label_with-checkbox.text
-            input(type="checkbox", name=name).form__checkbox
-            .form__rich-checkbox
-                .form__rich-checkbox-title= title 
-                .form__rich-checkbox-desc= description
-
 mixin user-review(userImage, userName, time, reviewText, numLikes, isLikeHighlighted)
     .user-review
         .user-review__image

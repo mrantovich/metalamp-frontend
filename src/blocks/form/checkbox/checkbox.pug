@@ -35,3 +35,18 @@ mixin toggle(contentOfCheckbox, nameOfCheckbox, isChecked)
         else 
             input(type="checkbox", name=nameOfCheckbox).form__checkbox.checkbox.checkbox_as-toggle
             | #{contentOfCheckbox}
+
+//- Rich checkbox
+mixin checkbox-rich(headOfCheckbox, bodyOfCheckbox, nameOfCheckbox, isChecked)
+    if isChecked
+        label.form__label.form__label_with-checkbox.text
+            input(type="checkbox", name=nameOfCheckbox, checked).form__checkbox.checkbox
+            .form__rich-checkbox.rich-checkbox
+                .rich-checkbox__title= headOfCheckbox
+                .rich-checkbox__desc= bodyOfCheckbox
+    else
+        label.form__label.form__label_with-checkbox.text
+            input(type="checkbox", name=nameOfCheckobx).form__checkbox.checkbox
+            .form__rich-checkbox.rich-checkbox
+                .rich-checkbox__title= headOfCheckbox
+                .rich-checkbox__desc= bodyOfCheckbox

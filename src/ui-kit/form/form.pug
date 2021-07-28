@@ -106,8 +106,8 @@ form.form
     
     .form__container-box 
         .form__label-text.text.text_label Rich checkbox buttons 
-        +rich-checkbox("rch", "Широкий коридор", "Ширина коридоров в номере не менее 91 см.", true)
-        +rich-checkbox("cch", "Помощник для инвалидов", "На 1 этаже вас встретит специалист  и проводит до номера.")
+        +checkbox-rich("Широкий коридор", "Ширина коридоров в номере не менее 91 см.", "first-rich-checkbox", true)
+        +checkbox-rich("Помощник для инвалидов", "На 1 этаже вас встретит специалист  и проводит до номера.", "second-rich-checkbox")
     
     .form__container-box 
         - var expandableData = [["breakfast", false, "Завтрак"], ["table", true, "Письменный стол"], ["child-chair", true, "Стул для кормления"], ["bed", true, "Кроватка"], ["tv", false, "Телевизор"], ["shampoo", false, "Шампунь"]]
