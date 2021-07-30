@@ -14,6 +14,7 @@ include ../blocks/form/subscription/subscription.pug
 
 form.ui-kit
 
+    //- Simple text field.
     .ui-kit__container-box.ui-kit__container-box_big
         .ui-kit__label-text.text.text_label Text field
         +text-field("text", "sometext", "Text sample")
@@ -22,6 +23,9 @@ form.ui-kit
         .ui-kit__label-text.text.text_label Email field
         +text-field("email", "email-sample", "Email sample")
 
+    //- Dropdown with ability to choose several items.
+    //-     Last parameter set single dropdown, as I call it.
+    //-     Single dropdown just show total items count, not differentiate it by name of items.
     .ui-kit__container-box_big
         .ui-kit__label-text.text.text_label Dropdown
         +dropdown("Сколько гостей", ["Спальни", "Кровати", "Ванные комнаты"])
@@ -29,14 +33,18 @@ form.ui-kit
         .ui-kit__label-text.text.text_label Single Dropdown
         +dropdown("Сколько гостей", ["Взрослые", "Дети", "Младенцы"], true)
 
+    //- Masked text field for date. Text field must be "num" type.
     .ui-kit__container-box_big
         .ui-kit__label-text.text.text_label Masked Text Field
         +text-field("num", "masked-date", "", true)
 
+    //- Subscription field with "transparent" button on right side of it.
+    //-     Need for subscription in footer.
     .ui-kit__container-box
         .ui-kit__label-text.text.text_label Subscription field 
         +subscription-field("Email")
 
+    //- Date dropdowns. Date range or just single date.
     .ui-kit__container-box
         .ui-kit__label-text.text.text_label Filter date dropdown
         +date-picker("filter-date-picker")
@@ -71,16 +79,21 @@ form.ui-kit
         +toggle("Получать спецпредложения", "first-toggle", true)
         +toggle("Получать спецпредложения", "second-toggle")
 
+    //- Like buttons. When highlighted, user can't interact with it.
+    //-     Be default, it's not higlighted.
     .ui-kit__label-text.text.text_label Like button 
     .ui-kit__container-box_with-likes
         +like-button(2)
         +like-button(12)
 
+    //- Rate buttons (stars). We may say how many stars we need (second parameter)
+    //-     and how many of them are filled (first parameter).
     .ui-kit__label-text.text.text_label Rate button
     .ui-kit__container-box_with-stars
         +star-buttons(0, 5)
         +star-buttons(5, 5)
     
+    //- Buttons of different types and in different states.
     .ui-kit__container-box
         .ui-kit__label-text.text.text_label Buttons 
             .ui-kit__grid
@@ -104,26 +117,34 @@ form.ui-kit
             a(href="/mock/address", alt="Next").pagination__button
         .pagination__desc.text 1 – 12 из 100+ вариантов аренды
 
+    //- Range slider. It has no settings for range by now. May be it will be changed in future.
     .ui-kit__label-text.text.text_label Range slider 
     .ui-kit__container-box_for-range-slider
         +range-slider
     
+    //- Just checkboxes with two-level text.
     .ui-kit__container-box 
         .ui-kit__label-text.text.text_label Rich checkbox buttons 
         +checkbox-rich("Широкий коридор", "Ширина коридоров в номере не менее 91 см.", "first-rich-checkbox", true)
         +checkbox-rich("Помощник для инвалидов", "На 1 этаже вас встретит специалист  и проводит до номера.", "second-rich-checkbox")
     
+    //- Expandable checkbox list. Data for it (array of arrays) is pretty mess by now.
+    //-     Can we change it and make it look more elegant?
     .ui-kit__container-box 
         - var expandableData = [["breakfast", false, "Завтрак"], ["table", true, "Письменный стол"], ["child-chair", true, "Стул для кормления"], ["bed", true, "Кроватка"], ["tv", false, "Телевизор"], ["shampoo", false, "Шампунь"]]
         +expandable-list("Expandable checkbox list", expandableData)
 
+    //- Just custom unordered list with gray bullets. Nothing special.
     .ui-kit__container-box
         .ui-kit__label-text.text.text_label Bullet list 
         +bullet-list(["Нельзя с питомцами", "Без вечеринок и мероприятий", "Время прибытия — после 13:00, а выезд до 12:00"])
 
+    //- User review block with four element: user pic, user name, publishing time and review itself.
     .ui-kit__container-box_long
         +user-review(require("../assets/user-review-img/user-01.jpg"), "Мурад Сарафанов", "5 дней назад", "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.", 12, true)
 
+    //- Advantages of room. Need symbolized image and text of advantage.
+    //-     Also, if we need bottom delimiter, set last parameter to true to show it.
     .ui-kit__container-box_big
         +room-info(require("../assets/room-info/insert_emoticon.svg"), "Комфорт", "Шумопоглощающие стены", true)
         +room-info(require("../assets/room-info/location_city.svg"), "Удобство", "Окно в каждой из спален")
