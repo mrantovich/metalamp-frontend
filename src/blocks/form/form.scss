@@ -2,28 +2,6 @@
 
 .form {
 
-    &__range-slider-container {
-        width: 30rem;
-        padding: 4rem 0;
-    }
-
-    &__range-slider {
-        width: 100%;
-        height: 0.6rem;
-        border: none;
-    }
-
-    &__range-text {
-        font-size: 1.2rem;
-        line-height: 1.5 / 1.2 * 100%;
-        color: $dark-shade-50-percent;
-        font-weight: normal;
-        text-transform: uppercase;
-        display: flex;
-        padding: 1.5rem 0;
-        justify-content: flex-end;
-    }
-
     &__container-box {
         max-width: 26.6rem;
         margin: 3rem 0;
@@ -47,6 +25,11 @@
             width: 28rem;
             justify-content: space-between;
         }
+
+        &_for-range-slider {
+            width: 30rem;
+            margin: 4rem 0;
+        }
     }
 
     &__label {
@@ -56,14 +39,12 @@
             align-items: center;
             margin-bottom: 1rem;
             transition: 0.2s;
-
         }
     }
 
     &__label-text {
         margin: 0 0 0.5rem 0;
     }
-
 
 }
 

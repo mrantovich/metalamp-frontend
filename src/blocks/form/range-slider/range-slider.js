@@ -2,7 +2,7 @@ import noUiSlider from 'nouislider';
 import wNumb from 'wnumb';
 import 'nouislider/dist/nouislider.css';
 
-let rangeSlider = document.querySelector('.range-slider');
+let rangeSlider = document.querySelector('.range-slider__ui');
 
 let rangeUiSlider = noUiSlider.create(rangeSlider, {
     start: [0, 10000],
@@ -20,7 +20,7 @@ let rangeUiSlider = noUiSlider.create(rangeSlider, {
     })
 });
 
-let rangeText = document.querySelector('.form__range-text');
+let rangeText = document.querySelector('.range-slider__text');
 rangeUiSlider.on('update', changePriceRange);
 
 function changePriceRange() {

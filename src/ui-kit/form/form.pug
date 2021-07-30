@@ -4,6 +4,7 @@ include ../../blocks/form/dropdown/dropdown.pug
 include ../../blocks/form/like-button/like-button.pug
 include ../../blocks/form/star-button/star-button.pug
 include ../../blocks/form/bullet-list/bullet-list.pug
+include ../../blocks/form/range-slider/range-slider.pug
 include ../../blocks/form/button/button.pug
 include ../../blocks/form/datepicker/datepicker.pug
 include ../../blocks/form/expandable-list/expandable-list.pug
@@ -101,9 +102,8 @@ form.form
             .pagination__desc.text 1 – 12 из 100+ вариантов аренды
 
     .form__label-text.text.text_label Range slider 
-        .form__range-slider-container
-            .form__range-text
-            .form__range-slider.range-slider 
+        .form__container-box_for-range-slider
+            +range-slider
     
     .form__container-box 
         .form__label-text.text.text_label Rich checkbox buttons 
