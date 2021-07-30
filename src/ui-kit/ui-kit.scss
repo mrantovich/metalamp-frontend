@@ -1,4 +1,41 @@
 .ui-kit {
     width: 100%;
     padding: 30px 15px;
+
+    &__content {
+    }
+
+    &__container-box {
+        max-width: 26.6rem;
+        margin: 3rem 0;
+
+        &_big {
+            max-width: 32rem;
+        }
+
+        &_long {
+            max-width: 71rem;
+        }
+
+        &_with-likes {
+            display: flex;
+            width: 10rem;
+            justify-content: space-between;
+        }
+
+        &_with-stars {
+            display: flex;
+            width: 28rem;
+            justify-content: space-between;
+        }
+
+        &_for-range-slider {
+            width: 30rem;
+            margin: 4rem 0;
+        }
+    }
+
+    &__label-text {
+        margin: 0 0 0.5rem 0;
+    }
 }

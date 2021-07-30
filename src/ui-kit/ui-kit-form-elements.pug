@@ -1,50 +1,51 @@
-include ../../blocks/form/text-field/text-field.pug
-include ../../blocks/form/checkbox/checkbox.pug
-include ../../blocks/form/dropdown/dropdown.pug
-include ../../blocks/form/like-button/like-button.pug
-include ../../blocks/form/star-button/star-button.pug
-include ../../blocks/form/bullet-list/bullet-list.pug
-include ../../blocks/form/range-slider/range-slider.pug
-include ../../blocks/form/button/button.pug
-include ../../blocks/form/datepicker/datepicker.pug
-include ../../blocks/form/expandable-list/expandable-list.pug
-include ../../blocks/form/subscription/subscription.pug
-include ../../blocks/form/form-mixins.pug
+include ../blocks/form/text-field/text-field.pug
+include ../blocks/form/checkbox/checkbox.pug
+include ../blocks/form/dropdown/dropdown.pug
+include ../blocks/form/like-button/like-button.pug
+include ../blocks/form/star-button/star-button.pug
+include ../blocks/form/bullet-list/bullet-list.pug
+include ../blocks/form/range-slider/range-slider.pug
+include ../blocks/form/button/button.pug
+include ../blocks/form/datepicker/datepicker.pug
+include ../blocks/form/user-review/user-review.pug
+include ../blocks/form/room-info/room-info.pug
+include ../blocks/form/expandable-list/expandable-list.pug
+include ../blocks/form/subscription/subscription.pug
 
-form.form
+form.ui-kit
 
-    .form__container-box.form__container-box_big
-        .form__label-text.text.text_label Text field
+    .ui-kit__container-box.ui-kit__container-box_big
+        .ui-kit__label-text.text.text_label Text field
         +text-field("text", "sometext", "Text sample")
 
-    .form__container-box_big
-        .form__label-text.text.text_label Email field
+    .ui-kit__container-box_big
+        .ui-kit__label-text.text.text_label Email field
         +text-field("email", "email-sample", "Email sample")
 
-    .form__container-box_big
-        .form__label-text.text.text_label Dropdown
+    .ui-kit__container-box_big
+        .ui-kit__label-text.text.text_label Dropdown
         +dropdown("Сколько гостей", ["Спальни", "Кровати", "Ванные комнаты"])
-    .form__container-box_big
-        .form__label-text.text.text_label Single Dropdown
+    .ui-kit__container-box_big
+        .ui-kit__label-text.text.text_label Single Dropdown
         +dropdown("Сколько гостей", ["Взрослые", "Дети", "Младенцы"], true)
 
-    .form__container-box_big
-        .form__label-text.text.text_label Masked Text Field
+    .ui-kit__container-box_big
+        .ui-kit__label-text.text.text_label Masked Text Field
         +text-field("num", "masked-date", "", true)
 
-    .form__container-box_big
-        .form__label-text.text.text_label Subscription field 
+    .ui-kit__container-box_big
+        .ui-kit__label-text.text.text_label Subscription field 
         +subscription-field("Email")
 
-    .form__container-box
-        .form__label-text.text.text_label Filter date dropdown
+    .ui-kit__container-box
+        .ui-kit__label-text.text.text_label Filter date dropdown
         +date-picker("filter-date-picker")
 
-    .form__container-box
-        .form__label-text.text.text_label Date dropdown (position to left)
+    .ui-kit__container-box
+        .ui-kit__label-text.text.text_label Date dropdown (position to left)
         +date-picker("general-left-date-picker", true)
 
-    .form__container-box_big
+    .ui-kit__container-box_big
         .date-picker-container 
             .date-picker-container__left-part
                 +date-picker("left-date-picker", true)
@@ -52,36 +53,36 @@ form.form
                 +date-picker("right-date-picker", true)
     
     //- Common checkboxes. Contains: text, name, flag showing is button checked or not.
-    .form__container-box
-        .form__label-text.text.text_label Checkbox buttons
+    .ui-kit__container-box
+        .ui-kit__label-text.text.text_label Checkbox buttons
         +checkbox("Можно курить", "check")
         +checkbox("Можно с питомцами", "check", true)
         +checkbox("Можно пригласить гостей (до 10 человек)", "check", true)
 
     //- Radio buttons. Must have similiar name (second parameter). Contains: text, name, flag showing is button checked or not.
-    .form__container-box
-        .form__label-text.text.text_label Radio buttons 
+    .ui-kit__container-box
+        .ui-kit__label-text.text.text_label Radio buttons 
         +radio("Мужчина", "some-radio", true)
         +radio("Женщина", "some-radio")
     
     //- Toggles making from checkboxes. Contains: text, name, flag showing is toggle active or not.
-    .form__container-box 
-        .form__label-text.text.text_label Toggle
+    .ui-kit__container-box 
+        .ui-kit__label-text.text.text_label Toggle
         +toggle("Получать спецпредложения", "first-toggle", true)
         +toggle("Получать спецпредложения", "second-toggle")
 
-    .form__label-text.text.text_label Like button 
-    .form__container-box_with-likes
+    .ui-kit__label-text.text.text_label Like button 
+    .ui-kit__container-box_with-likes
         +like-button(2)
         +like-button(12)
 
-    .form__label-text.text.text_label Rate button
-    .form__container-box_with-stars
+    .ui-kit__label-text.text.text_label Rate button
+    .ui-kit__container-box_with-stars
         +star-buttons(0, 5)
         +star-buttons(5, 5)
     
-    .form__container-box
-        .form__label-text.text.text_label Buttons 
+    .ui-kit__container-box
+        .ui-kit__label-text.text.text_label Buttons 
             .form__vbox
                 +button("Click me")
                 +button("click me", true)
@@ -90,7 +91,7 @@ form.form
             .form__longbox
                 +button-with-arrow("Перейти к оплате")
 
-    .form__label-text.text.text_label Pagination 
+    .ui-kit__label-text.text.text_label Pagination 
         .form__pagination.pagination 
             .pagination__content
                 .pagination__item.pagination__item_current 1
@@ -101,27 +102,27 @@ form.form
                 a(href="/mock/address", alt="Next").pagination__button
             .pagination__desc.text 1 – 12 из 100+ вариантов аренды
 
-    .form__label-text.text.text_label Range slider 
-        .form__container-box_for-range-slider
+    .ui-kit__label-text.text.text_label Range slider 
+        .ui-kit__container-box_for-range-slider
             +range-slider
     
-    .form__container-box 
-        .form__label-text.text.text_label Rich checkbox buttons 
+    .ui-kit__container-box 
+        .ui-kit__label-text.text.text_label Rich checkbox buttons 
         +checkbox-rich("Широкий коридор", "Ширина коридоров в номере не менее 91 см.", "first-rich-checkbox", true)
         +checkbox-rich("Помощник для инвалидов", "На 1 этаже вас встретит специалист  и проводит до номера.", "second-rich-checkbox")
     
-    .form__container-box 
+    .ui-kit__container-box 
         - var expandableData = [["breakfast", false, "Завтрак"], ["table", true, "Письменный стол"], ["child-chair", true, "Стул для кормления"], ["bed", true, "Кроватка"], ["tv", false, "Телевизор"], ["shampoo", false, "Шампунь"]]
         +expandable-list("Expandable checkbox list", expandableData)
 
-    .form__container-box
-        .form__label-text.text.text_label Bullet list 
+    .ui-kit__container-box
+        .ui-kit__label-text.text.text_label Bullet list 
         +bullet-list(["Нельзя с питомцами", "Без вечеринок и мероприятий", "Время прибытия — после 13:00, а выезд до 12:00"])
 
-    .form__container-box_long
+    .ui-kit__container-box_long
         +user-review(require("../assets/user-review-img/user-01.jpg"), "Мурад Сарафанов", "5 дней назад", "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.", 12, true)
 
-    .form__container-box_big
+    .ui-kit__container-box_big
         +room-info(require("../assets/room-info/insert_emoticon.svg"), "Комфорт", "Шумопоглощающие стены", true)
         +room-info(require("../assets/room-info/location_city.svg"), "Удобство", "Окно в каждой из спален")
 

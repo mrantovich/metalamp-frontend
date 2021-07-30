@@ -1,0 +1,12 @@
+//- Making block with user review. We need user avatar (userImage), user name, publishing time,
+//-         a text of review itself, number of likes and to know whether likes is highlighted or not.
+mixin user-review(userImage, userName, time, reviewText, numLikes, isLikeHighlighted)
+    .user-review
+        .user-review__image
+            img(src=userImage, alt="User Image")
+        .user-review__info 
+            .user-review__name.caption= userName 
+            .user-review__time.text= time
+        .user-review__likes
+            +like-button(numLikes, isLikeHighlighted)
+        .user-review__text.text= reviewText

@@ -1,14 +1,5 @@
-mixin user-review(userImage, userName, time, reviewText, numLikes, isLikeHighlighted)
-    .user-review
-        .user-review__image
-            img(src=userImage, alt="User Image")
-        .user-review__info 
-            .user-review__name.caption= userName 
-            .user-review__time.text= time
-        .user-review__likes
-            +like-button(numLikes, isLikeHighlighted)
-        .user-review__text.text= reviewText
-
+//- Show room info (or advantages). Some blocks may have bottom delimiter,
+//-         so we need flag to show it (isBottomLineVisible).
 mixin room-info(roomImage, roomInfoTitle, roomInfoText, isBottomLineVisible)
     if isBottomLineVisible 
         .room-info.room-info_with-bottom-line

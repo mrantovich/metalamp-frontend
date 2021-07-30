@@ -1,53 +1,5 @@
 @import 'form-mixins';
 
-.form {
-
-    &__container-box {
-        max-width: 26.6rem;
-        margin: 3rem 0;
-
-        &_big {
-            max-width: 32rem;
-        }
-
-        &_long {
-            max-width: 71rem;
-        }
-
-        &_with-likes {
-            display: flex;
-            width: 10rem;
-            justify-content: space-between;
-        }
-
-        &_with-stars {
-            display: flex;
-            width: 28rem;
-            justify-content: space-between;
-        }
-
-        &_for-range-slider {
-            width: 30rem;
-            margin: 4rem 0;
-        }
-    }
-
-    &__label {
-
-        &_with-checkbox {
-            display: flex;
-            align-items: center;
-            margin-bottom: 1rem;
-            transition: 0.2s;
-        }
-    }
-
-    &__label-text {
-        margin: 0 0 0.5rem 0;
-    }
-
-}
-
 @import './text-field/text-field.scss';
 @import './checkbox/checkbox.scss';
 @import './arrow/arrow.scss';
