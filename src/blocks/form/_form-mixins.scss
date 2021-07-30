@@ -1,4 +1,6 @@
-@mixin buttons-property($width, $height, $margin-right, $border-radius) {
+// Property for checkbox and radio elements (and for imitated toggles).
+// We need different size and border radius of elements for each input type.
+@mixin elements-property($width, $height, $margin-right, $border-radius) {
     display: block;
     flex: 0 0 auto;
     appearance: none;

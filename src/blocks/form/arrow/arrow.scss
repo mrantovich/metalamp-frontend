@@ -1,3 +1,10 @@
+// Mixin to create arrow shape. Using by date-picker calendar, on buttons and so on.
+// Good way is place in inside another block to avoid some unexpected behaviour
+//      when positioning elements.
+// 
+// We can set width, height, color (by default is white) of arrow;
+//      and rotate it to look in opposite direction
+//      (normally, it point out to the right side).
 @mixin arrow($width, $height, $color: $white, $direction: 0) {
     width: $width;
     height: $height;

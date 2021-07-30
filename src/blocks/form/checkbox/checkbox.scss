@@ -1,7 +1,8 @@
 @import '../form-mixins';
 
+// Styles for custom checkboxes.
 .checkbox {
-    @include buttons-property(2rem, 2rem, 1rem, 0.4rem);
+    @include elements-property(2rem, 2rem, 1rem, 0.4rem);
     align-self: flex-start;
 
     &:checked {
@@ -34,8 +35,10 @@
         transform: translate(-50%, -50%) rotate(-45deg);
     }
 
+    // Imitate toggle buttons.
+    // Some issue: gradient color changes instantly and has no transition effect.
     &_as-toggle {
-        @include buttons-property(4rem, 2rem, 1rem, 1rem);
+        @include elements-property(4rem, 2rem, 1rem, 1rem);
 
         &:checked {
             border: 1px solid $purple;
@@ -67,8 +70,9 @@
     }
 }
 
+// Custom radio buttons.
 .radio {
-    @include buttons-property(2rem, 2rem, 1.4rem, 50%);
+    @include elements-property(2rem, 2rem, 1.4rem, 50%);
 
     &:checked {
         border: 1px solid $purple;
@@ -94,10 +98,12 @@
     }
 }
 
+// Working with two levels of text in so-called rich checkbox.
 .rich-checkbox {
     display: flex;
     flex-direction: column;
 
+    // Bold heading.
     &__title {
         font-size: 1.4rem;
         font-weight: bold;
@@ -106,6 +112,7 @@
         margin-bottom: 0.5rem;
     }
 
+    // Text with general information.
     &__desc {
         font-size: 1.2rem;
         line-height: 1.4 / 1.2 * 100%;
