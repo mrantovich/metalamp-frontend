@@ -6,6 +6,11 @@
     border-radius: $brd-radius;
     box-shadow: 0 0 2.5rem rgba($black, 0.2);
 
+    &__room-card {
+        max-width: 27rem;
+        padding: 0;
+    }
+
     &__row {
         margin-bottom: 2rem;
 
