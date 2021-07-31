@@ -1,7 +1,12 @@
+//- Dropdown mixin. Get an array of options: 
+//-                                         1. placeholder text
+//-                                         2. list of items (names of things to be displayed)
+//-                                         3. flag showing is it in "single mode"
 mixin dropdown(dropdownOptions)
     - var placeholder = dropdownOptions[0]
     - var itemList = dropdownOptions[1]
     - var isCounterTotal = dropdownOptions[2]
+
     if isCounterTotal 
         .iqdropdown.iqdropdown_single 
             p.iqdropdown-selection= placeholder
