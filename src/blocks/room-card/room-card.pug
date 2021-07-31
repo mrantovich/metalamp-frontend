@@ -15,11 +15,11 @@ mixin room-card(roomImage, roomInfo, roomRating)
     .card.card__room-card.room-card 
         .room-card__container 
             .room-card__top 
-                .room-card__image
-                    img(src=roomImage, alt="Room Image")
+                img(src=roomImage, alt="Room Image").room-card__image
             .room-card__body
                 .room-card__info 
                     +card-head-total(roomNumber, roomPrice, isRoomLuxury)
+                .room-card__hr
                 .room-card__rating
                     +star-buttons(starsIsFilled, 5)
                     +review-counter(reviewCount)
