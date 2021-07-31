@@ -67,3 +67,28 @@
         @include nav-arrow($white, -135deg);
     }
 }
+
+.swiper-pagination-fraction, .swiper-pagination-custom, .swiper-container-horizontal > .swiper-pagination-bullets {
+    position: absolute;
+    width: 42rem;
+    bottom: 1.5rem;
+    right: 1.5rem;
+}
+
+.swiper-pagination-bullet {
+    width: 0.75rem;
+    height: 0.75rem;
+    background: transparent;
+    border: 0.1rem solid $white;
+    border-radius: 50%;
+    transition: 0.2s;
+}
+
+.swiper-pagination-bullet-active {
+    background: $white;
+    width: 0.75rem;
+    height: 0.75rem;
+    border: transparent;
+    border-radius: 50%;
+    transition: 0.2s;
+}
