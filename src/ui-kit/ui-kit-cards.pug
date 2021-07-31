@@ -34,3 +34,17 @@
             +card-wide-button("Перейти к оплате")
         .card__row.card__row_without-bottom-margin
             +card-footer-action("Уже есть аккаунт на Toxin?", "Войти")
+
+.ui-kit__card-container 
+
+    .card.card__login 
+        .card__row 
+            +card-title("Войти")
+        .card__row.card__row_min-bottom-margin 
+            +card-text-field("email", "email", "Email")
+        .card__row
+            +card-text-field("password", "pwd", "Пароль")
+        .card__row.card__row_big-bottom-margin
+            +card-wide-button("Войти")
+        .card__row.card__row_without-bottom-margin 
+            +card-footer-action("Нет аккаунта на Toxin?", "Создать")
