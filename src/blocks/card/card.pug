@@ -23,3 +23,18 @@ mixin card-dropdown(dropdownLabelText, dropdownOptions)
 //- Just purple wide button with needed text on it.
 mixin card-wide-button(buttonText)
     +button-with-arrow(buttonText)
+
+//- Common text field, type determines by first parameter.
+mixin card-text-field(type, name, placeholder, isMasked)
+    +text-field(type, name, placeholder, isMasked)
+
+//- Radio buttons. First parameter is array of text caption for radio buttons.
+//-     First element checked by default.
+//-     FIX: margin bottom is set for radio label, make it none (see ui-kit-form-elements)
+mixin card-radios(radioTexts, name)
+    .radio__container
+        each caption, index in radioTexts 
+            if index == 0
+                +radio(caption, name, true)
+            else 
+                +radio(caption, name)

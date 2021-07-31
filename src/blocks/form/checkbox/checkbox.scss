@@ -96,6 +96,16 @@
         visibility: hidden;
         transition: 0.2s;
     }
+
+    &__container {
+        display: flex;
+
+        & label {
+            &:not(:last-child) {
+                margin-right: 2rem;
+            }
+        }
+    }
 }
 
 // Working with two levels of text in so-called rich checkbox.

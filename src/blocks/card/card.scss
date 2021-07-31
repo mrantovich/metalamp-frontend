@@ -9,6 +9,10 @@
     &__row {
         margin-bottom: 2rem;
 
+        &_min-bottom-margin {
+            margin-bottom: 1rem;
+        }
+
         &_big-bottom-margin {
             margin-bottom: 3rem;
         }

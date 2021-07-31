@@ -7,3 +7,13 @@
         +card-dropdown("Гости", ["Сколько гостей", ["Взрослые", "Дети", "Младенцы"], true])
     .card__row.card__row_without-bottom-margin 
         +card-wide-button("Перейти к оплате")
+
+.card.card__registration 
+    .card__row 
+        +card-title("Регистрация аккаунта")
+    .card__row.card__row_min-bottom-margin 
+        +card-text-field("text", "first-name", "Имя")
+    .card__row.card__row_min-bottom-margin 
+        +card-text-field("text", "last-name", "Фамилия")
+    .card__row
+        +card-radios(["Мужчина", "Женщина"], "user-sex")
