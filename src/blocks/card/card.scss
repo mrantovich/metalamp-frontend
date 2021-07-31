@@ -21,4 +21,14 @@
             margin-bottom: 0;
         }
     }
+
+    &__horizontal-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__button-container {
+        width: 10rem;
+    }
 }

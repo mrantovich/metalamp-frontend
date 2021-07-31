@@ -5,6 +5,11 @@
     line-height: 2.4 / 1.4 * 100%;
     text-transform: none;
 
+    &_call-to-action {
+        color: $black;
+        line-height: 1.8 / 1.4 * 100%;
+    }
+
     &_is-light {
         color: $dark-shade-50-percent;
     }

@@ -43,3 +43,14 @@ mixin card-radios(radioTexts, name)
                 +radio(caption, name, true)
             else 
                 +radio(caption, name)
+
+//- Repeat toggle functionality.
+mixin card-toggle(cardToggleCaption, cardToggleName, isToggled)
+    +toggle(cardToggleCaption, cardToggleName, isToggled)
+
+//- For bottom section of cards. Contains some question and button to act.
+mixin card-footer-action(callToAction, actionButtonText)
+    .card__horizontal-container 
+        .text.text_call-to-action= callToAction
+        .card__button-container
+            +ghost-button(actionButtonText)

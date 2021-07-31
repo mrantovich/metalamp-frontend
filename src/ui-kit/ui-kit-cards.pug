@@ -1,21 +1,36 @@
-.card 
-    .card__row 
-        +card-title("Найдём номера под ваши пожелания")
-    .card__row
-        +card-date-picker("Прибытие", "Выезд")
-    .card__row.card__row_big-bottom-margin 
-        +card-dropdown("Гости", ["Сколько гостей", ["Взрослые", "Дети", "Младенцы"], true])
-    .card__row.card__row_without-bottom-margin 
-        +card-wide-button("Перейти к оплате")
+.ui-kit__card-container
 
-.card.card__registration 
-    .card__row 
-        +card-title("Регистрация аккаунта")
-    .card__row.card__row_min-bottom-margin 
-        +card-text-field("text", "first-name", "Имя")
-    .card__row.card__row_min-bottom-margin 
-        +card-text-field("text", "last-name", "Фамилия")
-    .card__row
-        +card-radios(["Мужчина", "Женщина"], "user-sex")
-    .card__row 
-        +card-masked-field("birth-date", "Дата рождения")
+    .card 
+        .card__row 
+            +card-title("Найдём номера под ваши пожелания")
+        .card__row
+            +card-date-picker("Прибытие", "Выезд")
+        .card__row.card__row_big-bottom-margin 
+            +card-dropdown("Гости", ["Сколько гостей", ["Взрослые", "Дети", "Младенцы"], true])
+        .card__row.card__row_without-bottom-margin 
+            +card-wide-button("Перейти к оплате")
+
+.ui-kit__card-container
+
+    .card.card__registration 
+        .card__row 
+            +card-title("Регистрация аккаунта")
+        .card__row.card__row_min-bottom-margin 
+            +card-text-field("text", "first-name", "Имя")
+        .card__row.card__row_min-bottom-margin 
+            +card-text-field("text", "last-name", "Фамилия")
+        .card__row
+            +card-radios(["Мужчина", "Женщина"], "user-sex")
+        .card__row 
+            +card-masked-field("birth-date", "Дата рождения")
+        .card__row.card__row_min-bottom-margin
+            .form__label-text.text.text_label Данные для входа в сервис
+            +card-text-field("email", "email", "Email")
+        .card__row.card__row_min-bottom-margin
+            +card-text-field("password", "pwd", "Пароль")
+        .card__row
+            +card-toggle("Получать спецпредложения", "special-offers", false)
+        .card__row.card__row_big-bottom-margin
+            +card-wide-button("Перейти к оплате")
+        .card__row.card__row_without-bottom-margin
+            +card-footer-action("Уже есть аккаунт на Toxin?", "Войти")
