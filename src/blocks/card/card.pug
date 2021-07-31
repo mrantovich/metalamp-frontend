@@ -28,6 +28,11 @@ mixin card-wide-button(buttonText)
 mixin card-text-field(type, name, placeholder, isMasked)
     +text-field(type, name, placeholder, isMasked)
 
+//- Text field to set birth date. Need just name of it and label for it.
+mixin card-masked-field(name, maskedFieldLabel)
+    .form__label-text.text.text_label= maskedFieldLabel
+    +text-field("num", name, "ДД.ММ.ГГГГ", true)
+
 //- Radio buttons. First parameter is array of text caption for radio buttons.
 //-     First element checked by default.
 //-     FIX: margin bottom is set for radio label, make it none (see ui-kit-form-elements)
