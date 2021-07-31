@@ -54,3 +54,13 @@
     .card.card__total 
         .card__row
             +card-head-total("888", "9990", true)
+        .card__row
+            +card-date-picker("Прибытие", "Выезд")
+        .card__row
+            +card-dropdown("Гости", ["Сколько гостей", ["Взрослые", "Дети", "Младенцы"], true])
+        .card__row.card__row_min-bottom-margin
+            +card-calculation("9990 x 4 суток", "39 960")
+        .card__row.card__row_min-bottom-margin
+            +card-calculation("Сбор за услуги", "0")
+        .card__row.card__row_min-bottom-margin
+            +card-calculation("Сбор за дополнительные услуги", "0")

@@ -67,3 +67,9 @@ mixin card-head-total(roomNumber, roomPrice, isLuxury)
         .card__head-price
             | #{roomPrice}&#8381; 
             span в сутки
+
+//- For calculation area on card with total info of room.
+mixin card-calculation(calculationItemText, calculationItemData)
+    .card__calculation-flex 
+        .card__calculation-text= calculationItemText 
+        .card__calculation-data= calculationItemData
