@@ -31,4 +31,44 @@
     &__button-container {
         width: 10rem;
     }
+
+    &__head-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__head-no {
+        display: flex;
+        align-items: center;
+    }
+
+    &__head-title {
+
+        margin-right: 0.8rem;
+        span {
+            font-size: 1.4rem;
+        }
+    }
+
+    &__head-luxury-mark {
+        color: $purple;
+        font-size: 1.2rem;
+        font-weight: bold;
+        line-height: 1.5 / 1.2 * 100%;
+        text-transform: uppercase;
+    }
+
+    &__head-price {
+        color: $dark-shade-50-percent;
+        font-size: 1.4rem;
+        font-weight: bold;
+        line-height: 1.8 / 1.4 * 100%;
+
+        span {
+            font-size: 1.2rem;
+            font-weight: normal;
+            line-height: 1.8 / 1.2 * 100%;
+        }
+    }
 }

@@ -54,3 +54,16 @@ mixin card-footer-action(callToAction, actionButtonText)
         .text.text_call-to-action= callToAction
         .card__button-container
             +ghost-button(actionButtonText)
+
+//- Head element for card with total information about room.
+mixin card-head-total(roomNumber, roomPrice, isLuxury)
+    .card__head-container 
+        .card__head-no 
+            .card__head-title.text.text_title 
+                span № 
+                | #{roomNumber}
+            if isLuxury 
+                .card__head-luxury-mark Люкс
+        .card__head-price
+            | #{roomPrice}&#8381; 
+            span в сутки
