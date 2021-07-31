@@ -11,6 +11,7 @@ include ../blocks/form/user-review/user-review.pug
 include ../blocks/form/room-info/room-info.pug
 include ../blocks/form/expandable-list/expandable-list.pug
 include ../blocks/form/subscription/subscription.pug
+include ../blocks/card/card.pug
 
 form.ui-kit
 
@@ -28,10 +29,10 @@ form.ui-kit
     //-     Single dropdown just show total items count, not differentiate it by name of items.
     .ui-kit__container-box_big
         .ui-kit__label-text.text.text_label Dropdown
-        +dropdown("Сколько гостей", ["Спальни", "Кровати", "Ванные комнаты"])
+        +dropdown(["Сколько гостей", ["Спальни", "Кровати", "Ванные комнаты"]])
     .ui-kit__container-box_big
         .ui-kit__label-text.text.text_label Single Dropdown
-        +dropdown("Сколько гостей", ["Взрослые", "Дети", "Младенцы"], true)
+        +dropdown(["Сколько гостей", ["Взрослые", "Дети", "Младенцы"], true])
 
     //- Masked text field for date. Text field must be "num" type.
     .ui-kit__container-box_big

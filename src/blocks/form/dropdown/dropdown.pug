@@ -1,4 +1,7 @@
-mixin dropdown(placeholder, itemList, isCounterTotal)
+mixin dropdown(dropdownOptions)
+    - var placeholder = dropdownOptions[0]
+    - var itemList = dropdownOptions[1]
+    - var isCounterTotal = dropdownOptions[2]
     if isCounterTotal 
         .iqdropdown.iqdropdown_single 
             p.iqdropdown-selection= placeholder

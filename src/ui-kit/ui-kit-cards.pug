@@ -1,16 +1,9 @@
 .card 
-    .card__row
-        .text.text_title Найдём номера под ваши пожелания
     .card__row 
-        .date-picker-container 
-            .date-picker-container__left-part
-                .form__label-text.text.text_label Прибытие
-                +date-picker("left-date-picker", true)
-            .date-picker-container__right-part
-                .form__label-text.text.text_label Выезд
-                +date-picker("right-date-picker", true)
+        +card-title("Найдём номера под ваши пожелания")
+    .card__row
+        +card-date-picker("Прибытие", "Выезд")
     .card__row.card__row_big-bottom-margin 
-        .form__label-text.text.text_label Single Dropdown
-        +dropdown("Сколько гостей", ["Взрослые", "Дети", "Младенцы"], true)
+        +card-dropdown("Гости", ["Сколько гостей", ["Взрослые", "Дети", "Младенцы"], true])
     .card__row.card__row_without-bottom-margin 
-        +button-with-arrow("Перейти к оплате")
+        +card-wide-button("Перейти к оплате")

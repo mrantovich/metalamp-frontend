@@ -1,0 +1,25 @@
+//- Entities to include in card.
+
+//- Just card title, simple text with style.
+mixin card-title(titleText)
+    .text.text_title= titleText
+
+//- Date picker with two separate input fields.
+//-     One can set text above eache field (for arrivale and departure).
+mixin card-date-picker(arrivalText, departureText)
+    .date-picker-container 
+        .date-picker-container__left-part
+            .form__label-text.text.text_label= arrivalText
+            +date-picker("left-date-picker", true)
+        .date-picker-container__right-part
+            .form__label-text.text.text_label= departureText
+            +date-picker("right-date-picker", true)
+
+//- Dropdown, type of it determines by options (second parameter).
+mixin card-dropdown(dropdownLabelText, dropdownOptions)
+    .form__label-text.text.text_label= dropdownLabelText
+    +dropdown(dropdownOptions)
+
+//- Just purple wide button with needed text on it.
+mixin card-wide-button(buttonText)
+    +button-with-arrow(buttonText)
