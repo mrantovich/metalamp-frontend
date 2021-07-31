@@ -68,3 +68,9 @@
             +card-total-line("Итого")
         .card__row.card__row_without-bottom-margin
             +card-wide-button("Забронировать")
+
+.ui-kit__card-container 
+
+    - var roomNo888Info = ["888", "9990", true]
+    - var roomNo888Rating = ["5", "145"]
+    +room-card(require('../assets/img/room/room-888.jpg'), roomNo888Info, roomNo888Rating)
