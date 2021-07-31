@@ -35,3 +35,16 @@
         transform: translate(-25%, -50%) rotate(45deg);
     }
 }
+
+@mixin nav-arrow($color, $angle) {
+    background: transparent;
+    border-left: 0.2rem solid $color;
+    border-bottom: 0.2rem solid $color;
+    width: 0.8rem;
+    height: 0.8rem;
+    position: absolute;
+    top: 50%;
+    right: 2rem;
+    transform: translate(0, -75%) rotate($angle);
+    transition: 0.2s;
+}
