@@ -71,12 +71,14 @@
 
 .ui-kit__card-container 
 
+    - var roomNo888Images = [require('../assets/img/room/room-888.jpg'), require('../assets/img/room/room-888.jpg'), require('../assets/img/room/room-888.jpg'), require('../assets/img/room/room-888.jpg'),]
     - var roomNo888Info = ["888", "9990", true]
     - var roomNo888Rating = ["5", "145"]
-    +room-card(require('../assets/img/room/room-888.jpg'), roomNo888Info, roomNo888Rating)
+    +room-card(roomNo888Images, roomNo888Info, roomNo888Rating)
 
 .ui-kit__card-container 
 
+    - var roomNo840Images = [require('../assets/img/room/room-840.jpg'), require('../assets/img/room/room-840.jpg'), require('../assets/img/room/room-840.jpg'), require('../assets/img/room/room-840.jpg'),]
     - var roomNo840Info = ["840", "9900", false]
     - var roomNo840Rating = ["4", "65"]
-    +room-card(require('../assets/img/room/room-840.jpg'), roomNo840Info, roomNo840Rating)
+    +room-card(roomNo840Images, roomNo840Info, roomNo840Rating)

@@ -3,7 +3,7 @@ mixin review-counter(count)
         | #{count} 
         span отзывов
 
-mixin room-card(roomImage, roomInfo, roomRating)
+mixin room-card(roomImages, roomInfo, roomRating)
 
     - var roomNumber = roomInfo[0]
     - var roomPrice = roomInfo[1]
@@ -14,8 +14,16 @@ mixin room-card(roomImage, roomInfo, roomRating)
 
     .card.card__room-card.room-card 
         .room-card__container 
-            .room-card__top 
-                img(src=roomImage, alt="Room Image").room-card__image
+            .room-card__top
+                .room-card__swiper
+                    .swiper-container
+                        .swiper-wrapper
+                            each roomImage in roomImages
+                                .swiper-slide
+                                    img(src=roomImage, alt="Room Image").room-card__image
+                        .swiper-pagination
+                        .swiper-button-prev
+                        .swiper-button-next
             .room-card__body
                 .room-card__info 
                     +card-head-total(roomNumber, roomPrice, isRoomLuxury)
