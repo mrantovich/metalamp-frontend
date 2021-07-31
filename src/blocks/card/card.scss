@@ -71,4 +71,19 @@
             line-height: 1.8 / 1.2 * 100%;
         }
     }
+
+    &__calculation-flex {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__total-flex {
+        display: flex;
+        align-items: flex-end;
+    }
+
+    &__total-delimiter {
+        flex: 1 1 auto;
+        border-bottom: 0.1rem dotted $dark-shade-25-percent;
+    }
 }
