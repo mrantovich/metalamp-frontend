@@ -15,6 +15,10 @@
         object-position: center;
     }
 
+    &__swiper {
+        height: 100%;
+    }
+
     &__info {
         margin-bottom: 1rem;
     }
@@ -48,6 +52,13 @@
             line-height: 1.8 / 1.2 * 100%;
         }
     }
+}
+
+// Swiper slider styles
+
+
+.swiper-container {
+    height: 100%;
 }
 
 .swiper-button-prev {
