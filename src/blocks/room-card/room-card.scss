@@ -59,13 +59,31 @@
 
 .swiper-container {
     height: 100%;
+
+    @media (any-hover: hover) {
+        &:hover {
+            .swiper-button-prev,
+            .swiper-button-next {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+    opacity: 0;
+    transition: 0.2s;
+
+    &::after {
+        font-size: 0;
+        left: calc(50% - 0.4rem);
+    }
 }
 
 .swiper-button-prev {
     
     &::after {
-        font-size: 0;
-        left: calc(50% - 0.4rem);
         @include nav-arrow($white, 45deg);
     }
 }
@@ -73,8 +91,6 @@
 .swiper-button-next {
     
     &::after {
-        font-size: 0;
-        left: calc(50% - 0.4rem);
         @include nav-arrow($white, -135deg);
     }
 }
