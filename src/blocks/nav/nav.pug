@@ -1,0 +1,18 @@
+//- Navigation. Using by header and footer 
+mixin nav(navItemList)
+    .nav
+        ul.nav__list
+            each navItem in navItemList
+                - var item = navItem[0]
+                - var isItemCurrent = navItem[1]
+                - var hasItemSubMenu = navItem[2]
+                if isItemCurrent 
+                    li.nav__item
+                        a(href="/mockup/address", alt="Menu Link").nav__link.nav__link_current= item
+                else
+                    if hasItemSubmenu
+                        li.nav__item.nav__item_with-sub-menu
+                            a(href="/mockup/address", alt="Menu Link").nav__link= item
+                    else
+                        li.nav__item
+                            a(href="/mockup/address", alt="Menu Link").nav__link= item
