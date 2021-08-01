@@ -1,0 +1,16 @@
+//- Footer
+mixin footer 
+    footer.footer 
+        .container 
+            .footer__content 
+                .footer__body
+                    .footer__about
+                        .footer__logo 
+                            img(src=require('../assets/img/toxin-logo.svg'), alt="Toxin Logo")
+                        .footer__hotel Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, non!
+                    .footer__nav
+                        +footer-nav("Навигация")
+                        +footer-nav("О нас")
+                        +footer-nav("Служба поддержки")
+                    +footer-subscription("Подписка", "Получайте специальные предложения и новости сервиса")
+                .footer__foot
