@@ -3,6 +3,12 @@
 - var menuList = [["О нас", true, false], ["Услуги", false, true], ["Вакансии"], ["Новости"], ["Соглашения", false, true]]
 - var menuButtons = ["Войти", "Зарегистрироваться"]
 
+//- Header with buttons for login and registration.
 .ui-kit__header-container 
 
     +header(menuList, menuButtons)
+
+//- Header with displaying user name.
+.ui-kit__header-container 
+
+    +header(menuList, menuButtons, "Юлий Цезарь")

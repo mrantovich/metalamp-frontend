@@ -1,5 +1,5 @@
 //- Header
-mixin header(menuList, menuButtons)
+mixin header(menuList, menuButtons, userName)
     header.header 
         .container 
             .header__content 
@@ -21,8 +21,12 @@ mixin header(menuList, menuButtons)
                                 else
                                     li.header__menu-item
                                         a(href="/mockup/address", alt="Menu Link").header__menu-link= item
-                    .header__menu-buttons
-                        - var ghostButtonText = menuButtons[0]
-                        - var normalButtonText = menuButtons[1]
-                        +ghost-button(ghostButtonText)
-                        +button(normalButtonText)
+                    if userName
+                        .header__menu-user-section
+                            .header__menu-user-display.text.text_is-light= userName
+                    else
+                        .header__menu-buttons
+                            - var ghostButtonText = menuButtons[0]
+                            - var normalButtonText = menuButtons[1]
+                            +ghost-button(ghostButtonText)
+                            +button(normalButtonText)

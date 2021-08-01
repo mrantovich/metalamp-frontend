@@ -102,4 +102,16 @@
         column-gap: 2rem;
         height: 3.4rem;
     }
+
+    &__menu-user-section {
+        height: 100%;
+        padding: 0 2rem;
+        border-left: 0.1rem solid $dark-shade-10-percent;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__menu-user-display {
+    }
 }
