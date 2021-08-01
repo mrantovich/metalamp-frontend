@@ -1,5 +1,7 @@
 .footer {
 
+    box-shadow: 0 0.1rem 0 rgba($purple, 0.1);
+
     &__content {
         width: 100%;
         display: flex;
@@ -49,5 +51,30 @@
 
     &__subscription-call {
         margin-bottom: 2rem;
+    }
+
+    &__foot {
+        height: 7rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-top: 0.1rem solid $dark-shade-25-percent;
+    }
+
+    &__socials {
+        display: flex;
+    }
+
+    &__socials-link {
+        display: block;
+        width: 2.4rem;
+        height: 2.4rem;
+        margin-left: 2rem;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
     }
 }

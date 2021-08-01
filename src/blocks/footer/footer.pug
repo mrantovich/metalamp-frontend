@@ -31,7 +31,10 @@ mixin footer(description, navigationData, subscriptionData, copyrightInfo, socia
                             +footer-nav(navigationSet.navColumnTitle, navigationSet.navItemList)
                     +footer-subscription(subscriptionData)
                 .footer__foot
-                    .footer__copy= copyrightInfo
+                    .footer__copy.text= copyrightInfo
                     .footer__socials
                         each socialsSet in socialsData 
-                            .footer__socials-item lorem
+                            - var socialItemIco = socialsSet.ico 
+                            - var socialItemLink = socialsSet.link
+                            a(href=socialItemLink, alt="Social Link").footer__socials-link
+                                img(src=socialItemIco, alt="Social Icon").footer__socials-ico
