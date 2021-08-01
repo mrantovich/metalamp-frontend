@@ -1,0 +1,19 @@
+.footer {
+
+    &__content {
+        padding: 10rem 0;
+    }
+
+    &__body {
+        display: flex;
+    }
+
+    &__nav {
+        display: flex;
+    }
+
+    &__nav-column {
+        display: flex;
+        flex-direction: column;
+    }
+}

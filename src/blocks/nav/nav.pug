@@ -1,18 +1,37 @@
 //- Navigation. Using by header and footer 
-mixin nav(navItemList)
+mixin nav(navItemList, isVerticallyOriented)
     .nav
-        ul.nav__list
-            each navItem in navItemList
-                - var item = navItem[0]
-                - var isItemCurrent = navItem[1]
-                - var hasItemSubMenu = navItem[2]
-                if isItemCurrent 
-                    li.nav__item
-                        a(href="/mockup/address", alt="Menu Link").nav__link.nav__link_current= item
-                else
-                    if hasItemSubMenu
-                        li.nav__item.nav__item_with-sub-menu
-                            a(href="/mockup/address", alt="Menu Link").nav__link= item
-                    else
+        if isVerticallyOriented
+            ul.nav__list.nav__list_vertically-oriented
+                each navItem in navItemList
+                    - var itemText = navItem.text
+                    - var itemLink = navItem.link
+                    - var isItemCurrent = navItem.isCurrent
+                    - var hasItemSubMenu = navItem.hasSubMenu
+                    if isItemCurrent 
                         li.nav__item
-                            a(href="/mockup/address", alt="Menu Link").nav__link= item
+                            a(href=itemLink, alt="Menu Link").nav__link.nav__link_current= itemText
+                    else
+                        if hasItemSubMenu
+                            li.nav__item.nav__item_with-sub-menu
+                                a(href=itemLink, alt="Menu Link").nav__link= itemText
+                        else
+                            li.nav__item
+                                a(href=itemLink, alt="Menu Link").nav__link= itemText
+        else 
+            ul.nav__list
+                each navItem in navItemList
+                    - var itemText = navItem.text
+                    - var itemLink = navItem.link
+                    - var isItemCurrent = navItem.isCurrent
+                    - var hasItemSubMenu = navItem.hasSubMenu
+                    if isItemCurrent 
+                        li.nav__item
+                            a(href=itemLink, alt="Menu Link").nav__link.nav__link_current= itemText
+                    else
+                        if hasItemSubMenu
+                            li.nav__item.nav__item_with-sub-menu
+                                a(href=itemLink, alt="Menu Link").nav__link= itemText
+                        else
+                            li.nav__item
+                                a(href=itemLink, alt="Menu Link").nav__link= itemText

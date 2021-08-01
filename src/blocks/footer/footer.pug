@@ -1,5 +1,23 @@
 //- Footer
-mixin footer 
+
+//- Navigation column inside footer. Has bold title.
+mixin footer-nav(navColumnTitle, navItemList)
+    .footer__nav-column
+        .footer__nav-title= navColumnTitle 
+        +nav(navItemList, true)
+
+//- Section to subscribe inside footer.
+mixin footer-subscription(subscriptionData)
+    - var subscriptionTitle = subscriptionData.title 
+    - var subscriptionCallToAction = subscriptionData.call
+    .footer__subscription 
+        .footer__subscription-title= subscriptionTitle 
+        .footer__subscription-call= subscriptionCallToAction 
+        form.footer__form(action="/some-action-here", method="GET")
+            +subscription-field("Email")
+
+//- Footer itself.
+mixin footer(description, navigationData, subscriptionData, copyrightInfo, socialsData)
     footer.footer 
         .container 
             .footer__content 
@@ -7,10 +25,13 @@ mixin footer
                     .footer__about
                         .footer__logo 
                             img(src=require('../assets/img/toxin-logo.svg'), alt="Toxin Logo")
-                        .footer__hotel Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, non!
+                        .footer__hotel= description
                     .footer__nav
-                        +footer-nav("Навигация")
-                        +footer-nav("О нас")
-                        +footer-nav("Служба поддержки")
-                    +footer-subscription("Подписка", "Получайте специальные предложения и новости сервиса")
+                        each navigationSet in navigationData 
+                            +footer-nav(navigationSet.navColumntTitle, navigationSet.navItemList)
+                    +footer-subscription(subscriptionData)
                 .footer__foot
+                    .footer__copy= copyrightInfog
+                    .footer__socials
+                        each socialsSet in socialsData 
+                            

@@ -4,6 +4,10 @@
         height: 100%;
         display: flex;
         margin-right: $header-menu-list-right-margin;
+
+        &_vertically-oriented {
+            flex-direction: column;
+        }
     }
 
     &__item {
