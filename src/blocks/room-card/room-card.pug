@@ -3,6 +3,10 @@ mixin review-counter(count)
         | #{count} 
         span отзывов
 
+//- Make a card with general room info.
+//-     We need: array of images (for top part slider),
+//-              room info (including room number, price for it, is it luxury or not)
+//-              and room rating info (stars and number of user reviews).
 mixin room-card(roomImages, roomInfo, roomRating)
 
     - var roomNumber = roomInfo[0]

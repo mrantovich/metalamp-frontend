@@ -1,3 +1,8 @@
+//- Making cards. Card is just a set of card row that may contain
+//-                     any type of data (text field, date picker dropdown etc.)
+//-                     Use modificators of .card__row to set bottom margin when it necessary.
+
+//- Just a container to separate cards visually.
 .ui-kit__card-container
 
     .card 
@@ -71,6 +76,7 @@
 
 .ui-kit__card-container 
 
+    //- Room-card. Set parameters first, and then pass it to mixin.
     - var roomNo888Images = [require('../assets/img/room/room-888.jpg'), require('../assets/img/room/room-888.jpg'), require('../assets/img/room/room-888.jpg'), require('../assets/img/room/room-888.jpg'),]
     - var roomNo888Info = ["888", "9990", true]
     - var roomNo888Rating = ["5", "145"]
