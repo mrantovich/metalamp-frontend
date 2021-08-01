@@ -1,11 +1,20 @@
 .footer {
 
     &__content {
-        padding: 10rem 0;
+        
     }
 
     &__body {
         display: flex;
+        padding: 10rem 0;
+    }
+
+    &__about {
+        max-width: 26rem;
+    }
+
+    &__logo {
+        margin-bottom: 2rem;
     }
 
     &__nav {

@@ -6,18 +6,8 @@ mixin nav(navItemList, isVerticallyOriented)
                 each navItem in navItemList
                     - var itemText = navItem.text
                     - var itemLink = navItem.link
-                    - var isItemCurrent = navItem.isCurrent
-                    - var hasItemSubMenu = navItem.hasSubMenu
-                    if isItemCurrent 
-                        li.nav__item
-                            a(href=itemLink, alt="Menu Link").nav__link.nav__link_current= itemText
-                    else
-                        if hasItemSubMenu
-                            li.nav__item.nav__item_with-sub-menu
-                                a(href=itemLink, alt="Menu Link").nav__link= itemText
-                        else
-                            li.nav__item
-                                a(href=itemLink, alt="Menu Link").nav__link= itemText
+                    li.nav__item.nav__item_no-right-margin
+                        a(href=itemLink, alt="Menu Link").nav__link= itemText
         else 
             ul.nav__list
                 each navItem in navItemList
