@@ -10,7 +10,7 @@ mixin nav(navItemList)
                     li.nav__item
                         a(href="/mockup/address", alt="Menu Link").nav__link.nav__link_current= item
                 else
-                    if hasItemSubmenu
+                    if hasItemSubMenu
                         li.nav__item.nav__item_with-sub-menu
                             a(href="/mockup/address", alt="Menu Link").nav__link= item
                     else

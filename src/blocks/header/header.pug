@@ -5,27 +5,13 @@ mixin header(menuList, menuButtons, userName)
             .header__content 
                 .header__logo 
                     img(src=require('../assets/img/toxin-logo.svg'), alt="Toxin Logo")
-                .header__menu 
-                    ul.header__menu-list 
-                        each menuItem in menuList 
-                            - var item = menuItem[0]
-                            - var isItemCurrent = menuItem[1]
-                            - var hasItemSubmenu = menuItem[2]
-                            if isItemCurrent 
-                                li.header__menu-item
-                                    a(href="/mockup/address", alt="Menu Link").header__menu-link.header__menu-link_current= item
-                            else
-                                if hasItemSubmenu
-                                    li.header__menu-item.header__menu-item_with-sub-menu
-                                        a(href="/mockup/address", alt="Menu Link").header__menu-link= item
-                                else
-                                    li.header__menu-item
-                                        a(href="/mockup/address", alt="Menu Link").header__menu-link= item
+                .header__nav
+                    +nav(menuList)
                     if userName
-                        .header__menu-user-section
-                            .header__menu-user-display.text.text_is-light= userName
+                        .header__nav-user-section
+                            .header__nav-user-display.text.text_is-light= userName
                     else
-                        .header__menu-buttons
+                        .header__nav-buttons
                             - var ghostButtonText = menuButtons[0]
                             - var normalButtonText = menuButtons[1]
                             +ghost-button(ghostButtonText)
