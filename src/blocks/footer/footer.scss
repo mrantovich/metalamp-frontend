@@ -10,19 +10,21 @@
 
     &__body {
         display: flex;
-        padding: 10rem 0;
+        padding: 10rem 0 10.5rem;
     }
 
     &__about {
+        align-self: flex-start;
         max-width: 26rem;
         margin-right: 4rem;
     }
 
     &__logo {
-        margin-bottom: 2rem;
+        margin-bottom: 1.8rem;
     }
 
     &__nav {
+        align-self: flex-start;
         width: 100%;
         display: flex;
         flex: 1 1 100%;
@@ -33,11 +35,12 @@
         flex-direction: column;
 
         &:not(:last-child) {
-            margin-right: 5rem;
+            margin-right: 3rem;
         }
     }
 
     &__nav-title {
+        padding-top: 0.4rem;
         margin-bottom: 2rem;
     }
 
