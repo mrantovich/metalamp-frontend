@@ -25,35 +25,39 @@
 
     &__nav {
         align-self: flex-start;
-        width: 100%;
-        display: flex;
-        flex: 1 1 100%;
+        display: grid;
+        grid-template: 1fr / repeat(3, 16rem);
+        column-gap: 4rem;
+        margin-right: 4rem;
     }
 
     &__nav-column {
         display: flex;
         flex-direction: column;
+        flex: 1 1 auto;
 
-        &:not(:last-child) {
+        /* &:not(:last-child) {
             margin-right: 3rem;
-        }
+        } */
     }
 
     &__nav-title {
         padding-top: 0.4rem;
-        margin-bottom: 2rem;
+        margin-bottom: 2.3rem;
     }
 
     &__subscription {
+        align-self: flex-start;
         max-width: 26rem;
     }
 
     &__subscription-title {
+        padding-top: 0.4rem;
         margin-bottom: 2rem;
     }
 
     &__subscription-call {
-        margin-bottom: 2rem;
+        margin-bottom: 2.2rem;
     }
 
     &__foot {
