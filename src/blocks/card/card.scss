@@ -16,7 +16,7 @@
     // Each element of card is just some content within a row.
     // Each row can have different margin-bottom value, so we use modificators.
     &__row {
-        margin-bottom: 2rem;
+        margin-bottom: $card-row-bottom-margin;
 
         &_min-bottom-margin {
             margin-bottom: 1rem;
