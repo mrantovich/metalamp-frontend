@@ -1,7 +1,6 @@
 # metalamp-frontend
 ## Учебная вёрстка MetaLamp
 
-____
 
 __Использованы следующие проекты:__
 
@@ -14,3 +13,5 @@ __Использованы следующие проекты:__
 * [noUiSlider](https://refreshless.com/nouislider/) для слайдера выбора диапазона
 
 * [wNumb.js](https://refreshless.com/wnumb/) для вывода информации из range-slider в нужном формате
+
+* [swiper.js](https://swiperjs.com/) для слайдера карточки номера
