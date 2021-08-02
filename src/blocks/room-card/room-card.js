@@ -22,7 +22,8 @@ for (let i = 0; i < swipers.length; i++) {
     });
 };
 
-//
+// Calculate all needed values on calculation card.
+// Under construction.
 const cardWithTotals = document.querySelectorAll('.card__total');
 
 for (let i = 0; i < cardWithTotals.length; i++) {

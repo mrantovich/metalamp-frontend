@@ -11,6 +11,8 @@
         padding: 0;
     }
 
+    // Each element of card is just some content within a row.
+    // Each row can have different margin-bottom value, so we use modificators.
     &__row {
         margin-bottom: 2rem;
 
@@ -37,6 +39,8 @@
         width: 10rem;
     }
 
+    // Styles for calculation card.
+    // First of all, we need complex header element.
     &__head-container {
         display: flex;
         align-items: center;
@@ -78,6 +82,8 @@
         }
     }
 
+    // Styles for area with calculation.
+    // Need JS to interfere. Maybe need to rewrite pug and all.
     &__calculation-flex {
         display: flex;
         justify-content: space-between;
@@ -89,6 +95,7 @@
         width: 24rem;
     }
 
+    // Imitate icon: letter "i" inside circle with border.
     &__calculation-tip {
         width: 2rem;
         height: 2rem;
