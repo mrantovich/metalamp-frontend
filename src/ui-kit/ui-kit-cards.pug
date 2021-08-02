@@ -6,73 +6,77 @@
 .ui-kit__card-container
 
     .card 
-        .card__row 
-            +card-title("Найдём номера под ваши пожелания")
-        .card__row
-            +card-date-picker("Прибытие", "Выезд")
-        .card__row.card__row_big-bottom-margin 
-            +card-dropdown("Гости", ["Сколько гостей", ["Взрослые", "Дети", "Младенцы"], true])
-        .card__row.card__row_without-bottom-margin 
-            +card-wide-button("Перейти к оплате")
+        form.form__card
+            .card__row 
+                +card-title("Найдём номера под ваши пожелания")
+            .card__row
+                +card-date-picker("Прибытие", "Выезд")
+            .card__row.card__row_big-bottom-margin 
+                +card-dropdown("Гости", ["Сколько гостей", ["Взрослые", "Дети", "Младенцы"], true])
+            .card__row.card__row_without-bottom-margin 
+                +card-wide-button("Перейти к оплате")
 
 .ui-kit__card-container
 
     .card.card__registration 
-        .card__row 
-            +card-title("Регистрация аккаунта")
-        .card__row.card__row_min-bottom-margin 
-            +card-text-field("text", "first-name", "Имя")
-        .card__row.card__row_min-bottom-margin 
-            +card-text-field("text", "last-name", "Фамилия")
-        .card__row
-            +card-radios(["Мужчина", "Женщина"], "user-sex")
-        .card__row 
-            +card-masked-field("birth-date", "Дата рождения")
-        .card__row.card__row_min-bottom-margin
-            .form__label-text.text.text_label Данные для входа в сервис
-            +card-text-field("email", "email", "Email")
-        .card__row.card__row_min-bottom-margin
-            +card-text-field("password", "pwd", "Пароль")
-        .card__row
-            +card-toggle("Получать спецпредложения", "special-offers", false)
-        .card__row.card__row_big-bottom-margin
-            +card-wide-button("Перейти к оплате")
-        .card__row.card__row_without-bottom-margin
-            +card-footer-action("Уже есть аккаунт на Toxin?", "Войти")
+        form.form__card
+            .card__row 
+                +card-title("Регистрация аккаунта")
+            .card__row.card__row_min-bottom-margin 
+                +card-text-field("text", "first-name", "Имя")
+            .card__row.card__row_min-bottom-margin 
+                +card-text-field("text", "last-name", "Фамилия")
+            .card__row
+                +card-radios(["Мужчина", "Женщина"], "user-sex")
+            .card__row 
+                +card-masked-field("birth-date", "Дата рождения")
+            .card__row.card__row_min-bottom-margin
+                .form__label-text.text.text_label Данные для входа в сервис
+                +card-text-field("email", "email", "Email")
+            .card__row.card__row_min-bottom-margin
+                +card-text-field("password", "pwd", "Пароль")
+            .card__row
+                +card-toggle("Получать спецпредложения", "special-offers", false)
+            .card__row.card__row_big-bottom-margin
+                +card-wide-button("Перейти к оплате")
+            .card__row.card__row_without-bottom-margin
+                +card-footer-action("Уже есть аккаунт на Toxin?", "Войти")
 
 .ui-kit__card-container 
 
     .card.card__login 
-        .card__row 
-            +card-title("Войти")
-        .card__row.card__row_min-bottom-margin 
-            +card-text-field("email", "email", "Email")
-        .card__row
-            +card-text-field("password", "pwd", "Пароль")
-        .card__row.card__row_big-bottom-margin
-            +card-wide-button("Войти")
-        .card__row.card__row_without-bottom-margin 
-            +card-footer-action("Нет аккаунта на Toxin?", "Создать")
+        form.form__card
+            .card__row 
+                +card-title("Войти")
+            .card__row.card__row_min-bottom-margin 
+                +card-text-field("email", "email", "Email")
+            .card__row
+                +card-text-field("password", "pwd", "Пароль")
+            .card__row.card__row_big-bottom-margin
+                +card-wide-button("Войти")
+            .card__row.card__row_without-bottom-margin 
+                +card-footer-action("Нет аккаунта на Toxin?", "Создать")
 
 .ui-kit__card-container 
 
     .card.card__total 
-        .card__row
-            +card-head-total("888", "9990", true)
-        .card__row
-            +card-date-picker("Прибытие", "Выезд")
-        .card__row
-            +card-dropdown("Гости", ["Сколько гостей", ["Взрослые", "Дети", "Младенцы"], true])
-        .card__row.card__row_min-bottom-margin
-            +card-calculation("9990 x 4 суток", "39 960")
-        .card__row.card__row_min-bottom-margin
-            +card-calculation("Сбор за услуги: скидка 2179₽", "0", true)
-        .card__row.card__row_big-bottom-margin
-            +card-calculation("Сбор за дополнительные услуги", "0", true)
-        .card__row 
-            +card-total-line("Итого")
-        .card__row.card__row_without-bottom-margin
-            +card-wide-button("Забронировать")
+        form.form__card
+            .card__row
+                +card-head-total("888", "9990", true)
+            .card__row
+                +card-date-picker("Прибытие", "Выезд")
+            .card__row
+                +card-dropdown("Гости", ["Сколько гостей", ["Взрослые", "Дети", "Младенцы"], true])
+            .card__row.card__row_min-bottom-margin
+                +card-calculation("9990 x 4 суток", "39 960")
+            .card__row.card__row_min-bottom-margin
+                +card-calculation("Сбор за услуги: скидка 2179₽", "0", true)
+            .card__row.card__row_big-bottom-margin
+                +card-calculation("Сбор за дополнительные услуги", "0", true)
+            .card__row 
+                +card-total-line("Итого")
+            .card__row.card__row_without-bottom-margin
+                +card-wide-button("Забронировать")
 
 .ui-kit__card-container 
 
