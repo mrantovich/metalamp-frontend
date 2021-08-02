@@ -2,6 +2,12 @@
     height: $header-height;
     box-shadow: 0 1rem 2rem $dark-shade-5-percent;
 
+    &_is-fixed-at-top {
+        position: fixed;
+        top: 0;
+        left: 0;
+    }
+
     &__content {
         width: 100%;
         display: flex;

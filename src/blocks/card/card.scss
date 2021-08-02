@@ -2,6 +2,8 @@
     max-width: $card-width;
     padding: $card-padding;
 
+    background: $card-background-color;
+
     border: 0.1rem solid rgba($black, 0.12);
     border-radius: $brd-radius;
     box-shadow: 0 0 2.5rem rgba($black, 0.2);

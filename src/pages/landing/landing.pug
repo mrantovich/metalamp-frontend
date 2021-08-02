@@ -13,6 +13,20 @@
         +header(menuHeaderItems, menuButtons)
 
         main.main 
+            .main__background 
+                img(src=require('../assets/img/landing-page-bg/landing-page-bg-01.jpg'), alt="Main section background")
+            .main__container
+                .main__card 
+                    .card 
+                        form.form__card
+                            .card__row 
+                                +card-title("Найдём номера под ваши пожелания")
+                            .card__row
+                                +card-date-picker("Прибытие", "Выезд")
+                            .card__row.card__row_big-bottom-margin 
+                                +card-dropdown("Гости", ["Сколько гостей", ["Взрослые", "Дети", "Младенцы"], true])
+                            .card__row.card__row_without-bottom-margin 
+                                +card-wide-button("Перейти к оплате")
 
         - var navFooterItemNo1 = {text: "О нас", link: "/mockup/address"}
         - var navFooterItemNo2 = {text: "Новости", link: "/mockup/address"}
