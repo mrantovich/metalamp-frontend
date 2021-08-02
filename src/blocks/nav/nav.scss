@@ -23,7 +23,7 @@
             justify-content: flex-start;
 
             &:not(:last-child) {
-                margin-bottom: 2rem;
+                margin-right: 2rem;
             }
         }
 
@@ -33,7 +33,8 @@
 
         &_with-sub-menu {
             position: relative;
-            padding-right: 1.5rem;
+            padding-right: 2rem;
+            margin-right: 3rem;
 
             &::after {
                 content: '';

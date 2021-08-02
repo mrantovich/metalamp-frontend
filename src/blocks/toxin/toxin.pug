@@ -1,0 +1,46 @@
+//- Some mixins with bunch of parameters.
+//- To make it easier to construct pages.
+
+//- Toxin header
+mixin toxin-header
+
+    - var menuHeaderItemNo1 = {text: "О нас", link: "/mockup/address", isCurrent: false, hasSubMenu: false}
+    - var menuHeaderItemNo2 = {text: "Услуги", link: "/mockup/address", isCurrent: false, hasSubMenu: true}
+    - var menuHeaderItemNo3 = {text: "Вакансии", link: "/mockup/address", isCurrent: false, hasSubMenu: false}
+    - var menuHeaderItemNo4 = {text: "Новости", link: "/mockup/address", isCurrent: false, hasSubMenu: false}
+    - var menuHeaderItemNo5 = {text: "Соглашения", link: "/mockup/address", isCurrent: false, hasSubMenu: true}
+
+    - var menuHeaderItems = [menuHeaderItemNo1, menuHeaderItemNo2, menuHeaderItemNo3, menuHeaderItemNo4, menuHeaderItemNo5]
+    - var menuButtons = {ghost: "Войти", normal: "Зарегистрироваться"}
+
+    +header(menuHeaderItems, menuButtons)
+
+
+//- Toxin footer
+mixin toxin-footer 
+
+    - var navFooterItemNo1 = {text: "О нас", link: "/mockup/address"}
+    - var navFooterItemNo2 = {text: "Новости", link: "/mockup/address"}
+    - var navFooterItemNo3 = {text: "Служба поддержки", link: "/mockup/address"}
+    - var navFooterItemNo4 = {text: "Услуги", link: "/mockup/address"}
+
+    - var navFooterItemNo5 = {text: "О сервисе", link: "/mockup/address"}
+    - var navFooterItemNo6 = {text: "Наша команда", link: "/mockup/address"}
+    - var navFooterItemNo7 = {text: "Вакансии", link: "/mockup/address"}
+    - var navFooterItemNo8 = {text: "Инвесторы", link: "/mockup/address"}
+
+    - var navFooterItemNo9 = {text: "Соглашения", link: "/mockup/address"}
+    - var navFooterItemNo10 = {text: "Сообщества", link: "/mockup/address"}
+    - var navFooterItemNo11 = {text: "Связь с нами", link: "/mockup/address"}
+
+    - var navFooterColumnNo1 = {navColumnTitle: "Навигация", navItemList: [navFooterItemNo1, navFooterItemNo2, navFooterItemNo3, navFooterItemNo4]}
+    - var navFooterColumnNo2 = {navColumnTitle: "О нас", navItemList: [navFooterItemNo5, navFooterItemNo6, navFooterItemNo7, navFooterItemNo8]}
+    - var navFooterColumnNo3 = {navColumnTitle: "Служба поддержки", navItemList: [navFooterItemNo9, navFooterItemNo10, navFooterItemNo11]}
+
+    - var description = "Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»"
+    - var navigationData = [navFooterColumnNo1, navFooterColumnNo2, navFooterColumnNo3]
+    - var subscriptionData = {title: "Подписка", call: "Получайте специальные предложения и новости сервиса"}
+    - var copyrightData = "Copyright © 2018 Toxin отель. Все права защищены."
+    - var socialsData = [{ico: require("../assets/img/socials/twitter-ico.svg"), link: "/mockup/address/twitter"}, {ico: require("../assets/img/socials/facebook-ico.svg"), link: "/mockup/address/facebook"}, {ico: require("../assets/img/socials/instagram-ico.svg"), link: "/mockup/address/instagram"}]
+
+    +footer(description, navigationData, subscriptionData, copyrightData, socialsData)
