@@ -16,7 +16,7 @@ mixin header(menuList, menuButtons, userName)
                             .header__nav-user-display.text.text_is-light= userName
                     else
                         .header__nav-buttons
-                            - var ghostButtonText = menuButtons[0]
-                            - var normalButtonText = menuButtons[1]
+                            - var ghostButtonText = menuButtons.ghost
+                            - var normalButtonText = menuButtons.normal
                             +ghost-button(ghostButtonText)
                             +button(normalButtonText)
