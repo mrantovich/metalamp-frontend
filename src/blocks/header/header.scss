@@ -28,11 +28,18 @@
     }
 
     &__nav {
+
+        @media (max-width: $mq-laptop) {
+            display: none;
+        }
+    }
+
+    &__menu {
         display: flex;
         align-items: center;
     }
 
-    &__nav-buttons {
+    &__menu-buttons {
         display: grid;
         grid-template: 3.4rem / 8.7rem 19.6rem;
         column-gap: 2rem;
@@ -40,7 +47,7 @@
     }
 
     // Section with user name when logged in. Do we need some actions under it?
-    &__nav-user-section {
+    &__menu-user-section {
         height: 100%;
         padding: 0 2rem;
         border-left: 0.1rem solid $dark-shade-10-percent;

@@ -9,13 +9,14 @@ mixin header(menuList, menuButtons, userName)
             .header__content 
                 .header__logo 
                     img(src=require('../assets/img/toxin-logo.svg'), alt="Toxin Logo")
-                .header__nav
-                    +nav(menuList)
+                .header__menu
+                    .header__nav
+                        +nav(menuList)
                     if userName
-                        .header__nav-user-section
-                            .header__nav-user-display.text.text_is-light= userName
+                        .header__menu-user-section
+                            .header__menu-user-display.text.text_is-light= userName
                     else
-                        .header__nav-buttons
+                        .header__menu-buttons
                             - var ghostButtonText = menuButtons.ghost
                             - var normalButtonText = menuButtons.normal
                             +ghost-button(ghostButtonText)
