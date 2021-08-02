@@ -1,3 +1,22 @@
+include ../blocks/form/text-field/text-field.pug
+include ../blocks/form/checkbox/checkbox.pug
+include ../blocks/form/dropdown/dropdown.pug
+include ../blocks/form/like-button/like-button.pug
+include ../blocks/form/star-button/star-button.pug
+include ../blocks/form/bullet-list/bullet-list.pug
+include ../blocks/form/range-slider/range-slider.pug
+include ../blocks/form/button/button.pug
+include ../blocks/form/datepicker/datepicker.pug
+include ../blocks/form/user-review/user-review.pug
+include ../blocks/form/room-info/room-info.pug
+include ../blocks/form/expandable-list/expandable-list.pug
+include ../blocks/form/subscription/subscription.pug
+include ../blocks/card/card.pug
+include ../blocks/room-card/room-card.pug
+include ../blocks/nav/nav.pug
+include ../blocks/header/header.pug
+include ../blocks/footer/footer.pug
+
 block variables
 
     - pageTitle = "MetaLamp Frontend"
@@ -10,4 +29,4 @@ html(lang="ru")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         title=pageTitle
     body 
-        include ../ui-kit/ui-kit.pug
+        include ../pages/landing/landing.pug
