@@ -18,10 +18,10 @@ mixin footer-subscription(subscriptionData)
 
 //- Footer itself.
 mixin footer(description, navigationData, subscriptionData, copyrightInfo, socialsData)
-    footer.footer 
-        .container 
-            .footer__content 
-                .footer__body
+    footer.footer  
+        .footer__content 
+            .footer__body
+                .container
                     .footer__about
                         .footer__logo 
                             img(src=require('../assets/img/toxin-logo.svg'), alt="Toxin Logo")
@@ -30,11 +30,13 @@ mixin footer(description, navigationData, subscriptionData, copyrightInfo, socia
                         each navigationSet in navigationData 
                             +footer-nav(navigationSet.navColumnTitle, navigationSet.navItemList)
                     +footer-subscription(subscriptionData)
-                .footer__foot
-                    .footer__copy.text= copyrightInfo
-                    .footer__socials
-                        each socialsSet in socialsData 
-                            - var socialItemIco = socialsSet.ico 
-                            - var socialItemLink = socialsSet.link
-                            a(href=socialItemLink, alt="Social Link").footer__socials-link
-                                img(src=socialItemIco, alt="Social Icon").footer__socials-ico
+            .footer__foot
+                .container
+                    .footer__foot-content
+                        .footer__copy.text= copyrightInfo
+                        .footer__socials
+                            each socialsSet in socialsData 
+                                - var socialItemIco = socialsSet.ico 
+                                - var socialItemLink = socialsSet.link
+                                a(href=socialItemLink, alt="Social Link").footer__socials-link
+                                    img(src=socialItemIco, alt="Social Icon").footer__socials-ico
