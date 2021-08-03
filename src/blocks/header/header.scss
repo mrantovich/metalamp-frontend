@@ -23,6 +23,7 @@
                 flex-direction: column;
                 justify-content: flex-start;
                 padding-top: $header-height / 2;
+                padding-bottom: $header-height / 2;
             }
 
             .header__menu {
@@ -49,6 +50,7 @@
             &.is-active {
                 opacity: 1;
                 visibility: visible;
+                overflow: auto;
             }
         }
     }
@@ -120,6 +122,10 @@
 
     &__nav {
         margin-right: 1.8rem;
+
+        @media (max-width: $mq-laptop) {
+            margin-right: 0;
+        }
     }
 
     &__menu {
@@ -132,6 +138,15 @@
         grid-template: 3.4rem / 8.7rem 19.6rem;
         column-gap: 2rem;
         height: 3.4rem;
+
+        @media (max-width: $mq-laptop) {
+            display: flex;
+            flex-direction: column;
+
+            & button {
+                margin-bottom: 2rem;
+            }
+        }
     }
 
     // Section with user name when logged in. Do we need some actions under it?
