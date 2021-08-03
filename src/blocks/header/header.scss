@@ -1,11 +1,9 @@
 .header {
     height: $header-height;
     box-shadow: 0 1rem 2rem $dark-shade-5-percent;
-    //position: relative;
     transition: 0.3s;
 
     &__overlay {
-        //position: absolute;
         top: 0;
         left: 0;
         width: 100%;
