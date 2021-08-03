@@ -25,6 +25,10 @@
     overflow: hidden;
 
     @media (max-width: $mq-mobile-large) {
-        height: auto;
+        min-height: $min-landing-height;
+    }
+
+    @media (max-height: $min-landing-height) {
+        min-height: $min-landing-height;
     }
 }
