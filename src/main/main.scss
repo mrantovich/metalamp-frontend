@@ -5,10 +5,15 @@
 
 @import 'root';
 
-html {
+html, body {
     font-size: 1.4rem;
     font-family: $font-primary, sans-serif;
     color: $dark-shade;
+
+    &.is-locked {
+        height: 100%;
+        overflow: hidden;
+    }
 }
 
 @import '../main/wrappers.scss';
