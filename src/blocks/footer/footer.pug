@@ -21,7 +21,7 @@ mixin footer(description, navigationData, subscriptionData, copyrightInfo, socia
     footer.footer  
         .footer__content 
             .footer__body
-                .container
+                .footer__container
                     .footer__about
                         .footer__logo 
                             img(src=require('../assets/img/toxin-logo.svg'), alt="Toxin Logo")
@@ -33,6 +33,8 @@ mixin footer(description, navigationData, subscriptionData, copyrightInfo, socia
             .footer__foot
                 .container
                     .footer__foot-content
+                        .footer__logo.footer__logo_is-hidden-on-large-screen
+                            img(src=require('../assets/img/toxin-logo.svg'), alt="Toxin Logo")
                         .footer__copy.text= copyrightInfo
                         .footer__socials
                             each socialsSet in socialsData 

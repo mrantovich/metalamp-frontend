@@ -9,6 +9,12 @@
     display: grid;
     grid-template: 1fr / 1fr 1fr;
     column-gap: 2rem;
+
+    @media (max-width: $mq-mobile-large) {
+        grid-template: 1fr 1fr / 1fr;
+        column-gap: 0;
+        row-gap: 1.5rem;
+    }
 }
 
 .date-picker-wrap {

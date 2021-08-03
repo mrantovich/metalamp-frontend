@@ -4,6 +4,10 @@
     position: relative;
     padding-top: 6.9rem;
 
+    @media (max-width: $mq-mobile-large) {
+        padding: 3rem 0;
+    }
+
     &__background {
         position: absolute;
         top: 0;
@@ -25,5 +29,14 @@
         max-width: 1190px;
         padding: 0 15px;
         margin: 0 auto;
+    }
+
+    &__card {
+
+        @media (max-width: $mq-mobile-large) {
+            display: flex;
+            justify-content: center;
+        }
+        
     }
 }

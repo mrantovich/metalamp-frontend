@@ -4,22 +4,24 @@
 //-                 2. List of captions of buttons (ghost button and normal)
 //-                 3. If user name is defined, display it instead of buttons
 mixin header(menuList, menuButtons, userName)
-    header.header 
-        .container 
-            .header__content 
-                .header__logo 
-                    img(src=require('../assets/img/toxin-logo.svg'), alt="Toxin Logo")
-                .header__menu
-                    .header__nav
-                        +nav(menuList)
-                    if userName
-                        .header__menu-user-section
-                            .header__menu-user-display.text.text_is-light= userName
-                    else
-                        .header__menu-buttons
-                            - var ghostButtonText = menuButtons.ghost
-                            - var normalButtonText = menuButtons.normal
-                            +ghost-button(ghostButtonText)
-                            +button(normalButtonText)
-                .header__burger
-                    span
+    header.header
+        .header__burger
+            span
+        .header__overlay
+            .container 
+                .header__content 
+                    .header__logo 
+                        img(src=require('../assets/img/toxin-logo.svg'), alt="Toxin Logo")
+                    .header__menu
+                        .header__nav
+                            +nav(menuList)
+                        if userName
+                            .header__menu-user-section
+                                .header__menu-user-display.text.text_is-light= userName
+                        else
+                            .header__menu-buttons
+                                - var ghostButtonText = menuButtons.ghost
+                                - var normalButtonText = menuButtons.normal
+                                +ghost-button(ghostButtonText)
+                                +button(normalButtonText)
+

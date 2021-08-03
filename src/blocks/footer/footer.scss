@@ -8,19 +8,64 @@
         flex-direction: column;
     }
 
+    &__container {
+        width: 100%;
+        height: 100%;
+        max-width: 1190px;
+        padding: 0 15px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+
+        @media (max-width: $mq-laptop) {
+            flex-direction: column;
+        }
+    }
+
     &__body {
         display: flex;
         padding: 10rem 0 9.8rem;
+
+        @media (max-width: $mq-tablet) {
+            padding: 5rem 0 0 0;
+        }
     }
 
     &__about {
         align-self: flex-start;
         max-width: 26rem;
         margin-right: 4rem;
+
+        @media (max-width: $mq-laptop) {
+            align-self: center;
+            margin-right: 0;
+            margin-bottom: 4rem;
+        }
     }
 
     &__logo {
         margin-bottom: 1.8rem;
+
+        @media (max-width: $mq-laptop) {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        &_is-hidden-on-large-screen {
+            display: none;
+
+            @media (max-width: $mq-tablet) {
+                display: block;
+            }
+        }
+    }
+
+    &__hotel {
+
+        @media (max-width: $mq-laptop) {
+            text-align: center;
+        }
     }
 
     &__nav {
@@ -29,6 +74,17 @@
         grid-template: 1fr / repeat(3, 16rem);
         column-gap: 4rem;
         margin-right: 4rem;
+
+        @media (max-width: $mq-laptop) {
+            align-self: center;
+            margin-right: 0;
+            margin-bottom: 4rem;
+        }
+
+        @media (max-width: $mq-tablet) {
+            display: flex;
+            flex-direction: column;
+        }
     }
 
     &__nav-column {
@@ -36,33 +92,55 @@
         flex-direction: column;
         flex: 1 1 auto;
 
-        /* &:not(:last-child) {
-            margin-right: 3rem;
-        } */
+        @media (max-width: $mq-tablet) {
+            margin-bottom: 2rem;
+        }
     }
 
     &__nav-title {
         padding-top: 0.4rem;
         margin-bottom: 2.3rem;
+
+        @media (max-width: $mq-tablet) {
+            text-align: center;
+        }
     }
 
     &__subscription {
         align-self: flex-start;
         max-width: 26rem;
+
+        @media (max-width: $mq-laptop) {
+            align-self: center;
+            margin-right: 0;
+            margin-bottom: 4rem;
+        }
     }
 
     &__subscription-title {
         padding-top: 0.4rem;
         margin-bottom: 2rem;
+
+        @media (max-width: $mq-laptop) {
+            text-align: center;
+        }
     }
 
     &__subscription-call {
         margin-bottom: 2.2rem;
+
+        @media (max-width: $mq-laptop) {
+            text-align: center;
+        }
     }
 
     &__foot {
         height: 7rem;
         border-top: 0.1rem solid $dark-shade-25-percent;
+
+        @media (max-width: $mq-tablet) {
+            height: 36.7rem;
+        }
     }
 
     &__foot-content {
@@ -71,6 +149,19 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+
+        @media (max-width: $mq-tablet) {
+            flex-direction: column;
+            justify-content: center;
+        }
+    }
+
+    &__copy {
+
+        @media (max-width: $mq-tablet) {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
     }
 
     &__socials {
