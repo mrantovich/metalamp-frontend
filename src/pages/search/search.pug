@@ -7,9 +7,35 @@ block content
             +toxin-header
 
             section.search 
-                .search__content
-                    .container 
-                        .search__filter-area 
-                        .search__rooms-area
+                .container
+                    .search__content
+                        .search__filter-area
+                            form.search__form
+                                .search__form-row 
+                                    .form__label-text.text.text_label Дата пребывания в отеле
+                                    +date-picker("filter-date-picker")
+                                .search__form-row 
+                                    .form__label-text.text.text_label Гости
+                                    +dropdown(["Сколько гостей", ["Взрослые", "Дети", "Младенцы"]])
+                                .search__form-row 
+                                    +range-slider
+                                .search__form-row
+                                    .form__label-text.text.text_label Правила дома
+                                    +checkbox("Можно курить", "check")
+                                    +checkbox("Можно с питомцами", "check", true)
+                                    +checkbox("Можно пригласить гостей (до 10 человек)", "check", true)
+                                .search__form-row 
+                                    .form__label-text.text.text_label Доступность
+                                    +checkbox-rich("Широкий коридор", "Ширина коридоров в номере не менее 91 см.", "first-rich-checkbox")
+                                    +checkbox-rich("Помощник для инвалидов", "На 1 этаже вас встретит специалист  и проводит до номера.", "second-rich-checkbox")
+                                .search__form-row 
+                                    .form__label-text.text.text_label Удобства номера
+                                    +dropdown(["Сколько гостей", ["Спальни", "Кровати", "Ванные комнаты"]])
+                                .search__form-row 
+                                    - var expandableTitle = "Дополнительные удобства"
+                                    - var expandableData = [["breakfast", false, "Завтрак"], ["table", true, "Письменный стол"], ["child-chair", true, "Стул для кормления"], ["bed", true, "Кроватка"], ["tv", false, "Телевизор"], ["shampoo", false, "Шампунь"]]
+                                    +expandable-list(expandableTitle, expandableData)
+
+                        .search__rooms-area 
 
             +toxin-footer
