@@ -8,16 +8,13 @@
         &_vertically-oriented {
             flex-direction: column;
             flex: 1 1 auto;
-            margin-right: 0;
-
-            @media (max-width: $mq-tablet) {
-
-                .nav__item .nav__link {
-                    width: 100%;
-                    text-align: center;
-                }
-                
+            margin-right: 0; 
             }
+
+        @media (max-width: $mq-laptop) {
+            flex-direction: column;
+            margin-right: 0;
+            flex: 1 1 auto;
         }
     }
 
@@ -42,20 +39,11 @@
         }
 
         &_with-sub-menu {
-            position: relative;
-            padding-right: 2rem;
-            margin-right: 3rem;
 
-            &::after {
-                content: '';
-                width: 0.2rem;
-                height: 0.2rem;
-                @include nav-arrow($dark-shade-50-percent, -45deg);
-                top: calc(50% + 0.1rem);
-                right: 0;
+            &:not(:last-child) {
+                margin-right: 5rem;
             }
         }
-
     }
 
     &__link {
@@ -78,6 +66,20 @@
             opacity: 0;
             visibility: hidden;
             transition: 0.2s;
+        }
+
+        &_with-sub-menu {
+            position: relative;
+
+            &::before {
+                content: '';
+                width: 0.2rem;
+                height: 0.2rem;
+                @include nav-arrow($dark-shade-50-percent, -45deg);
+                top: calc(50% + 0.1rem);
+                right: -1.7rem;
+            }
+
         }
 
         @media (any-hover: hover) {

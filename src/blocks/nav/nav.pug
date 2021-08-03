@@ -21,7 +21,7 @@ mixin nav(navItemList, isVerticallyOriented)
                     else
                         if hasItemSubMenu
                             li.nav__item.nav__item_with-sub-menu
-                                a(href=itemLink, alt="Menu Link").nav__link= itemText
+                                a(href=itemLink, alt="Menu Link").nav__link.nav__link_with-sub-menu= itemText
                         else
                             li.nav__item
                                 a(href=itemLink, alt="Menu Link").nav__link= itemText
