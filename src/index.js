@@ -9,5 +9,5 @@ import './blocks/form/form.js';
 import './blocks/room-card/room-card';
 import './blocks/header/header';
 
-import './main/main.pug';
+import './pages/landing/landing.pug';
 import './main/main.scss';

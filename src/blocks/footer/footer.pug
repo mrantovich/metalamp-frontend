@@ -24,7 +24,7 @@ mixin footer(description, navigationData, subscriptionData, copyrightInfo, socia
                 .footer__container
                     .footer__about
                         .footer__logo 
-                            img(src=require('../assets/img/toxin-logo.svg'), alt="Toxin Logo")
+                            img(src=require('../../assets/img/toxin-logo.svg'), alt="Toxin Logo")
                         .footer__hotel.text= description
                     .footer__nav
                         each navigationSet in navigationData 
@@ -34,7 +34,7 @@ mixin footer(description, navigationData, subscriptionData, copyrightInfo, socia
                 .container
                     .footer__foot-content
                         .footer__logo.footer__logo_is-hidden-on-large-screen
-                            img(src=require('../assets/img/toxin-logo.svg'), alt="Toxin Logo")
+                            img(src=require('../../assets/img/toxin-logo.svg'), alt="Toxin Logo")
                         .footer__copy.text= copyrightInfo
                         .footer__socials
                             each socialsSet in socialsData 

@@ -55,8 +55,13 @@ module.exports = {
     plugins: [
         new CleanWebpackPlugin(),
         new HTMLWebpackPlugin({
-            template: path.resolve(__dirname, './src/main/main.pug'),
+            template: path.resolve(__dirname, './src/pages/landing/landing.pug'),
             filename: 'index.html',
+            inject: 'body'
+        }),
+        new HTMLWebpackPlugin({
+            template: path.resolve(__dirname, './src/pages/search/search.pug'),
+            filename: 'search.html',
             inject: 'body'
         }),
         new MiniCssExtracPlugin({
