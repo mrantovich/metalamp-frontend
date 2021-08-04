@@ -17,10 +17,10 @@ block content
                                 .search__form-row.search__form-row_margin-bottom-large
                                     .form__label-text.text.text_label Гости
                                     +dropdown(["Сколько гостей", ["Взрослые", "Дети", "Младенцы"]])
-                                .search__form-row 
+                                .search__form-row.search__form-row_margin-bottom-large
                                     +range-slider("Диапазон цены", "Стоимость за сутки пребывания в номере")
                                 .search__form-row
-                                    .form__label-text.text.text_label Правила дома
+                                    .form__label-text.form__label-text_margin-bottom-large.text.text_label Правила дома
                                     +checkbox("Можно курить", "check")
                                     +checkbox("Можно с питомцами", "check", true)
                                     +checkbox("Можно пригласить гостей (до 10 человек)", "check", true)
