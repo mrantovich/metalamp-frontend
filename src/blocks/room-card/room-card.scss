@@ -119,8 +119,10 @@
 .swiper-pagination-fraction, .swiper-pagination-custom, .swiper-container-horizontal > .swiper-pagination-bullets {
     position: absolute;
     width: 42rem;
-    bottom: 1.5rem;
-    right: 1.5rem;
+    bottom: 1.3rem;
+    //right: 1rem;
+    left: 2.25rem;
+    justify-content: flex-end;
 }
 
 .swiper-pagination-bullet {
@@ -140,4 +142,8 @@
     border: transparent;
     border-radius: 50%;
     transition: 0.2s;
+}
+
+.swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {
+    margin: 0 0.17rem;
 }
