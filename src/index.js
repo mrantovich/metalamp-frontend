@@ -10,4 +10,5 @@ import './blocks/room-card/room-card';
 import './blocks/header/header';
 
 import './pages/landing/landing.pug';
+import './pages/room/room.pug';
 import './main/main.scss';

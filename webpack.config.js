@@ -64,6 +64,11 @@ module.exports = {
             filename: 'search.html',
             inject: 'body'
         }),
+        new HTMLWebpackPlugin({
+            template: path.resolve(__dirname, './src/pages/room/room.pug'),
+            filename: 'room.html',
+            inject: 'body'
+        }),
         new MiniCssExtracPlugin({
             filename: 'style.css',
         }),
