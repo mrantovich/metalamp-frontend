@@ -37,5 +37,43 @@ block content
                                     +expandable-list(expandableTitle, expandableData)
 
                         .search__rooms-area 
+                            .search__rooms-area-title.text.text_title Номера, которые мы для вас подобрали
+                            .search__rooms-area-content 
+                                //- 1st row.
+                                - var room888 = {images: [require('../../assets/img/room/room-888.jpg'), require('../../assets/img/room/room-888.jpg'), require('../../assets/img/room/room-888.jpg'), require('../../assets/img/room/room-888.jpg'),], info: ["888", "9990", true], rating: ["5", "145"]}
+                                - var room840 = {images: [require('../../assets/img/room/room-840.jpg'), require('../../assets/img/room/room-840.jpg'), require('../../assets/img/room/room-840.jpg'), require('../../assets/img/room/room-840.jpg'),], info: ["840", "9900", false], rating: ["4", "65"]}
+                                - var room980 = {images: [require('../../assets/img/room/room-888.jpg'), require('../../assets/img/room/room-888.jpg'), require('../../assets/img/room/room-888.jpg'), require('../../assets/img/room/room-888.jpg'),], info: ["888", "9990", true], rating: ["5", "145"]}
+
+                                //- 2nd row.
+                                - var room856 = {images: [require('../../assets/img/room/room-856.jpg'), require('../../assets/img/room/room-856.jpg'), require('../../assets/img/room/room-856.jpg'), require('../../assets/img/room/room-856.jpg'),], info: ["856", "7300", false], rating: ["5", "19"]}
+                                - var room740 = {images: [require('../../assets/img/room/room-740.jpg'), require('../../assets/img/room/room-740.jpg'), require('../../assets/img/room/room-740.jpg'), require('../../assets/img/room/room-740.jpg'),], info: ["740", "6000", false], rating: ["4", "44"]}
+                                - var room982 = {images: [require('../../assets/img/room/room-982.jpg'), require('../../assets/img/room/room-982.jpg'), require('../../assets/img/room/room-982.jpg'), require('../../assets/img/room/room-982.jpg'),], info: ["982", "5800", false], rating: ["3", "56"]}
+
+                                //- 3rd row.
+                                - var room678 = {images: [require('../../assets/img/room/room-678.jpg'), require('../../assets/img/room/room-678.jpg'), require('../../assets/img/room/room-678.jpg'), require('../../assets/img/room/room-678.jpg'),], info: ["678", "5500", false], rating: ["5", "45"]}
+                                - var room450 = {images: [require('../../assets/img/room/room-450.jpg'), require('../../assets/img/room/room-450.jpg'), require('../../assets/img/room/room-450.jpg'), require('../../assets/img/room/room-450.jpg'),], info: ["450", "5300", false], rating: ["4", "39"]}
+                                - var room350 = {images: [require('../../assets/img/room/room-350.jpg'), require('../../assets/img/room/room-350.jpg'), require('../../assets/img/room/room-350.jpg'), require('../../assets/img/room/room-350.jpg'),], info: ["350", "5000", false], rating: ["3", "77"]}
+
+                                //- 4th row.
+                                - var room666 = {images: [require('../../assets/img/room/room-666.jpg'), require('../../assets/img/room/room-666.jpg'), require('../../assets/img/room/room-666.jpg'), require('../../assets/img/room/room-666.jpg'),], info: ["666", "5000", false], rating: ["5", "25"]}
+                                - var room444 = {images: [require('../../assets/img/room/room-444.jpg'), require('../../assets/img/room/room-444.jpg'), require('../../assets/img/room/room-444.jpg'), require('../../assets/img/room/room-444.jpg'),], info: ["444", "5000", false], rating: ["3", "15"]}
+                                - var room352 = {images: [require('../../assets/img/room/room-352.jpg'), require('../../assets/img/room/room-352.jpg'), require('../../assets/img/room/room-352.jpg'), require('../../assets/img/room/room-352.jpg'),], info: ["352", "5000", false], rating: ["3", "55"]}
+
+
+                                - var roomItems = [room888, room840, room980, room856, room740, room982, room678, room450, room350, room666, room444, room352]
+                                each room in roomItems
+                                    +room-card(room.images, room.info, room.rating)
+
+                            .search__rooms-area-pagination
+                                .pagination 
+                                    .pagination__content
+                                        .pagination__item.pagination__item_current 1
+                                        .pagination__item 2
+                                        .pagination__item 3
+                                        .pagination__item.pagination__item_ellipsis  ...
+                                        .pagination__item 15
+                                        a(href="/mock/address", alt="Next").pagination__button
+                                    .pagination__desc.text 1 – 12 из 100+ вариантов аренды
+
 
             +toxin-footer
