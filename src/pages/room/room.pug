@@ -1,0 +1,37 @@
+extends ../template/template.pug
+
+block content
+    .wrapper 
+        .flexible__wrapper
+
+            +toxin-header
+
+            section.gallery 
+                .gallery__grid 
+                    .gallery__item.gallery__item_big 
+                        img(src=require('../../assets/img/room/room-888-gallery-img-big.jpg'), alt="Room 888").gallery__image
+                    .gallery__item 
+                        img(src=require('../../assets/img/room/room-888-gallery-img-01.jpg'), alt="Room 888").gallery_image
+                    .gallery__item 
+                        img(src=require('../../assets/img/room/room-888-gallery-img-02.jpg'), alt="Room 888").gallery_image
+            
+            section.room-details 
+                .room-details__grid 
+                    .room-details__main
+                        .room-details__info
+                            .room-details__advantages
+                                .room-details__title.text.text_sub-title Сведения о номере
+                                    +room-info(require("../../assets/room-info/insert_emoticon.svg"), "Комфорт", "Шумопоглощающие стены", true)
+                                    +room-info(require("../../assets/room-info/location_city.svg"), "Удобство", "Окно в каждой из спален", true)
+                                    +room-info(require("../../assets/room-info/whatshot.svg"), "Уют", "Номер оснащён камином")
+                            .room-details__impressions 
+                                .room-details__title.text.text_sub-title Впечатления от номера
+                        
+                        .room-details__reviews 
+                            .room-details__title.text.text_sub-title Отзывы посетителей о номере
+                                +user-review(require("../../assets/img/room/room-888-user-01.jpg"), "Мурад Сарафанов", "5 дней назад", "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.", 12, true)
+                                +user-review(require("../../assets/img/room/room-888-user-02.jpg"), "Патрисия Стёклышкова", "Неделю назад", "Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент.", 2, false)
+                    .room-details__book
+
+
+            +toxin-footer
