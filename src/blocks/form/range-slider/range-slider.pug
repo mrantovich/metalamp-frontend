@@ -1,4 +1,6 @@
-mixin range-slider
+mixin range-slider(title)
     .form__range-slider.range-slider
-        .range-slider__text
+        .range-slider__top
+            .range-slider__title.text.text_label= title
+            .range-slider__text
         .range-slider__ui

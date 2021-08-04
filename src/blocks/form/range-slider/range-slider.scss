@@ -1,5 +1,12 @@
 .range-slider {
 
+    &__top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 2.3rem;
+    }
+
     &__text {
         font-size: 1.2rem;
         line-height: 1.5 / 1.2 * 100%;
@@ -7,8 +14,8 @@
         font-weight: normal;
         text-transform: uppercase;
         display: flex;
-        padding: 1.5rem 0;
         justify-content: flex-end;
+        letter-spacing: -0.04rem;
     }
 
     &__ui {
@@ -49,8 +56,9 @@
 }
 
 .noUi-horizontal .noUi-handle {
-    width: 1.2rem;
-    height: 1.2rem;
+    width: 1.7rem;
+    height: 1.7rem;
+    transform: translateY(-0.01rem)
 }
 
 .noUi-connects {

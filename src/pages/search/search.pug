@@ -12,13 +12,13 @@ block content
                         .search__filter-area
                             form.search__form
                                 .search__form-row 
-                                    .form__label-text.text.text_label Дата пребывания в отеле
+                                    .form__label-text.text.text_label Даты пребывания в отеле
                                     +date-picker("filter-date-picker")
-                                .search__form-row 
+                                .search__form-row.search__form-row_margin-bottom-large
                                     .form__label-text.text.text_label Гости
                                     +dropdown(["Сколько гостей", ["Взрослые", "Дети", "Младенцы"]])
                                 .search__form-row 
-                                    +range-slider
+                                    +range-slider("Диапазон цены")
                                 .search__form-row
                                     .form__label-text.text.text_label Правила дома
                                     +checkbox("Можно курить", "check")
