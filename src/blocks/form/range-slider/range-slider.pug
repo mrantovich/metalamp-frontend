@@ -1,6 +1,8 @@
-mixin range-slider(title)
+mixin range-slider(title, subText)
     .form__range-slider.range-slider
         .range-slider__top
             .range-slider__title.text.text_label= title
             .range-slider__text
         .range-slider__ui
+        if subText 
+            .range-slider__sub-text= subText
