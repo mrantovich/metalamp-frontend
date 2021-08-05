@@ -57,8 +57,11 @@
     }
 
     &__form {
-        height: 80vh;
-        overflow-y: scroll;
+        @media (max-width: $mq-extra-large) {
+            height: 80vh;
+            overflow-y: scroll;
+        }
+        
     }
 
     &__form-row {
@@ -87,6 +90,11 @@
 
         @media (max-width: $mq-laptop) {
             grid-template: repeat(6, 1fr) / repeat(2, 1fr);
+        }
+
+        @media (max-width: $mq-tablet) {
+            grid-template: repeat(12, 1fr) / 1fr;
+            justify-items: center;
         }
     }
 
