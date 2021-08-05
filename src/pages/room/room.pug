@@ -9,32 +9,62 @@ block content
 
             +toxin-header
 
-            section.gallery 
-                .gallery__grid 
-                    .gallery__item.gallery__item_big 
-                        img(src=require('../../assets/img/room/room-888-gallery-img-big.jpg'), alt="Room 888").gallery__image
-                    .gallery__item 
-                        img(src=require('../../assets/img/room/room-888-gallery-img-01.jpg'), alt="Room 888").gallery_image
-                    .gallery__item 
-                        img(src=require('../../assets/img/room/room-888-gallery-img-02.jpg'), alt="Room 888").gallery_image
+            section.room-details__gallery 
+                .room-details__gallery-grid 
+                    .room-details__gallery-item.room-details__gallery-item_big 
+                        img(src=require('../../assets/img/room/room-888-gallery-img-big.jpg'), alt="Room 888").room-details__gallery-image
+                    .room-details__gallery-item.room-details__gallery-item_small-top
+                        img(src=require('../../assets/img/room/room-888-gallery-img-01.jpg'), alt="Room 888").room-details__gallery-image
+                    .room-details__gallery-item.room-details__gallery-item_small-bottom
+                        img(src=require('../../assets/img/room/room-888-gallery-img-02.jpg'), alt="Room 888").room-details__gallery-image
             
             section.room-details 
-                .room-details__grid 
-                    .room-details__main
-                        .room-details__info
-                            .room-details__advantages
-                                .room-details__title.text.text_sub-title Сведения о номере
+                .container
+                    .room-details__grid 
+                        .room-details__main
+                            .room-details__info
+                                .room-details__advantages
+                                    .room-details__sub-title.text.text_sub-title Сведения о номере
                                     +room-info(require("../../assets/room-info/insert_emoticon.svg"), "Комфорт", "Шумопоглощающие стены", true)
                                     +room-info(require("../../assets/room-info/location_city.svg"), "Удобство", "Окно в каждой из спален", true)
                                     +room-info(require("../../assets/room-info/whatshot.svg"), "Уют", "Номер оснащён камином")
-                            .room-details__impressions 
-                                .room-details__title.text.text_sub-title Впечатления от номера
-                        
-                        .room-details__reviews 
-                            .room-details__title.text.text_sub-title Отзывы посетителей о номере
-                                +user-review(require("../../assets/img/room/room-888-user-01.jpg"), "Мурад Сарафанов", "5 дней назад", "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.", 12, true)
-                                +user-review(require("../../assets/img/room/room-888-user-02.jpg"), "Патрисия Стёклышкова", "Неделю назад", "Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент.", 2, false)
-                    .room-details__book
+                                .room-details__impressions 
+                                    .room-details__sub-title.text.text_sub-title Впечатления от номера
+                            
+                            .room-details__reviews 
+                                .room-details__sub-title.text.text_sub-title Отзывы посетителей о номере
+                                .room-details__user-review
+                                    +user-review(require("../../assets/img/room/room-888-user-01.jpg"), "Мурад Сарафанов", "5 дней назад", "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.", 12, true)
+                                .room-details__user-review
+                                    +user-review(require("../../assets/img/room/room-888-user-02.jpg"), "Патрисия Стёклышкова", "Неделю назад", "Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент.", 2, false)
+                            
+                            .room-details__additions 
+                                .room-details__additions-column 
+                                    .room-details__sub-title.text.text_sub-title Правила
+                                    +bullet-list(["Нельзя с питомцами", "Без вечеринок и мероприятий", "Время прибытия — после 13:00, а выезд до 12:00"])
+                                .room-details__additions-column 
+                                    .room-details__sub-title.text.text_sub-title Отмена
+                                    .room-details__text.text Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
+
+                        .room-details__book
+                            .room-details__card.card.card__total 
+                                form.form__card
+                                    .card__row
+                                        +card-head-total("888", "9990", true)
+                                    .card__row
+                                        +card-date-picker("Прибытие", "Выезд")
+                                    .card__row
+                                        +card-dropdown("Гости", ["Сколько гостей", ["Взрослые", "Дети", "Младенцы"], true])
+                                    .card__row.card__row_min-bottom-margin
+                                        +card-calculation("9990 x 4 суток", "39 960")
+                                    .card__row.card__row_min-bottom-margin
+                                        +card-calculation("Сбор за услуги: скидка 2179₽", "0", true)
+                                    .card__row.card__row_big-bottom-margin
+                                        +card-calculation("Сбор за дополнительные услуги", "0", true)
+                                    .card__row 
+                                        +card-total-line("Итого")
+                                    .card__row.card__row_without-bottom-margin
+                                        +card-wide-button("Забронировать")
 
 
             +toxin-footer
