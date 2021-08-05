@@ -55,29 +55,36 @@ import {
     SubTitle
     );
 
-import colors from '../../main/colors.scss';
+import colors from '../../main/_colors.scss';
 
 let roomChart = document.querySelector('.room-details__chart');
 
 const data = {
     labels: [
-        'Red',
-        'Blue',
-        'Yellow'
+        'Великолепно',
+        'Хорошо',
+        'Удовлетворительно'
         ],
         datasets: [{
-        label: 'My First Dataset',
         data: [300, 50, 100],
         backgroundColor: [
-            colors.chartBackgroundGreat,
-            colors.chartBackgroundGood,
-            colors.chartBackgroundDisappointed
+            'rgb(255, 99, 132)',
+            'rgb(54, 162, 235)',
+            'rgb(255, 205, 86)'
         ],
         hoverOffset: 4
         }]
-    };
-    
+};
+
 let roomChartEl = new Chart(roomChart, {
     type: 'doughnut',
-    data: data
+    data: data,
+    options: {
+        plugins: {
+            legend: {
+                position: 'right'
+            }
+        },
+        cutout: 99
+    }
 });
