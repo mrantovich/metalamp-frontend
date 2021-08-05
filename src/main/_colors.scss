@@ -30,3 +30,16 @@ $green-second: #66D2EA;
 // linear gradients
 $gradient-purple: linear-gradient(180deg, $purple 0%, $purple-second 100%);
 $gradient-green: linear-gradient(180deg, $green 0%, $green-second 100%);
+
+// Chart backgrounds.
+$chart-background-great: linear-gradient(180deg, #FFE39C 0%, #FFBA9C 100%);
+$chart-background-good: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+$chart-background-normal: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+$chart-background-disappointed: linear-gradient(180deg, #919191 0%, #3D4975 100%);
+
+:export {
+    chartBackgroundGreat: $chart-background-great;
+    chartBackgroundGood: $chart-background-good;
+    chartBackgroundNormal: $chart-background-normal;
+    chartBackgroundDisappointed: $chart-background-disappointed;
+}

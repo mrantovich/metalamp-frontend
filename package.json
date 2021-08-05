@@ -53,6 +53,7 @@
     "wnumb": "^1.2.0"
   },
   "dependencies": {
+    "chart.js": "^3.5.0",
     "svg-url-loader": "^7.1.1"
   }
 }
