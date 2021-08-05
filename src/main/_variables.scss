@@ -8,6 +8,9 @@ $card-width: 38rem;
 $card-padding: 4rem 3rem 3rem 3rem;
 $card-row-bottom-margin: 2.2rem;
 
+// Box shadow properties.
+$box-shadow-properties: 0 1rem 2rem $dark-shade-5-percent;
+
 // General header properties.
 $header-height: 7.2rem;
 
@@ -17,8 +20,10 @@ $header-menu-item-space: 1.8rem;
 
 // Room search page properties;
 $search-sidebar-width: 32.6rem;
+$search-area-top-padding: 3rem;
 
 // Media queries.
+$mq-extra-large: 1200px;
 $mq-laptop: 1024px;
 $mq-tablet: 768px;
 $mq-mobile-large: 425px;

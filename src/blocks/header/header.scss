@@ -1,6 +1,6 @@
 .header {
     height: $header-height;
-    box-shadow: 0 1rem 2rem $dark-shade-5-percent;
+    box-shadow: $box-shadow-properties;
     transition: 0.3s;
 
     &__overlay {

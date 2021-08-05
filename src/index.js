@@ -8,6 +8,7 @@ import './blocks/form/expandable-list/expandable-list';
 import './blocks/form/form.js';
 import './blocks/room-card/room-card';
 import './blocks/header/header';
+import './pages/search/search';
 
 import './pages/landing/landing.pug';
 import './pages/room/room.pug';
