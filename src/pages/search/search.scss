@@ -30,7 +30,7 @@
             transform: translate(-100%, 0);
             width: $search-sidebar-width;
             background: $white;
-            box-shadow: $box-shadow-properties;
+            box-shadow: 1rem 2rem 2rem $dark-shade-25-percent;
             z-index: 18;
             transition: 0.2s;
 
@@ -50,15 +50,16 @@
             background: $white;
             position: absolute;
             top: 1.5rem;
-            right: -3.5rem;
-            border: 0.1rem solid $dark-shade-50-percent;
+            right: -3.8rem;
+            box-shadow: 2rem 0 2rem $dark-shade-25-percent;
         }
         
     }
 
     &__form {
         @media (max-width: $mq-extra-large) {
-            height: 80vh;
+            padding: 0 1.5rem 4rem;
+            height: calc(100vh - #{$header-height});
             overflow-y: scroll;
         }
         
