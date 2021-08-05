@@ -62,13 +62,8 @@
 
         @media (any-hover: hover) {
             &:hover {
-                box-shadow: 0 0 1.5rem 0 $purple;
+                opacity: 0.5;
             }
-        }
-
-        &_is-disabled {
-            opacity: 0.5;
-            pointer-events: none;
         }
     }
 
@@ -94,7 +89,7 @@
 
     @media (any-hover: hover) {
         &:hover {
-            box-shadow: 0 0 1.5rem 0 $purple;
+            opacity: 0.5;
         }
     }
 
