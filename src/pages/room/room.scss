@@ -65,6 +65,12 @@
     &__chart {
     }
 
+    &__chart-container {
+        width: 29rem;
+        height: 10.6rem;
+        position: relative;
+    }
+
     &__reviews {
         max-width: 71rem;
         margin-bottom: 3rem;

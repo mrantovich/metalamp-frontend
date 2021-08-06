@@ -38,8 +38,8 @@ $chart-background-normal: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
 $chart-background-disappointed: linear-gradient(180deg, #919191 0%, #3D4975 100%);
 
 :export {
-    chartBackgroundGreat: $chart-background-great;
-    chartBackgroundGood: $chart-background-good;
-    chartBackgroundNormal: $chart-background-normal;
-    chartBackgroundDisappointed: $chart-background-disappointed;
+    chartBackgroundGreat: #fff;
+    chartBackgroundGood: #f00;
+    chartBackgroundNormal: #0f0;
+    chartBackgroundDisappointed: #0ff;
 }

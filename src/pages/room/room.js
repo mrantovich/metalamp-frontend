@@ -57,7 +57,7 @@ import {
 
 import colors from '../../main/_colors.scss';
 
-let roomChart = document.querySelector('.room-details__chart');
+let chartNode = document.querySelector('.room-details__chart');
 
 const data = {
     labels: [
@@ -76,15 +76,24 @@ const data = {
         }]
 };
 
-let roomChartEl = new Chart(roomChart, {
+let roomChart = new Chart(chartNode, {
     type: 'doughnut',
     data: data,
     options: {
         plugins: {
             legend: {
-                position: 'right'
+                position: 'right',
+                labels : {
+                    boxWidth: 10,
+                    boxHeight: 10,
+                    usePointStyle: true,
+                    pointStyle: 'circle'
+                }
             }
         },
-        cutout: 99
+        cutout: 65,
+        aspectRatio: 2,
+        maintainAspectRatio: false,
+        responsive: false
     }
 });
