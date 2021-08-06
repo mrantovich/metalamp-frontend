@@ -1,4 +1,5 @@
 @import './colors';
+@import './fonts';
 
 :export {
     purpleColor: $purple;
@@ -9,4 +10,5 @@
     goldColorSecond: $gold-second;
     dimColor: $dim;
     dimColorSecond: $dim-second;
+    montserratFont: $font-primary;
 }

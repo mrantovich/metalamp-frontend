@@ -53,28 +53,31 @@ import {
     Title,
     Tooltip,
     SubTitle
-    );
+    );    
 
-import colors from '../../main/_export.scss';
+import varExports from '../../main/_export.scss';
 
 let chartNode = document.querySelector('.room-details__chart').getContext('2d');
+let chartCanvas = document.querySelector('.room-details__chart');
 
 // Create linear gradients for different states on chart.
 let backgroundGreatGradient = chartNode.createLinearGradient(0, 0, 0, 400);
-backgroundGreatGradient.addColorStop(0, colors.goldColor);
-backgroundGreatGradient.addColorStop(1, colors.goldColorSecond);
+backgroundGreatGradient.addColorStop(0, varExports.goldColor);
+backgroundGreatGradient.addColorStop(1, varExports.goldColorSecond);
 
 let backgroundGoodGradient = chartNode.createLinearGradient(0, 0, 0, 400);
-backgroundGoodGradient.addColorStop(0, colors.greenColor);
-backgroundGoodGradient.addColorStop(1, colors.greenColorSecond);
+backgroundGoodGradient.addColorStop(0, varExports.greenColor);
+backgroundGoodGradient.addColorStop(1, varExports.greenColorSecond);
 
 let backgroundNormalGradient = chartNode.createLinearGradient(0, 0, 0, 400);
-backgroundNormalGradient.addColorStop(0, colors.purpleColor);
-backgroundNormalGradient.addColorStop(1, colors.purpleColorSecond);
+backgroundNormalGradient.addColorStop(0, varExports.purpleColor);
+backgroundNormalGradient.addColorStop(1, varExports.purpleColorSecond);
 
 let backgroundDisappointedGradient = chartNode.createLinearGradient(0, 0, 0, 400);
-backgroundDisappointedGradient.addColorStop(0, colors.dimColor);
-backgroundDisappointedGradient.addColorStop(1, colors.dimColorSecond);
+backgroundDisappointedGradient.addColorStop(0, varExports.dimColor);
+backgroundDisappointedGradient.addColorStop(1, varExports.dimColorSecond);
+
+chartNode.fillText('40%', 260/2 - 20, 260/2, 200)
 
 // Values for drawing chart.
 let chartData = {
@@ -82,7 +85,7 @@ let chartData = {
     normal: 65,
     good: 65,
     great: 130
-}
+};
 
 const data = {
     labels: [
@@ -101,6 +104,31 @@ const data = {
         ],
         hoverOffset: 4
         }]
+};
+
+let text = chartData.disappointed + chartData.normal + chartData.good + chartData.great;
+
+const innerChartText = {
+    fillStyle: varExports.purpleColor,
+    fontMainText: `bold 2.4rem ${varExports.montserratFont}`,
+    fontSubText: `bold 1.2rem ${varExports.montserratFont}`,
+    theText: text
+};
+
+const fillTextPlugin = {
+    id: 'fill-text-plugin',
+    afterDraw: function(chart, option) {
+        let theCenterText = innerChartText.theText;
+        let theCenterSubText = 'голосов';
+        const canvasBounds = chartCanvas.getBoundingClientRect();
+        chart.ctx.textBaseline = 'middle';
+        chart.ctx.textAlign = 'center';
+        chart.ctx.fillStyle = innerChartText.fillStyle;
+        chart.ctx.font = innerChartText.fontMainText;
+        chart.ctx.fillText(theCenterText, canvasBounds.width * 0.25, canvasBounds.height * 0.50);
+        chart.ctx.font = innerChartText.fontSubText;
+        chart.ctx.fillText(theCenterSubText, canvasBounds.width * 0.25, canvasBounds.height * 0.60);
+    }
 };
 
 let roomChart = new Chart(chartNode, {
@@ -123,5 +151,6 @@ let roomChart = new Chart(chartNode, {
         aspectRatio: 2,
         maintainAspectRatio: false,
         responsive: false
-    }
+    },
+    plugins: [fillTextPlugin]
 });
