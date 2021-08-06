@@ -1,8 +1,12 @@
 @import './colors';
 
 :export {
-    chartBackgroundGreat: $chart-background-great;
-    chartBackgroundGood: $chart-background-good;
-    chartBackgroundNormal: $chart-background-normal;
-    chartBackgroundDisappointed: $chart-background-disappointed;
+    purpleColor: $purple;
+    purpleColorSecond: $purple-second;
+    greenColor: $green;
+    greenColorSecond: $green-second;
+    goldColor: $gold;
+    goldColorSecond: $gold-second;
+    dimColor: $dim;
+    dimColorSecond: $dim-second;
 }

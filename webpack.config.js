@@ -33,16 +33,23 @@ module.exports = {
             {
                 test: /\.s[ac]ss/,
                 use: [MiniCssExtracPlugin.loader, 
-                    {
-                        loader: 'css-loader',
-                        options: {
-                            importLoaders: 1,
-                            modules: {
-                                mode: 'icss'
+                        {
+                            loader: 'css-loader',
+                            options: {
+                                sourceMap: true,
+                                importLoaders: 1,
+                                modules: {
+                                    mode: 'icss'
+                                }
+                            }
+                        },
+                        {
+                            loader: 'sass-loader',
+                            options: {
+                                sourceMap: true
                             }
                         }
-                    },
-                    'sass-loader']
+                    ]
             },
             {
                 test: /\.css$/,
@@ -50,6 +57,7 @@ module.exports = {
                         {
                             loader: 'css-loader',
                             options: {
+                                sourceMap: true,
                                 importLoaders: 1,
                                 modules: {
                                     mode: 'icss'

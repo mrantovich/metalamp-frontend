@@ -55,23 +55,49 @@ import {
     SubTitle
     );
 
-import varExport from '../../main/_export.scss';
-console.log(varExport)
+import colors from '../../main/_export.scss';
 
-let chartNode = document.querySelector('.room-details__chart');
+let chartNode = document.querySelector('.room-details__chart').getContext('2d');
+
+// Create linear gradients for different states on chart.
+let backgroundGreatGradient = chartNode.createLinearGradient(0, 0, 0, 400);
+backgroundGreatGradient.addColorStop(0, colors.goldColor);
+backgroundGreatGradient.addColorStop(1, colors.goldColorSecond);
+
+let backgroundGoodGradient = chartNode.createLinearGradient(0, 0, 0, 400);
+backgroundGoodGradient.addColorStop(0, colors.greenColor);
+backgroundGoodGradient.addColorStop(1, colors.greenColorSecond);
+
+let backgroundNormalGradient = chartNode.createLinearGradient(0, 0, 0, 400);
+backgroundNormalGradient.addColorStop(0, colors.purpleColor);
+backgroundNormalGradient.addColorStop(1, colors.purpleColorSecond);
+
+let backgroundDisappointedGradient = chartNode.createLinearGradient(0, 0, 0, 400);
+backgroundDisappointedGradient.addColorStop(0, colors.dimColor);
+backgroundDisappointedGradient.addColorStop(1, colors.dimColorSecond);
+
+// Values for drawing chart.
+let chartData = {
+    disappointed: 0,
+    normal: 65,
+    good: 65,
+    great: 130
+}
 
 const data = {
     labels: [
-        'Великолепно',
+        'Разочарован',
+        'Удовлетворительно',
         'Хорошо',
-        'Удовлетворительно'
+        'Великолепно',
         ],
         datasets: [{
-        data: [300, 50, 100],
+        data: [chartData.disappointed, chartData.normal, chartData.good, chartData.great],
         backgroundColor: [
-            varExport.chartBackgroundGreat,
-            varExport.chartBackgroundGood,
-            varExport.chartBackgroundNormal
+            backgroundDisappointedGradient,
+            backgroundNormalGradient,
+            backgroundGoodGradient,
+            backgroundGreatGradient,
         ],
         hoverOffset: 4
         }]
@@ -84,6 +110,7 @@ let roomChart = new Chart(chartNode, {
         plugins: {
             legend: {
                 position: 'right',
+                reverse: true,
                 labels : {
                     boxWidth: 10,
                     boxHeight: 10,
