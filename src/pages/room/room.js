@@ -55,7 +55,8 @@ import {
     SubTitle
     );
 
-import colors from '../../main/_colors.scss';
+import varExport from '../../main/_export.scss';
+console.log(varExport)
 
 let chartNode = document.querySelector('.room-details__chart');
 
@@ -68,9 +69,9 @@ const data = {
         datasets: [{
         data: [300, 50, 100],
         backgroundColor: [
-            'rgb(255, 99, 132)',
-            'rgb(54, 162, 235)',
-            'rgb(255, 205, 86)'
+            varExport.chartBackgroundGreat,
+            varExport.chartBackgroundGood,
+            varExport.chartBackgroundNormal
         ],
         hoverOffset: 4
         }]

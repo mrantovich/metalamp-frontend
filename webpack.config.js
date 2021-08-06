@@ -32,11 +32,31 @@ module.exports = {
         rules: [
             {
                 test: /\.s[ac]ss/,
-                use: [MiniCssExtracPlugin.loader, 'css-loader', 'sass-loader']
+                use: [MiniCssExtracPlugin.loader, 
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            importLoaders: 1,
+                            modules: {
+                                mode: 'icss'
+                            }
+                        }
+                    },
+                    'sass-loader']
             },
             {
                 test: /\.css$/,
-                use: [MiniCssExtracPlugin.loader, 'css-loader']
+                use: [MiniCssExtracPlugin.loader, 
+                        {
+                            loader: 'css-loader',
+                            options: {
+                                importLoaders: 1,
+                                modules: {
+                                    mode: 'icss'
+                                }
+                            }
+                        },
+                    ]
             },
             {
                 test: /\.pug$/,

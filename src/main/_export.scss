@@ -1,0 +1,8 @@
+@import './colors';
+
+:export {
+    chartBackgroundGreat: $chart-background-great;
+    chartBackgroundGood: $chart-background-good;
+    chartBackgroundNormal: $chart-background-normal;
+    chartBackgroundDisappointed: $chart-background-disappointed;
+}
