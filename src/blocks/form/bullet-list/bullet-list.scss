@@ -3,8 +3,9 @@
 
     &__item {
         position: relative;
-        padding-left: 1.75rem;
+        padding-left: 1.9rem;
         text-transform: none;
+        margin-bottom: 1.1rem;
 
         // Custom bullet on each list item.
         &::before {
@@ -14,7 +15,7 @@
             height: 1rem;
             border-radius: 50%;
             position: absolute;
-            top: 1.25rem;
+            top: 1.15rem;
             left: 0;
             transform: translate(0, -50%);
         }

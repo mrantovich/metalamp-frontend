@@ -77,8 +77,6 @@ let backgroundDisappointedGradient = chartNode.createLinearGradient(0, 0, 0, 400
 backgroundDisappointedGradient.addColorStop(0, varExports.dimColor);
 backgroundDisappointedGradient.addColorStop(1, varExports.dimColorSecond);
 
-chartNode.fillText('40%', 260/2 - 20, 260/2, 200)
-
 // Values for drawing chart.
 let chartData = {
     disappointed: 0,
@@ -143,14 +141,16 @@ let roomChart = new Chart(chartNode, {
                     boxWidth: 10,
                     boxHeight: 10,
                     usePointStyle: true,
-                    pointStyle: 'circle'
+                    pointStyle: 'circle',
+                    font: {
+                        size: 14
+                    }
                 }
             }
         },
-        cutout: 65,
-        aspectRatio: 2,
+        cutout: 55,
+        responsive: true,
         maintainAspectRatio: false,
-        responsive: false
     },
     plugins: [fillTextPlugin]
 });

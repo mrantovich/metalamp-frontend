@@ -1,6 +1,6 @@
 .room-details {
 
-    padding: 7rem 0;
+    padding: 7rem 0 6.2rem;
 
     &__sub-title {
         margin-bottom: 2rem;
@@ -90,27 +90,29 @@
         display: grid;
         grid-template: 1fr / 29rem 1fr;
         column-gap: 7rem;
-        margin-bottom: 3rem;
+        margin-bottom: 1.2rem;
     }
 
     &__chart {
+        width: 100%;
+        height: 100%;
     }
 
     &__chart-container {
-        width: 29rem;
-        height: 10.6rem;
+        width: 311px;
+        height: 126px;
         position: relative;
     }
 
     &__reviews {
-        max-width: 71rem;
-        margin-bottom: 3rem;
+        max-width: 71.3rem;
+        margin-bottom: 3.4rem;
     }
 
     &__user-review {
 
         &:not(:last-child) {
-            margin-bottom: 2.2rem;
+            margin-bottom: 2.4rem;
         }
     }
 

@@ -2,7 +2,7 @@
     font-size: 1.4rem;
     font-weight: normal;
     color: $dark-shade-75-percent;
-    line-height: 140%;
+    line-height: 171%;
     letter-spacing: -0.01rem;
     text-transform: none;
 
@@ -33,6 +33,12 @@
         font-weight: bold;
         color: $dark-shade;
         line-height: 2.3 / 1.9 * 100%;
+        letter-spacing: 0.02rem;
+    }
+
+    // To make subtitle aligns with bullet list text.
+    &_with-left-padding {
+        padding-left: 2rem;
     }
 
     &_title {
@@ -48,6 +54,6 @@
 .caption {
     font-size: 1.4rem;
     font-weight: bold;
-    line-height: 2.4 / 1.4 * 100%;
+    line-height: 140%;
     color: $dark-shade-75-percent;
 }
