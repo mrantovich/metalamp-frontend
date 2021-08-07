@@ -51,17 +51,17 @@ block content
                         .room-details__book
                             .room-details__card.card.card__total 
                                 form.form__card
-                                    .card__row
-                                        +card-head-total("888", "9990", true)
+                                    .card__row.card__row_has-short-bottom-margin
+                                        +card-head-total("888", "9 990", true)
                                     .card__row
                                         +card-date-picker("Прибытие", "Выезд")
-                                    .card__row
+                                    .card__row.card__row_has-short-bottom-margin
                                         +card-dropdown("Гости", ["Сколько гостей", ["Взрослые", "Дети", "Младенцы"], true])
                                     .card__row.card__row_min-bottom-margin
                                         +card-calculation("9990 x 4 суток", "39 960")
                                     .card__row.card__row_min-bottom-margin
                                         +card-calculation("Сбор за услуги: скидка 2179₽", "0", true)
-                                    .card__row.card__row_big-bottom-margin
+                                    .card__row.card__row_middle-bottom-margin
                                         +card-calculation("Сбор за дополнительные услуги", "0", true)
                                     .card__row 
                                         +card-total-line("Итого")

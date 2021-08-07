@@ -59,7 +59,7 @@ mixin card-footer-action(callToAction, actionButtonText)
 mixin card-head-total(roomNumber, roomPrice, isLuxury)
     .card__head-container 
         .card__head-no 
-            .card__head-title.text.text_sub-title 
+            .card__head-title.text.text_title 
                 span № 
                 | #{roomNumber}
             if isLuxury 
@@ -73,7 +73,7 @@ mixin card-calculation(calculationItemText, calculationItemData, isTextHasTip)
     .card__calculation-flex 
         if isTextHasTip 
             .card__calculation-text-plus-tip 
-                .card__calculation-text.text= calculationItemText 
+                .card__calculation-text.text.text_has-line-height-140= calculationItemText 
                 .card__calculation-tip 
             .card__calculation-data.text= calculationItemData 
         else
@@ -82,6 +82,6 @@ mixin card-calculation(calculationItemText, calculationItemData, isTextHasTip)
 
 mixin card-total-line(totalLineText)
     .card__total-flex 
-        .card__total-text.text.text_sub-title= totalLineText
+        .card__total-text.text.text_sub-title.text_has-line-height-100= totalLineText
         .card__total-delimiter 
         .card__total-sum.text.text_sub-title 38&nbsp;081&#8381;
