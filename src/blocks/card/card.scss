@@ -8,6 +8,11 @@
     border-radius: $brd-radius;
     box-shadow: 0 0 2.5rem rgba($black, 0.2);
 
+    &_is-registration {
+        width: $card-width;
+        margin-left: 0.5rem;
+    }
+
     &__room-card {
         max-width: 27rem;
         padding: 0;
@@ -36,6 +41,26 @@
 
         &_without-bottom-margin {
             margin-bottom: 0;
+        }
+
+        &_has-bottom-margin-1rem {
+            margin-bottom: 1rem;
+        }
+
+        &_has-bottom-margin-1-1rem {
+            margin-bottom: 1.1rem;
+        }
+
+        &_has-bottom-margin-0-8rem {
+            margin-bottom: 0.8rem;
+        }
+
+        &_has-bottom-margin-2rem {
+            margin-bottom: 2rem;
+        }
+
+        &_has-bottom-margin-2-1rem {
+            margin-bottom: 2.1rem;
         }
     }
 

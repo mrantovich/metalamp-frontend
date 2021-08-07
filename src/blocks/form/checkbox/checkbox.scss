@@ -72,7 +72,7 @@
 
 // Custom radio buttons.
 .radio {
-    @include elements-property(2rem, 2rem, 1.4rem, 50%);
+    @include elements-property(2rem, 2rem, 1rem, 50%);
 
     &:checked {
         border: 1px solid $purple;

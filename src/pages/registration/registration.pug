@@ -1,0 +1,42 @@
+extends ../template/template.pug
+
+block pageTitle
+    | Toxin Registration
+
+block content
+    .wrapper 
+        .flexible__wrapper
+
+            .header-and-main-content
+                +toxin-header
+
+                main.registration
+                    .registration__background 
+                        img(src=require('../../assets/img/registration-page-bg/registration-page-bg-01.jpg'), alt="registration section background")
+                    .registration__container
+                        .registration__card 
+                            .card.card_is-registration
+                                form.form__card
+                                    .card__row 
+                                        +card-title("Регистрация аккаунта")
+                                    .card__row.card__row_has-bottom-margin-1rem
+                                        +card-text-field("text", "first-name", "Имя")
+                                    .card__row.card__row_has-bottom-margin-0-8rem
+                                        +card-text-field("text", "last-name", "Фамилия")
+                                    .card__row.card__row_has-bottom-margin-1-1rem
+                                        +card-radios(["Мужчина", "Женщина"], "user-sex")
+                                    .card__row.card__row_has-bottom-margin-2rem
+                                        +card-masked-field("birth-date", "Дата рождения")
+                                    .card__row.card__row_has-bottom-margin-1rem
+                                        .form__label-text.text.text_label Данные для входа в сервис
+                                        +card-text-field("email", "email", "Email")
+                                    .card__row.card__row_has-bottom-margin-1rem
+                                        +card-text-field("password", "pwd", "Пароль")
+                                    .card__row.card__row_has-bottom-margin-2-1rem
+                                        +card-toggle("Получать спецпредложения", "special-offers", false)
+                                    .card__row.card__row_big-bottom-margin
+                                        +card-wide-button("Зарегистрироваться")
+                                    .card__row.card__row_without-bottom-margin
+                                        +card-footer-action("Уже есть аккаунт на Toxin?", "Войти")
+
+            +toxin-footer

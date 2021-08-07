@@ -97,6 +97,11 @@ module.exports = {
             filename: 'room.html',
             inject: 'body'
         }),
+        new HTMLWebpackPlugin({
+            template: path.resolve(__dirname, './src/pages/registration/registration.pug'),
+            filename: 'registration.html',
+            inject: 'body'
+        }),
         new MiniCssExtracPlugin({
             filename: 'style.css',
         }),

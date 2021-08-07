@@ -9,7 +9,9 @@
             align-items: center;
             margin-bottom: 1.1rem;
             transition: 0.2s;
-            max-width: 25rem;
+
+            // TODO: Fix for those checkboxes, that have limited width.
+            //max-width: 25rem;
         }
     }
 
