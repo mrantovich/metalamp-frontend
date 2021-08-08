@@ -40,6 +40,10 @@
         right: 1rem;
         transform: translate(0, -50%);
         transition: 0.2s;
+
+        @media (max-width: $mq-mobile-large) {
+            right: 0.5rem;
+        }
     }
 
     &_is-disabled {

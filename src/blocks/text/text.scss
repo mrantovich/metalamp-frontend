@@ -9,6 +9,7 @@
     &_call-to-action {
         color: $black;
         line-height: 1.8 / 1.4 * 100%;
+        text-align: center;
     }
 
     &_is-light {
@@ -47,6 +48,10 @@
         color: $dark-shade;
         line-height: 2.9 / 2.4 * 100%;
         letter-spacing: -0.02rem;
+
+        @media (max-width: $mq-mobile-large) {
+            text-align: center;
+        }
     }
 
     &_has-line-height-140 {

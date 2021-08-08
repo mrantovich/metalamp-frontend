@@ -39,6 +39,7 @@
     // Some issue: gradient color changes instantly and has no transition effect.
     &_as-toggle {
         @include elements-property(4rem, 2rem, 1rem, 1rem);
+        align-self: center;
 
         &:checked {
             border: 1px solid $purple;
