@@ -102,6 +102,11 @@ module.exports = {
             filename: 'registration.html',
             inject: 'body'
         }),
+        new HTMLWebpackPlugin({
+            template: path.resolve(__dirname, './src/pages/signin/signin.pug'),
+            filename: 'signin.html',
+            inject: 'body'
+        }),
         new MiniCssExtracPlugin({
             filename: 'style.css',
         }),

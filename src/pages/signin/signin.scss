@@ -1,9 +1,11 @@
-.registration {
+.signin {
     height: 100%;
-    min-height: $min-registration-page-height;
+    min-height: $min-signin-page-height;
     flex: 1 1 auto;
     position: relative;
-    padding-top: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     @media (max-width: $mq-mobile-large) {
         min-height: auto;

@@ -15,4 +15,5 @@ import './pages/room/room';
 import './pages/landing/landing.pug';
 import './pages/room/room.pug';
 import './pages/registration/registration.pug';
+import './pages/signin/signin.pug';
 import './main/main.scss';
