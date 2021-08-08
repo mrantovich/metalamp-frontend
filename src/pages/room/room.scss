@@ -163,6 +163,10 @@
         width: 33.5rem;
         height: 12.4rem;
         position: relative;
+
+        @media (max-width: $mq-mobile-large) {
+            height: 17.4rem;
+        }
     }
 
     &__reviews {
@@ -171,6 +175,7 @@
 
         @media (max-width: $mq-tablet) {
             max-width: 40rem;
+            margin: 0 auto 3.4rem;
         }
     }
 

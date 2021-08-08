@@ -161,3 +161,15 @@ let roomChart = new Chart(chartNode, {
     },
     plugins: [fillTextPlugin]
 });
+
+const mediaQueryList = window.matchMedia(`(max-width: ${varExports.mqMobileLarge}`);
+mediaQueryList.addEventListener('change', handleMediaChange);
+handleMediaChange(mediaQueryList);
+
+function handleMediaChange(mql) {
+    if (mql.matches) {
+        roomChart.options.plugins.legend.align = 'center';
+        roomChart.options.plugins.legend.position = 'bottom';
+        roomChart.update();
+    };
+};
