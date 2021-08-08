@@ -9,8 +9,8 @@ import './blocks/form/form';
 import './blocks/room-card/room-card';
 import './blocks/header/header';
 //import './pages/search/search';
-//import './pages/room/room';
-import './blocks/layout/layout';
+import './pages/room/room';
+//import './blocks/layout/layout';
 
 
 import './pages/landing/landing.pug';

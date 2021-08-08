@@ -40,6 +40,10 @@
         color: $dark-shade;
         line-height: 2.3 / 1.9 * 100%;
         letter-spacing: 0.02rem;
+
+        @media (max-width: $mq-mobile-large) {
+            text-align: center;
+        }
     }
 
     // To make subtitle aligns with bullet list text.
