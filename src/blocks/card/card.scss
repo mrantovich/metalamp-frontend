@@ -127,12 +127,22 @@
     &__calculation-flex {
         display: flex;
         justify-content: space-between;
+
+        @media (max-width: $mq-mobile-large) {
+            flex-direction: column;
+            padding-bottom: 1rem;
+            border-bottom: 0.1rem solid $dark-shade-25-percent;
+        }
     }
 
     &__calculation-text-plus-tip {
         display: flex;
         justify-content: space-between;
         width: 24rem;
+
+        @media (max-width: $mq-mobile-large) {
+            margin-bottom: 1rem;
+        }
     }
 
     // Imitate icon: letter "i" inside circle with border.
@@ -166,6 +176,15 @@
             left: 50%;
             top: 22%;
             transform: translateX(-50%)
+        }
+    }
+
+    &__calculation-data {
+    }
+
+    &__total {
+        @media (max-width: $mq-mobile-large) {
+            padding: $card-total-padding;
         }
     }
 
