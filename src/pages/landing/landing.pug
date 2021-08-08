@@ -5,11 +5,16 @@ block pageTitle
 
 block main 
 
-    main.landing 
-        .landing__background 
-            img(src=require('../../assets/img/landing-page-bg/landing-page-bg-01.jpg'), alt="landing section background")
-        .landing__container
-            .landing__card 
+    main.layout.layout_for-landing 
+        .layout__background-overlay
+            .layout__background 
+                img(src=require('../../assets/img/landing-page-bg/landing-page-bg-01.jpg'), alt="landing section background")
+            .layout__background
+                img(src=require('../../assets/img/landing-page-bg/landing-page-bg-02.jpg'), alt="landing section background")
+            .layout__background
+                img(src=require('../../assets/img/landing-page-bg/landing-page-bg-03.jpg'), alt="landing section background")
+        .layout__container
+            .layout__card 
                 .card 
                     form.form__card
                         .card__row 
