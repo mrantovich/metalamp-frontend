@@ -1,47 +1,43 @@
 extends ../template/template.pug
 
-block content
-    .wrapper 
-        .flexible__wrapper
+block main
 
-            +toxin-header
+    section.search 
+        .container
+            .search__content
+                .search__filter-area
+                    .search__filter-toggle
+                        .search__filter-icon 
+                            .search__filter-icon-element 
+                            .search__filter-icon-element.search__filter-icon-element_with-opposed-circle 
+                            .search__filter-icon-element 
+                    form.search__form
+                        .search__form-row 
+                            .form__label-text.text.text_label Даты пребывания в отеле
+                            +date-picker("filter-date-picker")
+                        .search__form-row.search__form-row_margin-bottom-large
+                            .form__label-text.text.text_label Гости
+                            +dropdown(["Сколько гостей", ["Взрослые", "Дети", "Младенцы"]])
+                        .search__form-row.search__form-row_margin-bottom-large
+                            +range-slider("Диапазон цены", "Стоимость за сутки пребывания в номере")
+                        .search__form-row.search__form-row_margin-bottom-large
+                            .form__label-text.form__label-text_margin-bottom-large.text.text_label Правила дома
+                            +checkbox("Можно курить", "check")
+                            +checkbox("Можно с питомцами", "check", true)
+                            +checkbox("Можно пригласить гостей (до 10 человек)", "check", true)
+                        .search__form-row.search__form-row_margin-bottom-large
+                            .form__label-text.form__label-text_margin-bottom-large.text.text_label Доступность
+                            +checkbox-rich("Широкий коридор", "Ширина коридоров в номере не менее 91 см.", "first-rich-checkbox")
+                            +checkbox-rich("Помощник для инвалидов", "На 1 этаже вас встретит специалист  и проводит до номера.", "second-rich-checkbox")
+                        .search__form-row.search__form-row_margin-bottom-large
+                            .form__label-text.text.text_label Удобства номера
+                            +dropdown(["Сколько гостей", ["Спальни", "Кровати", "Ванные комнаты"]])
+                        .search__form-row 
+                            - var expandableTitle = "Дополнительные удобства"
+                            - var expandableData = [["breakfast", false, "Завтрак"], ["table", true, "Письменный стол"], ["child-chair", true, "Стул для кормления"], ["bed", true, "Кроватка"], ["tv", false, "Телевизор"], ["shampoo", false, "Шампунь"]]
+                            +expandable-list(expandableTitle, expandableData)
 
-            section.search 
-                .container
-                    .search__content
-                        .search__filter-area
-                            .search__filter-toggle
-                                .search__filter-icon 
-                                    .search__filter-icon-element 
-                                    .search__filter-icon-element.search__filter-icon-element_with-opposed-circle 
-                                    .search__filter-icon-element 
-                            form.search__form
-                                .search__form-row 
-                                    .form__label-text.text.text_label Даты пребывания в отеле
-                                    +date-picker("filter-date-picker")
-                                .search__form-row.search__form-row_margin-bottom-large
-                                    .form__label-text.text.text_label Гости
-                                    +dropdown(["Сколько гостей", ["Взрослые", "Дети", "Младенцы"]])
-                                .search__form-row.search__form-row_margin-bottom-large
-                                    +range-slider("Диапазон цены", "Стоимость за сутки пребывания в номере")
-                                .search__form-row.search__form-row_margin-bottom-large
-                                    .form__label-text.form__label-text_margin-bottom-large.text.text_label Правила дома
-                                    +checkbox("Можно курить", "check")
-                                    +checkbox("Можно с питомцами", "check", true)
-                                    +checkbox("Можно пригласить гостей (до 10 человек)", "check", true)
-                                .search__form-row.search__form-row_margin-bottom-large
-                                    .form__label-text.form__label-text_margin-bottom-large.text.text_label Доступность
-                                    +checkbox-rich("Широкий коридор", "Ширина коридоров в номере не менее 91 см.", "first-rich-checkbox")
-                                    +checkbox-rich("Помощник для инвалидов", "На 1 этаже вас встретит специалист  и проводит до номера.", "second-rich-checkbox")
-                                .search__form-row.search__form-row_margin-bottom-large
-                                    .form__label-text.text.text_label Удобства номера
-                                    +dropdown(["Сколько гостей", ["Спальни", "Кровати", "Ванные комнаты"]])
-                                .search__form-row 
-                                    - var expandableTitle = "Дополнительные удобства"
-                                    - var expandableData = [["breakfast", false, "Завтрак"], ["table", true, "Письменный стол"], ["child-chair", true, "Стул для кормления"], ["bed", true, "Кроватка"], ["tv", false, "Телевизор"], ["shampoo", false, "Шампунь"]]
-                                    +expandable-list(expandableTitle, expandableData)
-
-                        .search__rooms-area 
+                .search__rooms-area 
                             .search__rooms-area-title.text.text_title Номера, которые мы для вас подобрали
                             .search__rooms-area-content 
                                 //- 1st row.
@@ -79,6 +75,3 @@ block content
                                         .pagination__item 15
                                         a(href="/mock/address", alt="Next").pagination__button
                                     .pagination__desc.text 1 – 12 из 100+ вариантов аренды
-
-
-            +toxin-footer

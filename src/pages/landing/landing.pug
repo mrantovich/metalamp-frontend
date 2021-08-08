@@ -3,27 +3,20 @@ extends ../template/template.pug
 block pageTitle
     | Toxin Landing Page
 
-block content
-    .wrapper 
-        .flexible__wrapper
+block main 
 
-            .header-and-main-content
-                +toxin-header
-
-                main.landing 
-                    .landing__background 
-                        img(src=require('../../assets/img/landing-page-bg/landing-page-bg-01.jpg'), alt="landing section background")
-                    .landing__container
-                        .landing__card 
-                            .card 
-                                form.form__card
-                                    .card__row 
-                                        +card-title("Найдём номера под ваши пожелания")
-                                    .card__row
-                                        +card-date-picker("Прибытие", "Выезд")
-                                    .card__row.card__row_big-bottom-margin 
-                                        +card-dropdown("Гости", ["Сколько гостей", ["Взрослые", "Дети", "Младенцы"], true])
-                                    .card__row.card__row_without-bottom-margin 
-                                        +card-wide-button("Подобрать номер")
-
-            +toxin-footer
+    main.landing 
+        .landing__background 
+            img(src=require('../../assets/img/landing-page-bg/landing-page-bg-01.jpg'), alt="landing section background")
+        .landing__container
+            .landing__card 
+                .card 
+                    form.form__card
+                        .card__row 
+                            +card-title("Найдём номера под ваши пожелания")
+                        .card__row
+                            +card-date-picker("Прибытие", "Выезд")
+                        .card__row.card__row_big-bottom-margin 
+                            +card-dropdown("Гости", ["Сколько гостей", ["Взрослые", "Дети", "Младенцы"], true])
+                        .card__row.card__row_without-bottom-margin 
+                            +card-wide-button("Подобрать номер")

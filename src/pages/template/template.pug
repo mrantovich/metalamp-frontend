@@ -31,4 +31,12 @@ html(lang="ru")
         title
             block pageTitle
     body 
-        block content
+
+        .wrapper 
+            .flexible__wrapper 
+
+                +toxin-header 
+
+                block main 
+                
+                +toxin-footer
