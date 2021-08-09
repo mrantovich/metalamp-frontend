@@ -19,4 +19,6 @@ function changeLayoutBackground() {
     }, 5000);
 }
 
-changeLayoutBackground();
+if (layoutBackgrounds) {
+    changeLayoutBackground();
+};

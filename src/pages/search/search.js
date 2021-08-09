@@ -3,7 +3,9 @@ const filterMenu = document.querySelector('.search__filter-area');
 const html = document.querySelector('html');
 const body = document.querySelector('body');
 
-filterToggle.addEventListener('click', toggleFilterMenu);
+if (filterToggle) {
+    filterToggle.addEventListener('click', toggleFilterMenu);
+};
 
 function toggleFilterMenu() {
     this.classList.toggle('is-active');
@@ -11,4 +13,4 @@ function toggleFilterMenu() {
 
     html.classList.toggle('is-locked');
     body.classList.toggle('is-locked');
-}
+};
