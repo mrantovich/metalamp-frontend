@@ -59,11 +59,17 @@
     }
 
     &__card {
+        
 
         @media (max-width: $mq-mobile-large) {
             display: flex;
             justify-content: center;
         }
         
+
+        &_is-centered {
+            display: flex;
+            justify-content: center;
+        }
     }
 }

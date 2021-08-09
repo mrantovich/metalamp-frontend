@@ -5,11 +5,14 @@ block pageTitle
 
 block main 
 
-    main.registration
-        .registration__background 
-            img(src=require('../../assets/img/registration-page-bg/registration-page-bg-01.jpg'), alt="registration section background")
-        .registration__container
-            .registration__card 
+    main.layout.layout_for-registration
+        .layout__background-overlay
+            .layout__background
+                img(src=require('../../assets/img/registration-page-bg/registration-page-bg-01.jpg'), alt="registration section background")
+            .layout__background
+                img(src=require('../../assets/img/registration-page-bg/registration-page-bg-02.jpg'), alt="registration section background")
+        .layout__container
+            .layout__card.layout__card_is-centered
                 .card
                     form.form__card
                         .card__row 
