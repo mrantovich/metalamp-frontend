@@ -2,6 +2,9 @@
     height: $header-height;
     box-shadow: $box-shadow-properties;
     transition: 0.3s;
+    position: relative;
+    z-index: 20;
+    transition: 0.2s;
 
     &__overlay {
         top: 0;
@@ -15,13 +18,15 @@
             position: absolute;
             height: 100vh;
             background: $white;
-            opacity: 0;
-            visibility: hidden;
+            //clip-path: inset(0 0 calc(100vh - #{$header-height}));
+            animation-name: enableClipPath;
+            animation-duration: 0.3s;
+            animation-fill-mode: forwards;
 
             .header__content {
                 flex-direction: column;
                 justify-content: flex-start;
-                padding-top: $header-height / 2;
+                padding-top: $header-height / 4;
                 padding-bottom: $header-height / 2;
             }
 
@@ -50,6 +55,9 @@
                 opacity: 1;
                 visibility: visible;
                 overflow: auto;
+                animation-name: disableClipPath;
+                animation-duration: 0.3s;
+                animation-fill-mode: forwards;
 
                 & .container {
                     min-height: $min-header-overlay-container-height;
@@ -72,33 +80,6 @@
         transition: 0.3s;
     }
 
-    &.is-active {
-        height: 100vh;
-
-        &::after {
-            opacity: 1;
-            visibility: visible;
-            height: 100vh;
-        }
-
-        .header__menu { 
-            height: 100vh;
-            flex-direction: column;
-            position: absolute;
-            left: 50%;
-            bottom: 0;
-            transform: translate(-50%, 0)
-        }
-
-        
-    }
-
-    &_is-fixed-at-top {
-        position: fixed;
-        top: 0;
-        left: 0;
-    }
-
     &__content {
         width: 100%;
         display: flex;
@@ -107,7 +88,7 @@
 
         @media (max-width: $mq-laptop) {
             height: 100%;
-            z-index: 15;
+            z-index: 20;
         }
     }
 
@@ -220,5 +201,23 @@
                 width: 0;
             }
         }
+    }
+}
+
+@keyframes disableClipPath {
+    from {
+        clip-path: inset(0 0 calc(100vh - #{$header-height}));
+    }
+    to {
+        clip-path: inset(0 0);
+    }
+}
+
+@keyframes enableClipPath {
+    from {
+        clip-path: inset(0 0);
+    }
+    to {
+        clip-path: inset(0 0 calc(100vh - #{$header-height}));
     }
 }
