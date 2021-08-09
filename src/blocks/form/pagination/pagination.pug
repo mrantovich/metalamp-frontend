@@ -1,0 +1,11 @@
+//- Form pagination.
+mixin pagination(firstPage, lastPage, description)
+    .form__pagination.pagination 
+        .pagination__content
+            .pagination__item.pagination__item_current= firstPage
+            .pagination__item= ++firstPage
+            .pagination__item= ++firstPage
+            .pagination__item.pagination__item_ellipsis  ...
+            .pagination__item= lastPage
+            a(href="/mock/address", alt="Next").pagination__button
+        .pagination__desc.text= description
