@@ -15,3 +15,5 @@ __Использованы следующие проекты:__
 * [wNumb.js](https://refreshless.com/wnumb/) для вывода информации из range-slider в нужном формате
 
 * [swiper.js](https://swiperjs.com/) для слайдера карточки номера
+
+* [Chart.js](https://www.chartjs.org/) для диаграммы впечателний от номера
