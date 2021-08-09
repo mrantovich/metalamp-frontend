@@ -14,7 +14,7 @@ block main
         .layout__container
             .layout__card.layout__card_is-centered
                 .card
-                    form.form__card
+                    form(action="/change/me", method="GET", autocomplete="off").form__card
                         .card__row 
                             +card-title("Регистрация аккаунта")
                         .card__row.card__row_has-bottom-margin-1rem

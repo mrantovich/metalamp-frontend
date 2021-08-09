@@ -46,7 +46,7 @@ block main
 
                 .room-details__book
                     .room-details__card.card.card__total 
-                        form.form__card
+                        form(action="/change/me", method="GET", autocomplete="off").form__card
                             .card__row.card__row_has-short-bottom-margin
                                 +card-head-total("888", "9 990", true)
                             .card__row

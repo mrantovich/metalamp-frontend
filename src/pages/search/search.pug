@@ -11,7 +11,7 @@ block main
                             .search__filter-icon-element 
                             .search__filter-icon-element.search__filter-icon-element_with-opposed-circle 
                             .search__filter-icon-element 
-                    form.search__form
+                    form(action="/change/me", method="GET", autocomplete="off").search__form
                         .search__form-row 
                             .form__label-text.text.text_label Даты пребывания в отеле
                             +date-picker("filter-date-picker")
