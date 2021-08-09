@@ -13,3 +13,18 @@
     cursor: pointer;
     transition: 0.2s;
 }
+
+// Small gray arrow on the right side of inputs that indicate that there is dropdown.
+@mixin input-arrow($right-position) {
+    background: transparent;
+    border-left: 0.2rem solid $dark-shade-50-percent;
+    border-bottom: 0.2rem solid $dark-shade-50-percent;
+    width: 0.8rem;
+    height: 0.8rem;
+    position: absolute;
+    top: 50%;
+    right: $right-position;
+    transform: translate(0, -75%) rotate(-45deg);
+    transition: 0.2s;
+}
+

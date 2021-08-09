@@ -53,15 +53,7 @@
     &::after {
         display: block;
         content: '';
-        background: transparent;
-        border-left: 0.2rem solid $dark-shade-50-percent;
-        border-bottom: 0.2rem solid $dark-shade-50-percent;
-        width: 0.8rem;
-        height: 0.8rem;
-        position: absolute;
-        top: 50%;
-        right: 0.1rem;
-        transform: translate(0, -70%) rotate(-45deg);
+        @include input-arrow(0.1rem);
     }
 }
 
