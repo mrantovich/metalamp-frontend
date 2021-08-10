@@ -147,6 +147,12 @@
     font-size: 1.2rem;
 }
 
+.button-decrement.is-disabled {
+    transition: 0.2s;
+    opacity: 0.5;
+    pointer-events: none;
+}
+
 @keyframes makeDropdownMenuVisible {
     from {
         opacity: 0;

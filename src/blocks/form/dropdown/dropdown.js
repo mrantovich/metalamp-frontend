@@ -23,6 +23,14 @@ for (let i = 0; i < dropdowns.length; i++) {
 
             // Hide or show button when it have certain class.
             onChange: function(id, count, totalItems) {
+                let menuOption = $(dr).find('[data-id='+id+']')[0];
+                let buttonDecrement = $(menuOption).find('.button-decrement')[0];
+                if (count === 0) {
+                    $(buttonDecrement).addClass('is-disabled');
+                } else {
+                    $(buttonDecrement).removeClass('is-disabled');
+                };
+
                 function hideOrShowButton(buttonSelector) {
                     let buttonName = $(dr).find(buttonSelector)[0];
                     let isVisibleClass = 'iqdropdown-menu-button_is-visible';
