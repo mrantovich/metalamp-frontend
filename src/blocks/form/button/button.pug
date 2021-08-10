@@ -1,24 +1,20 @@
-//- Common button. Has two state. When disabled second parameter is true.
-mixin button(textContent, isDisabled)
-    if isDisabled 
-        button.form__button.button.button_is-disabled= textContent 
-    else 
-        button.form__button.button= textContent
+//- Common button. Has no paddings, looks like simple text.
+mixin button(textContent)
+    button.form__button.button= textContent
 
 //- So called ghost button with no color background inside.
-//- Parameters are the same as for common button.
-mixin ghost-button(textContent, isDisabled)
-    if isDisabled 
-        button.button__wrapper.button__wrapper_is-disabled 
-            .button__border-wrap 
-                .button__empty= textContent
-    else
-        button.button__wrapper
+mixin button-ghost(textContent)
+    button.form__button.button.button_ghost
+        .button__wrapper
             .button__border-wrap
-                .button__empty= textContent
+                .button__empty
+        .button__text= textContent
+
+//- Button that looks like ghost buttons but filled with color.
+mixin button-filled(textContent)
+    button.form__button.button.button_filled= textContent
 
 //- Button with arrow on right side. Usually in wide container.
-//- Don't need disabled state.
 mixin button-with-arrow(textContent)
-    button.form__button.button.button_with-arrow= textContent
+    button.form__button.button.button_filled.button_with-arrow= textContent
         span.button__arrow

@@ -22,6 +22,6 @@ mixin header(menuList, menuButtons, userName)
                             .header__menu-buttons
                                 - var ghostButtonText = menuButtons.ghost
                                 - var normalButtonText = menuButtons.normal
-                                +ghost-button(ghostButtonText)
-                                +button(normalButtonText)
+                                +button-ghost(ghostButtonText)
+                                +button-filled(normalButtonText)
 

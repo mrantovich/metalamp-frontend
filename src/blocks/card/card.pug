@@ -53,7 +53,7 @@ mixin card-footer-action(callToAction, actionButtonText)
     .card__horizontal-container 
         .text.text_call-to-action= callToAction
         .card__button-container
-            +ghost-button(actionButtonText)
+            +button-ghost(actionButtonText)
 
 //- Head element for card with total information about room.
 mixin card-head-total(roomNumber, roomPrice, isLuxury)
