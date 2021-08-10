@@ -13,7 +13,7 @@ const calendarOptions = {
     range: true,
     dateFormat: 'd M',
     multipleDatesSeparator: ' - '
-}
+};
 
 
 $('.date-picker').datepicker(calendarOptions);
@@ -27,7 +27,11 @@ function changeTodayText() {
     let todayButtons = $('.datepicker--button[data-action="today"]');
     for (let i = 0; i < todayButtons.length; i++) {
         let tdButton = todayButtons[i];
-        $(tdButton).on('click', function() {
+        $(tdButton).on('click', function(e) {
+            e.preventDefault();
+            let dp = $(this).parent().closest('.datepicker');
+            dp.removeClass('active');
+            document.activeElement.blur();
         });
         todayButtons[i].innerHTML = 'Применить';
     };

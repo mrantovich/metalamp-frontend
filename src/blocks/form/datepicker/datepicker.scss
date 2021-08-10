@@ -198,6 +198,14 @@
     color: $purple;
     text-transform: uppercase;
     display: flex;
+    transition: 0.2s;
+
+    @media (any-hover: hover) {
+        &:hover {
+            color: $dark-shade-50-percent;
+            background: transparent;
+        }
+    }
 }
 
 .datepicker--button[data-action="clear"] {
