@@ -67,11 +67,13 @@
 }
 
 .iqdropdown.menu-open .iqdropdown-menu {
-    animation: 0.3s makeDropdownMenuVisible;
+    animation-name: makeDropdownMenuVisible;
+    animation-duration: 0.3s;
 }
 
 .iqdropdown .iqdropdown-menu {
-    animation: 0.3s makeDropdownMenuHidden;
+    //animation-name: makeDropdownMenuHidden;
+    //animation-duration: 0.3s;
 }
 
 .iqdropdown-item {
