@@ -10,10 +10,10 @@ import './blocks/room-card/room-card';
 import './blocks/header/header';
 import './blocks/layout/layout';
 import './pages/search/search';
-import './pages/room/room';
+import './pages/room-details/room-details';
 
 import './pages/landing/landing.pug';
-import './pages/room/room.pug';
+import './pages/room-details/room-details.pug';
 import './pages/registration/registration.pug';
 import './pages/signin/signin.pug';
 import './main/main.scss';

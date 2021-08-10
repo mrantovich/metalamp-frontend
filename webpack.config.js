@@ -72,11 +72,17 @@ module.exports = {
             },
             {
                 test: /\.(?:png|gif|jpg|svg)$/i,
-                type: 'asset/resource'
+                type: 'asset/resource',
+                generator: {
+                    filename: './img/[hash][ext]'
+                }
             },
             {
                 test: /\.(ttf|woff)$/,
-                type: 'asset/resource'
+                type: 'asset/resource',
+                generator: {
+                    filename: './fonts/[hash][ext]'
+                }
             }
         ]
     },
@@ -93,8 +99,8 @@ module.exports = {
             inject: 'body'
         }),
         new HTMLWebpackPlugin({
-            template: path.resolve(__dirname, './src/pages/room/room.pug'),
-            filename: 'room.html',
+            template: path.resolve(__dirname, './src/pages/room-details/room-details.pug'),
+            filename: 'room-details.html',
             inject: 'body'
         }),
         new HTMLWebpackPlugin({
