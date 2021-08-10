@@ -108,6 +108,18 @@ for (let i = 0; i < dropdowns.length; i++) {
             },
         });
     };
+
+    $(dr).on('click', function() {
+        let menu = $(dr).find('.iqdropdown-menu');
+
+        if (dr.classList.contains('menu-open')) {
+            menu.removeClass('not-active');
+            menu.addClass('is-active');
+        } else {
+            menu.removeClass('is-active');
+            menu.addClass('not-active');
+        };
+    });
 };
 
 // To hide dropdown menu when clicked outside of it.
