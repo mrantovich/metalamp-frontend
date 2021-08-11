@@ -1,5 +1,5 @@
-import likeImgSelected from '../../../assets/img/like-button-selected.svg';
-import likeImgNotSelected from '../../../assets/img/like-button-not-selected.svg';
+import likeImgSelected from '../../assets/img/like-button-selected.svg';
+import likeImgNotSelected from '../../assets/img/like-button-not-selected.svg';
 
 const likeButtons = document.querySelectorAll('.like-button');
 

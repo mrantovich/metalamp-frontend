@@ -1,5 +1,3 @@
-@import '../form-mixins';
-
 // Styles for custom checkboxes.
 .checkbox {
     @include elements-property(2rem, 2rem, 1rem, 0.4rem);

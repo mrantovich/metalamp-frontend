@@ -1,4 +1,32 @@
-@import 'form-mixins';
+// Property for checkbox and radio elements (and for imitated toggles).
+// We need different size and border radius of elements for each input type.
+@mixin elements-property($width, $height, $margin-right, $border-radius) {
+    display: block;
+    flex: 0 0 auto;
+    appearance: none;
+    width: $width;
+    height: $height;
+    margin-right: $margin-right;
+    border: 1px solid $dark-shade-25-percent;
+    border-radius: $border-radius;
+    position: relative;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+// Small gray arrow on the right side of inputs that indicate that there is dropdown.
+@mixin input-arrow($right-position) {
+    background: transparent;
+    border-left: 0.2rem solid $dark-shade-50-percent;
+    border-bottom: 0.2rem solid $dark-shade-50-percent;
+    width: 0.8rem;
+    height: 0.8rem;
+    position: absolute;
+    top: 50%;
+    right: $right-position;
+    transform: translate(0, -75%) rotate(-45deg);
+    transition: 0.2s;
+}
 
 .form {
 
@@ -25,18 +53,18 @@
 
 }
 
-@import './text-field/text-field.scss';
-@import './checkbox/checkbox.scss';
-@import './arrow/arrow.scss';
-@import './dropdown/dropdown.scss';
-@import './like-button/like-button.scss';
-@import './star-button/star-button.scss';
-@import './button/button.scss';
-@import './bullet-list/bullet-list.scss';
-@import './pagination/pagination.scss';
-@import './range-slider/range-slider.scss';
-@import './user-review/user-review.scss';
-@import './room-info/room-info.scss';
-@import './datepicker/datepicker.scss';
-@import './expandable-list/expandable-list.scss';
-@import './subscription/subscription.scss';
+@import '../text-field/text-field.scss';
+@import '../checkbox/checkbox.scss';
+@import '../arrow/arrow.scss';
+@import '../dropdown/dropdown.scss';
+//@import '../like-button/like-button.scss';
+//@import '../star-button/star-button.scss';
+@import '../button/button.scss';
+//@import '../bullet-list/bullet-list.scss';
+@import '../pagination/pagination.scss';
+@import '../range-slider/range-slider.scss';
+//@import '../user-review/user-review.scss';
+//@import '../room-info/room-info.scss';
+@import '../datepicker/datepicker.scss';
+@import '../expandable-list/expandable-list.scss';
+@import '../subscription/subscription.scss';
