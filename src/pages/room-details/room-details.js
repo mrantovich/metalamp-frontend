@@ -187,7 +187,16 @@ if (chartCanvas) {
         };
 
         function enableSwiper(gallery) {
-            gswp = new Swiper(gallery, {});
+            gswp = new Swiper(gallery, {
+                loop: true,
+                pagination: {
+                    el: '.swiper-pagination'
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev'
+                }
+            });
         };
 
         function changeGalleryGridContent(gallery, isContentWrapped) {
@@ -210,7 +219,10 @@ if (chartCanvas) {
 
             let galleryContent;
             if (isContentWrapped) {
-                galleryContent = `<div class="swiper-wrapper">${slidesHtmlContent}</div>`;
+                galleryContent = `<div class="swiper-wrapper">${slidesHtmlContent}</div>
+                                    <div class="swiper-pagination"></div>
+                                    <div class="swiper-button-prev"></div>
+                                    <div class="swiper-button-next"></div>`;
             } else {
                 galleryContent = `${slidesHtmlContent}`;
             };
