@@ -118,7 +118,7 @@ if (chartCanvas) {
 
     const fillTextPlugin = {
         id: 'fill-text-plugin',
-        afterDraw: function(chart, option) {
+        /* afterDraw: function(chart, option) {
             let theCenterText = innerChartText.theText;
             let theCenterSubText = 'голосов';
             const canvasBounds = chartCanvas.getBoundingClientRect();
@@ -129,6 +129,31 @@ if (chartCanvas) {
             chart.ctx.fillText(theCenterText, canvasBounds.width * 0.23, canvasBounds.height * 0.43);
             chart.ctx.font = innerChartText.fontSubText;
             chart.ctx.fillText(theCenterSubText, canvasBounds.width * 0.23, canvasBounds.height * 0.60);
+        }, */
+        afterRender: function(chart, option) {
+            let theCenterText = innerChartText.theText;
+            let theCenterSubText = 'голосов';
+            const canvasBounds = chartCanvas.getBoundingClientRect();
+            chart.ctx.textBaseline = 'middle';
+            chart.ctx.textAlign = 'center';
+            chart.ctx.fillStyle = innerChartText.fillStyle;
+            chart.ctx.font = innerChartText.fontMainText;
+            chart.ctx.fillText(theCenterText, canvasBounds.width * 0.50, canvasBounds.height * 0.33);
+            chart.ctx.font = innerChartText.fontSubText;
+            chart.ctx.fillText(theCenterSubText, canvasBounds.width * 0.50, canvasBounds.height * 0.43);
+        },
+        afterUpdate: function(chart, args, options) {
+            console.log(options);
+            let theCenterText = innerChartText.theText;
+            let theCenterSubText = 'голосов';
+            const canvasBounds = chartCanvas.getBoundingClientRect();
+            chart.ctx.textBaseline = 'middle';
+            chart.ctx.textAlign = 'center';
+            chart.ctx.fillStyle = innerChartText.fillStyle;
+            chart.ctx.font = innerChartText.fontMainText;
+            chart.ctx.fillText(theCenterText, canvasBounds.width * 0.30, canvasBounds.height * 0.33);
+            chart.ctx.font = innerChartText.fontSubText;
+            chart.ctx.fillText(theCenterSubText, canvasBounds.width * 0.30, canvasBounds.height * 0.43);
         }
     };
 
@@ -178,10 +203,14 @@ if (chartCanvas) {
 
             roomChart.options.plugins.legend.align = 'center';
             roomChart.options.plugins.legend.position = 'bottom';
-            roomChart.update();
+            roomChart.update(true);
 
             enableSwiper(gallerySwiperContainer);
         } else {
+            roomChart.options.plugins.legend.align = 'end';
+            roomChart.options.plugins.legend.position = 'right';
+            roomChart.update(false);
+
             changeGalleryGridContent(gallerySwiperContainer, false);
             if (gswp !== undefined) gswp.destroy(true, true);
         };

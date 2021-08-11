@@ -161,7 +161,7 @@
         height: 12.4rem;
         position: relative;
 
-        @media (max-width: $mq-mobile-large) {
+        @media (max-width: $mq-tablet) {
             height: 17.4rem;
         }
     }
