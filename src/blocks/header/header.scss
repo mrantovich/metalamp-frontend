@@ -124,12 +124,8 @@
         height: 3.4rem;
 
         @media (max-width: $mq-laptop) {
-            display: flex;
-            flex-direction: column;
-
-            & button {
-                margin-bottom: 2rem;
-            }
+            grid-template: 3.4rem 3.4rem / 19.6rem;
+            row-gap: 2rem;
         }
     }
 

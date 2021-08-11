@@ -53,9 +53,15 @@
             height: 4rem;
             background: $white;
             position: absolute;
-            top: 0rem;
+            top: 0;
             right: -3.8rem;
             box-shadow: 2rem 0 2rem $dark-shade-25-percent;
+            opacity: 0.7;
+            transition: 0.2s;
+
+            &.is-active {
+                opacity: 1;
+            }
         }
     }
 
