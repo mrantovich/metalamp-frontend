@@ -27,6 +27,7 @@ import {
     Tooltip,
     SubTitle
     } from 'chart.js';
+import Swiper from 'swiper';
 
     Chart.register(
     ArcElement,
@@ -169,11 +170,53 @@ if (chartCanvas) {
     handleMediaChange(mediaQueryList);
 
     function handleMediaChange(mql) {
+        let gswp;
+        let gallerySwiperContainer = document.querySelector('.room-details__gallery-grid');
         if (mql.matches) {
+            
+            changeGalleryGridContent(gallerySwiperContainer, true);
+
             roomChart.options.plugins.legend.align = 'center';
             roomChart.options.plugins.legend.position = 'bottom';
             roomChart.update();
+
+            enableSwiper(gallerySwiperContainer);
+        } else {
+            changeGalleryGridContent(gallerySwiperContainer, false);
+            if (gswp !== undefined) gswp.destroy(true, true);
         };
+
+        function enableSwiper(gallery) {
+            gswp = new Swiper(gallery, {});
+        };
+
+        function changeGalleryGridContent(gallery, isContentWrapped) {
+            let gallerySlides = gallery.querySelectorAll('.room-details__gallery-item');
+            let slides = [];
+            for (let i = 0; i < gallerySlides.length; i++) {
+                let slide = gallerySlides[i];
+
+                if (isContentWrapped) {
+                    slide.classList.add('swiper-slide');
+                } else {
+                    slide.classList.remove('swiper-slide');
+                    slide.style.width = 'auto';
+                };
+
+                slides.push(slide.outerHTML);
+            };
+
+            let slidesHtmlContent = slides.join('');
+
+            let galleryContent;
+            if (isContentWrapped) {
+                galleryContent = `<div class="swiper-wrapper">${slidesHtmlContent}</div>`;
+            } else {
+                galleryContent = `${slidesHtmlContent}`;
+            };
+
+            gallery.innerHTML = galleryContent;
+        }
     };
 }
 

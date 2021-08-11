@@ -19,11 +19,7 @@
         height: 48.5rem;
 
         @media (max-width: $mq-tablet) {
-            height: calc(100vh - #{$header-height});
-        }
-
-        @media (max-width: $mq-mobile-large) {
-            height: 48.5rem;
+            height: calc((100vh - #{$header-height}) / 1.5);
         }
     }
 
@@ -34,7 +30,8 @@
 
         @media (max-width: $mq-tablet) {
             display: flex;
-            flex-direction: column;
+            //display: flex;
+            //flex-direction: column;
         }
     }
 

@@ -28,7 +28,7 @@ function changeTodayText() {
     for (let i = 0; i < todayButtons.length; i++) {
         let tdButton = todayButtons[i];
         $(tdButton).on('click', function(e) {
-            e.preventDefault();
+            //e.preventDefault();
             let dp = $(this).parent().closest('.datepicker');
             dp.removeClass('active');
             document.activeElement.blur();
