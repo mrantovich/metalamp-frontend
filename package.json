@@ -30,6 +30,7 @@
   },
   "homepage": "https://github.com/mrantovich/metalamp-frontend#readme",
   "devDependencies": {
+    "@popperjs/core": "^2.9.3",
     "air-datepicker": "^2.2.3",
     "clean-webpack-plugin": "^4.0.0-alpha.0",
     "css-loader": "^6.1.0",

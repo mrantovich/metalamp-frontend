@@ -6,6 +6,7 @@ import './blocks/range-slider/range-slider';
 import './blocks/datepicker/datepicker';
 import './blocks/expandable-list/expandable-list';
 import './blocks/form/form';
+import './blocks/card/card';
 import './blocks/room-card/room-card';
 import './blocks/header/header';
 import './blocks/layout/layout';

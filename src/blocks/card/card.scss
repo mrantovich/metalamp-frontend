@@ -179,7 +179,37 @@
         }
     }
 
-    &__calculation-data {
+    // 
+    &__calculation-tooltip {
+        width: 25rem;
+        padding: 1.5rem;
+        background: $dark-shade-light;
+        box-shadow: 0 2rem 2rem $dark-shade-25-percent;
+        border-radius: $brd-radius;
+        position: relative;
+        z-index: 22;
+        opacity: 0;
+        visibility: hidden;
+
+        &::before {
+            content: '';
+            width: 0;
+            height: 0;
+            border-left: 0.8rem solid transparent;
+            border-right: 0.8rem solid transparent;
+            border-top: 1.2rem solid $dark-shade-light;
+            position: absolute;
+            bottom: -1.2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 20;
+        }
+    }
+
+    &__calculation-tooltip[data-show] {
+        animation-name: showTooltip;
+        animation-duration: 0.3s;
+        animation-fill-mode: forwards;
     }
 
     &__total {
@@ -196,5 +226,16 @@
     &__total-delimiter {
         flex: 1 1 auto;
         border-bottom: 0.1rem dotted $dark-shade-25-percent;
+    }
+}
+
+@keyframes showTooltip {
+    from {
+        visibility: hidden;
+        opacity: 0;
+    }
+    to {
+        visibility: visible;
+        opacity: 1;
     }
 }

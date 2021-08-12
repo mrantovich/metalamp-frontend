@@ -69,12 +69,13 @@ mixin card-head-total(roomNumber, roomPrice, isLuxury)
             span в сутки
 
 //- For calculation area on card with total info of room.
-mixin card-calculation(calculationItemText, calculationItemData, isTextHasTip)
+mixin card-calculation(calculationItemText, calculationItemData, textToolTip)
     .card__calculation-flex 
-        if isTextHasTip 
+        if textToolTip 
             .card__calculation-text-plus-tip 
                 .card__calculation-text.text.text_has-line-height-140= calculationItemText 
-                .card__calculation-tip 
+                .card__calculation-tip
+                    .card__calculation-tooltip= textToolTip
             .card__calculation-data.text= calculationItemData 
         else
             .card__calculation-text.text= calculationItemText 

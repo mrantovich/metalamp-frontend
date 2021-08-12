@@ -21,6 +21,9 @@ $dark-shade-25-percent: rgba($dark-shade, 0.25);
 $dark-shade-10-percent: rgba($dark-shade, 0.1);
 $dark-shade-5-percent: rgba($dark-shade, 0.05);
 
+// Same as $dark-shade-5-percent but no transparency. Used for tooltips on calculation card.
+$dark-shade-light: #f4f4f5;
+
 // additional colors
 $purple: #BC9CFF;
 $purple-second: #8BA4F9;
