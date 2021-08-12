@@ -143,7 +143,6 @@ if (chartCanvas) {
             chart.ctx.fillText(theCenterSubText, canvasBounds.width * 0.50, canvasBounds.height * 0.43);
         },
         afterUpdate: function(chart, args, options) {
-            console.log(options);
             let theCenterText = innerChartText.theText;
             let theCenterSubText = 'голосов';
             const canvasBounds = chartCanvas.getBoundingClientRect();
@@ -198,6 +197,8 @@ if (chartCanvas) {
         let gswp;
         let gallerySwiperContainer = document.querySelector('.room-details__gallery-grid');
         if (mql.matches) {
+
+            gallerySwiperContainer.classList.add('swiper-container');
             
             changeGalleryGridContent(gallerySwiperContainer, true);
 
@@ -207,6 +208,8 @@ if (chartCanvas) {
 
             enableSwiper(gallerySwiperContainer);
         } else {
+            gallerySwiperContainer.classList.remove('swiper-container');
+
             roomChart.options.plugins.legend.align = 'end';
             roomChart.options.plugins.legend.position = 'right';
             roomChart.update(false);

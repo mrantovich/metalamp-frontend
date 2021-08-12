@@ -33,6 +33,11 @@
             //display: flex;
             //flex-direction: column;
         }
+
+        & > .swiper-pagination {
+            left: 50%;
+            transform: translate(-50%, 0);
+        }
     }
 
     &__gallery-item {
