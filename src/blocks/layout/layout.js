@@ -17,7 +17,7 @@ function changeLayoutBackground() {
         };
         backgrounds[i].style.opacity = 1;
     }, 5000);
-}
+};
 
 if (layoutBackgrounds) {
     changeLayoutBackground();

@@ -50,20 +50,28 @@ if (tooltipIcons) {
 // Under construction.
 const cardTotal = document.querySelector('.card__total');
 
-// Get room price that is in card header.
-let headPrice = cardTotal.querySelector('.card__head-price');
-let roomPrice = cardStringSplit(headPrice.innerHTML, '₽');
-let calculationText = cardTotal.querySelector('.card__calculation-text');
-let calculationData = cardTotal.querySelector('.card__calculation-text ~ .card__calculation-data');
-let calculationSum = cardTotal.querySelector('.card__total-sum');
+if (cardTotal) {
+    displayTotalSumOnCard();
+    updateCalculationCardData();
 
-let dpLeft = cardTotal.querySelector('.date-picker-container__left-part');
-let dpRight = cardTotal.querySelector('.date-picker-container__right-part');
+    document.addEventListener('click', function() {
+        updateCalculationCardData();
+    });
+};
 
-document.addEventListener('click', function() {
+function updateCalculationCardData() {
+    // Get room price that is in card header.
+    let headPrice = cardTotal.querySelector('.card__head-price');
+    let roomPrice = cardStringSplit(headPrice.innerHTML, '₽');
+    let calculationText = cardTotal.querySelector('.card__calculation-text');
+    let calculationData = cardTotal.querySelector('.card__calculation-text ~ .card__calculation-data');
+
+    let dpLeft = cardTotal.querySelector('.date-picker-container__left-part');
+    let dpRight = cardTotal.querySelector('.date-picker-container__right-part');
     let earlierDate = dpLeft.querySelector('.date-picker');
     let latterDate = dpRight.querySelector('.date-picker');
     let earlierDateValue, latterDateValue;
+    let diffInDays, sumOfDays = 0;
     if (earlierDate) {
         earlierDateValue = earlierDate.value;
     };
@@ -71,25 +79,28 @@ document.addEventListener('click', function() {
         latterDateValue = latterDate.value;
     };
     if (earlierDateValue && latterDateValue) {
-        let diffInDays = differenceInDays(reformatDateValue(latterDateValue), reformatDateValue(earlierDateValue));
-        let sumOfDays = parseInt(roomPrice.replaceAll(' ', '')) * parseInt(diffInDays);
+        diffInDays = differenceInDays(reformatDateValue(latterDateValue), reformatDateValue(earlierDateValue));
+        sumOfDays = parseInt(roomPrice.replaceAll(' ', '')) * parseInt(diffInDays);
 
-        calculationText.innerHTML = `${roomPrice} x ${diffInDays} суток`;
-        calculationData.innerHTML = `${sumOfDays}₽`;
-
-        displayTotalSumOnCard();
     };
-});
 
-// Set calculation text based on previously selected items.
-calculationText.innerHTML = roomPrice + ' x 4 суток';
+    calculationText.innerHTML = `${roomPrice} x ${diffInDays} суток`;
+    calculationData.innerHTML = `${sumOfDays}₽`;
+
+    displayTotalSumOnCard();
+};
 
 // Collect all calculation data to render total sum on card.
 function displayTotalSumOnCard() {
+    let calculationSum = cardTotal.querySelector('.card__total-sum');
     let toSum = []
     let allDataToSum = cardTotal.querySelectorAll('.card__calculation-data');
     allDataToSum.forEach(elem => toSum.push(cardStringSplit(elem.innerHTML, '₽')));
-    calculationSum.innerHTML = toSum.reduce((a, b) => parseInt(a) + parseInt(b)) + '₽';
+    let innerTextSum = toSum.reduce((a, b) => parseInt(a) + parseInt(b));
+    if (innerTextSum < 0) {
+        innerTextSum = 0;
+    };
+    calculationSum.innerHTML = innerTextSum  + '₽';
 };
 
 // Reformat date picked from calendar to make it suitable for calculation.
