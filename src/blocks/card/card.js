@@ -1,4 +1,5 @@
 import { createPopper } from '@popperjs/core';
+import { differenceInDays } from 'date-fns';
 
 const tooltipIcons = document.querySelectorAll('.card__calculation-tip');
 
@@ -53,6 +54,7 @@ const cardTotal = document.querySelector('.card__total');
 let headPrice = cardTotal.querySelector('.card__head-price');
 let roomPrice = cardStringSplit(headPrice.innerHTML, '₽');
 let calculationText = cardTotal.querySelector('.card__calculation-text');
+let calculationData = cardTotal.querySelector('.card__calculation-data');
 
 let dpLeft = cardTotal.querySelector('.date-picker-container__left-part');
 let dpRight = cardTotal.querySelector('.date-picker-container__right-part');
@@ -67,27 +69,27 @@ document.addEventListener('click', function() {
     if (latterDate) {
         latterDateValue = latterDate.value;
     };
-    if (earlierDate && latterDate) {
-        let diffInMs = new Date(latterDateValue) - new Date(earlierDateValue);
-        let diffInDays = diffInMs / (1000 * 60 * 60 * 24);
-        console.log(diffInDays);
+    if (earlierDateValue && latterDateValue) {
+        let diffInDays = differenceInDays(reformatDateValue(latterDateValue), reformatDateValue(earlierDateValue));
+        let sumOfDays = parseInt(roomPrice.replaceAll(' ', '')) * parseInt(diffInDays);
+
+        calculationText.innerHTML = `${roomPrice} x ${diffInDays} суток`;
+        calculationData.innerHTML = `${sumOfDays}`;
     }
 });
 
 // Set calculation text based on previously selected items.
 calculationText.innerHTML = roomPrice + ' x 4 суток';
 
-/* for (let i = 0; i < cardWithTotals.length; i++) {
-    let cardTotal = cardWithTotals[i];
-    let iqDropdownSelection = cardTotal.querySelector('.iqdropdown-selection');
-    let days = cardStringSplit(iqDropdownSelection.innerHTML, ' ');
-    let headPrice = cardTotal.querySelector('.card__head-price');
-    let roomPrice = cardStringSplit(headPrice.innerHTML, ' ');
-    let roomPriceRaw = cardStringSplit(roomPrice, '₽');
-    let calculationText = cardTotal.querySelector('.card__calculation-text');
+// Reformat date picked from calendar to make it suitable for calculation.
+//          dateString looks like "01.08.2021". Just reverse numbers and join them together with "-".
+function reformatDateValue(dateString) {
+    let splittedDateString = dateString.split('.');
+    let reversedDateString = splittedDateString.reverse().join('-');
 
-    calculationText.innerHTML = roomPriceRaw + ' x 4 суток';
-}; */
+    let nd = new Date(reversedDateString);
+    return nd;
+}
 
 function cardStringSplit(stringToSplit, splittingSymbol) {
     let s = stringToSplit.split(splittingSymbol);
