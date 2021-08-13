@@ -54,7 +54,8 @@ const cardTotal = document.querySelector('.card__total');
 let headPrice = cardTotal.querySelector('.card__head-price');
 let roomPrice = cardStringSplit(headPrice.innerHTML, '₽');
 let calculationText = cardTotal.querySelector('.card__calculation-text');
-let calculationData = cardTotal.querySelector('.card__calculation-data');
+let calculationData = cardTotal.querySelector('.card__calculation-text ~ .card__calculation-data');
+let calculationSum = cardTotal.querySelector('.card__total-sum');
 
 let dpLeft = cardTotal.querySelector('.date-picker-container__left-part');
 let dpRight = cardTotal.querySelector('.date-picker-container__right-part');
@@ -75,6 +76,11 @@ document.addEventListener('click', function() {
 
         calculationText.innerHTML = `${roomPrice} x ${diffInDays} суток`;
         calculationData.innerHTML = `${sumOfDays}`;
+
+        let toSum = []
+        let allDataToSum = cardTotal.querySelectorAll('.card__calculation-data');
+        allDataToSum.forEach(elem => toSum.push(elem.innerHTML));
+        calculationSum.innerHTML = toSum.reduce((a, b) => parseInt(a) + parseInt(b));
     }
 });
 
