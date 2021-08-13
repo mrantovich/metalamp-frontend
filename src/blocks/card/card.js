@@ -75,17 +75,22 @@ document.addEventListener('click', function() {
         let sumOfDays = parseInt(roomPrice.replaceAll(' ', '')) * parseInt(diffInDays);
 
         calculationText.innerHTML = `${roomPrice} x ${diffInDays} суток`;
-        calculationData.innerHTML = `${sumOfDays}`;
+        calculationData.innerHTML = `${sumOfDays}₽`;
 
-        let toSum = []
-        let allDataToSum = cardTotal.querySelectorAll('.card__calculation-data');
-        allDataToSum.forEach(elem => toSum.push(elem.innerHTML));
-        calculationSum.innerHTML = toSum.reduce((a, b) => parseInt(a) + parseInt(b));
-    }
+        displayTotalSumOnCard();
+    };
 });
 
 // Set calculation text based on previously selected items.
 calculationText.innerHTML = roomPrice + ' x 4 суток';
+
+// Collect all calculation data to render total sum on card.
+function displayTotalSumOnCard() {
+    let toSum = []
+    let allDataToSum = cardTotal.querySelectorAll('.card__calculation-data');
+    allDataToSum.forEach(elem => toSum.push(cardStringSplit(elem.innerHTML, '₽')));
+    calculationSum.innerHTML = toSum.reduce((a, b) => parseInt(a) + parseInt(b)) + '₽';
+};
 
 // Reformat date picked from calendar to make it suitable for calculation.
 //          dateString looks like "01.08.2021". Just reverse numbers and join them together with "-".
@@ -95,7 +100,7 @@ function reformatDateValue(dateString) {
 
     let nd = new Date(reversedDateString);
     return nd;
-}
+};
 
 function cardStringSplit(stringToSplit, splittingSymbol) {
     let s = stringToSplit.split(splittingSymbol);
