@@ -4,6 +4,8 @@ const HTMLWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtracPlugin = require('mini-css-extract-plugin');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const nodeExternals = require('webpack-node-externals');
+const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
+const { extendDefaultPlugins } = require("svgo");
 
 const isDev = process.env.NODE_ENV === 'development';
 const isProd = !isDev;
@@ -76,6 +78,41 @@ module.exports = {
                 generator: {
                     filename: './img/[hash][ext]'
                 }
+            },
+            {
+                test: /\.(?:png|gif|jpg|svg)$/i,
+                use: [
+                    {
+                        loader: ImageMinimizerPlugin.loader,
+                        options: {
+                            severityError: "warning",
+                            minimizerOptions: {
+                                plugins: [
+                                    ["gifsicle", { interlaced: true }], 
+                                    ["jpegtran", { progressive: true }], 
+                                    ["optipng", { optimizationLevel: 5 }],
+                                    [
+                                        "svgo",
+                                        {
+                                            plugins: extendDefaultPlugins([
+                                                {
+                                                    name: "removeViewBox",
+                                                    active: false,
+                                                },
+                                                {
+                                                    name: "addAttributesToSVGElement",
+                                                    params: {
+                                                        attributes: [{ xmlns: "http://www.w3.org/2000/svg" }]
+                                                    }
+                                                }
+                                            ])
+                                        }
+                                    ]
+                                ]
+                            },
+                        },
+                    },
+                ]
             },
             {
                 test: /\.(ttf|woff)$/,
